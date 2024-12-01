@@ -5,6 +5,5 @@ enum Tools{
 	AxeWood,
 	TillGrass,
 	WaterCrops,
-	PlantCorn,
-	PlantTomato
 }
+#used to assign names to action values

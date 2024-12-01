@@ -13,12 +13,13 @@ static func movement_input() -> Vector2:
 		direction = Vector2.RIGHT
 	else:
 		direction = Vector2.ZERO
-	
 	return direction
-	
+#updates direction for the class and returns it if needed
+
 static func is_movement_input() -> bool:
 	return not (direction == Vector2.ZERO)
-	
+#returns wheter or not the user is trying to move
+
 static func using_tool()-> bool:
-	var tool_active: bool = Input.is_action_just_pressed("hit")
+	var tool_active: bool = Input.is_action_just_pressed("use")
 	return tool_active
