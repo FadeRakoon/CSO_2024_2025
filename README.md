@@ -23,7 +23,7 @@ The project as of November 30, 2024:
 - Game map complete
 
 Running the executable:
-- Download the file "Nothing Nuh Grow Suh.exe" in the game builds folder 
+- Download the files "Nothing Nuh Grow Suh.exe" and "Nothing Nuh Grow Suh.pck" in the game builds folder 
 - Run the executable file
 
 Viewing project files:
