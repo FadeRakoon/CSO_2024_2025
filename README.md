@@ -31,3 +31,7 @@ Viewing project files:
 - Go to this link: https://editor.godotengine.org/releases/latest/
 - Upload the zip folder to the Preload project ZIP area
 - All the scripts, scenes and assets are now viewable
+
+# Technical Documentation
+
+Please see the link to a Google Document containing more information on our project: https://docs.google.com/document/d/16Pj2TyGX3ypZaMqVnBPXmOSDebkD5SU7TBVSSJI8_gk/edit?usp=sharing
