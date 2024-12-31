@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dkw8ihjedq1lx"]
+[gd_scene load_steps=53 format=3 uid="uid://dkw8ihjedq1lx"]
 
 [ext_resource type="Texture2D" uid="uid://13ejtg64y5rk" path="res://Game elements Assets/Characters/Basic Charakter Actions.png" id="1_rwqkq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_y5aqy"]
@@ -9,6 +9,9 @@
 [ext_resource type="Script" path="res://Scripts/state_machine/chop.gd" id="7_bnyi4"]
 [ext_resource type="Script" path="res://Scripts/state_machine/till.gd" id="8_t13ws"]
 [ext_resource type="Script" path="res://Scripts/state_machine/water.gd" id="9_p01ob"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p64nf"]
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3t6n"]
 atlas = ExtResource("1_rwqkq")
@@ -394,21 +397,29 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxrpq"]
-radius = 4.0
+radius = 2.0
 height = 12.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player", "player_aoi"]]
 collision_layer = 2
 script = ExtResource("1_y5aqy")
 
+[node name="Area2D" type="Area2D" parent="." groups=["player_aoi"]]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player_aoi"]]
+scale = Vector2(3.46, 3.5)
+shape = SubResource("CircleShape2D_p64nf")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_4i43s")
-animation = &"water_right"
+animation = &"idle_front"
 autoplay = "idle_front"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(0, 5)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rxrpq")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]

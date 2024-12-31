@@ -1,14 +1,14 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://nvimvucdvves"]
+[gd_scene load_steps=15 format=3 uid="uid://cgqwhjp4qevvs"]
 
-[ext_resource type="Texture2D" uid="uid://ckkc5cfehpdan" path="res://Game elements Assets/Tilesets/Water.png" id="1_p7a8y"]
-[ext_resource type="Texture2D" uid="uid://c8rj8t76idmps" path="res://Assets packs/Custom/active_box.png" id="1_ths44"]
-[ext_resource type="Texture2D" uid="uid://prsp3bd37pvn" path="res://Game elements Assets/Tilesets/Grass.png" id="2_wjafa"]
-[ext_resource type="Texture2D" uid="uid://did11uvu4l4iu" path="res://Game elements Assets/Tilesets/Tilled_Dirt_Wide.png" id="4_v0a7j"]
-[ext_resource type="Texture2D" uid="uid://biuojioalyqmn" path="res://Game elements Assets/Objects/Basic_Grass_Biom_things.png" id="5_tg7we"]
-[ext_resource type="PackedScene" uid="uid://cgqwhjp4qevvs" path="res://Scenes/tiles/tile.tscn" id="6_0pk5g"]
+[ext_resource type="Texture2D" uid="uid://ckkc5cfehpdan" path="res://Game elements Assets/Tilesets/Water.png" id="1_s3ewn"]
+[ext_resource type="Script" path="res://Scenes/tiles/tile.gd" id="1_u6jbh"]
+[ext_resource type="Texture2D" uid="uid://c8rj8t76idmps" path="res://Assets packs/Custom/active_box.png" id="1_xetp6"]
+[ext_resource type="Texture2D" uid="uid://prsp3bd37pvn" path="res://Game elements Assets/Tilesets/Grass.png" id="2_8ddwr"]
+[ext_resource type="Texture2D" uid="uid://did11uvu4l4iu" path="res://Game elements Assets/Tilesets/Tilled_Dirt_Wide.png" id="4_tgd28"]
+[ext_resource type="Texture2D" uid="uid://biuojioalyqmn" path="res://Game elements Assets/Objects/Basic_Grass_Biom_things.png" id="5_440if"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cr36g"]
-texture = ExtResource("1_p7a8y")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_266fn"]
+texture = ExtResource("1_s3ewn")
 0:0/animation_columns = 4
 0:0/animation_frame_0/duration = 0.2
 0:0/animation_frame_1/duration = 0.2
@@ -16,8 +16,8 @@ texture = ExtResource("1_p7a8y")
 0:0/animation_frame_3/duration = 0.2
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6tv8a"]
-texture = ExtResource("2_wjafa")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xk0m8"]
+texture = ExtResource("2_8ddwr")
 7:3/0 = 0
 7:3/0/terrain_set = 0
 7:3/0/terrain = 0
@@ -251,12 +251,12 @@ texture = ExtResource("2_wjafa")
 7:2/0/terrains_peering_bit/left_side = 0
 7:2/0/terrains_peering_bit/top_side = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j70pl"]
-texture = ExtResource("1_ths44")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dskxu"]
+texture = ExtResource("1_xetp6")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ba5q3"]
-texture = ExtResource("4_v0a7j")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feklq"]
+texture = ExtResource("4_tgd28")
 7:3/0 = 0
 7:3/0/terrain_set = 0
 7:3/0/terrain = 1
@@ -593,29 +593,23 @@ texture = ExtResource("4_v0a7j")
 1:6/0 = 0
 0:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3h3t"]
-texture = ExtResource("5_tg7we")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_crruy"]
+texture = ExtResource("5_440if")
 5:0/0 = 0
 6:0/0 = 0
 6:1/0 = 0
 7:1/0 = 0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, -1, -5, -1, -4, 1, 1, 1)
 8:1/0 = 0
-8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(7.5, 1, -7, 1, -7, 4, 7.5, 4)
 8:0/0 = 0
 7:0/0 = 0
 5:1/0 = 0
 3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5, 0, -3.5, 0, -3.5, 5.5, 3.5, 5.5)
 4:2/0 = 0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5, 0, -3.5, 0, -3.5, 5.5, 3.5, 5.5)
 5:2/0 = 0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(7.5, 1, -7, 1, -7, 4, 7.5, 4)
 6:2/0 = 0
 7:2/0 = 0
 5:3/0 = 0
 5:4/0 = 0
-5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(7.5, 1, -7, 1, -3.5, 5, 4.5, 5)
 6:3/0 = 0
 6:4/0 = 0
 7:3/0 = 0
@@ -625,33 +619,52 @@ texture = ExtResource("5_tg7we")
 8:2/0 = 0
 3:0/size_in_atlas = Vector2i(2, 2)
 3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 5, 4, 5, 4, 14, -4, 14)
 1:0/size_in_atlas = Vector2i(2, 2)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 5, 4, 5, 4, 14, -4, 14)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 5, 4, 5, 4, 14, -4, 14)
 0:3/0 = 0
 1:3/0 = 0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8qpwy"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_sa4k2"]
 resource_name = "tiles"
-scenes/1/scene = ExtResource("6_0pk5g")
+scenes/1/scene = null
 
-[resource]
+[sub_resource type="TileSet" id="TileSet_h41w8"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Grass"
+terrain_set_0/terrain_0/name = "Grass Terraim"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-terrain_set_0/terrain_1/name = "Dirt"
+terrain_set_0/terrain_1/name = "Dirt Terrain 1"
 terrain_set_0/terrain_1/color = Color(0.160053, 0.504827, 0.455603, 1)
-custom_data_layer_0/name = "selected"
-custom_data_layer_0/type = 1
-sources/0 = SubResource("TileSetAtlasSource_cr36g")
-sources/1 = SubResource("TileSetAtlasSource_6tv8a")
-sources/3 = SubResource("TileSetAtlasSource_ba5q3")
-sources/4 = SubResource("TileSetAtlasSource_n3h3t")
-sources/2 = SubResource("TileSetAtlasSource_j70pl")
-sources/5 = SubResource("TileSetScenesCollectionSource_8qpwy")
+sources/0 = SubResource("TileSetAtlasSource_266fn")
+sources/1 = SubResource("TileSetAtlasSource_xk0m8")
+sources/3 = SubResource("TileSetAtlasSource_feklq")
+sources/4 = SubResource("TileSetAtlasSource_crruy")
+sources/2 = SubResource("TileSetAtlasSource_dskxu")
+sources/5 = SubResource("TileSetScenesCollectionSource_sa4k2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8b6f"]
+size = Vector2(14, 14)
+
+[node name="tile" type="Area2D" groups=["player_aoi"]]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_u6jbh")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-8, 8)
+tile_set = SubResource("TileSet_h41w8")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player_aoi"]]
+shape = SubResource("RectangleShape2D_l8b6f")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

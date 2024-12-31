@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=4 uid="uid://i6p2gpwhqase"]
 
-[ext_resource type="TileSet" uid="uid://bk48bkbeymc0f" path="res://tilesets/house_tile_set.tres" id="1_o03ys"]
+[ext_resource type="TileSet" uid="uid://bk48bkbeymc0f" path="res://Tileset Groups/house_tile_set.tres" id="1_o03ys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i42ol"]
 size = Vector2(20, 42)
@@ -13,12 +13,12 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 2
-position = Vector2(109, 143)
+position = Vector2(106, 143)
 shape = SubResource("RectangleShape2D_i42ol")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 2
-position = Vector2(68, 143)
+position = Vector2(70, 143)
 shape = SubResource("RectangleShape2D_i42ol")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
