@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dug5jkl2t0bsv"]
+
+[ext_resource type="Texture2D" uid="uid://xc0ftyxn25y7" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_lxrcn"]
+
+[node name="Small Tree" type="Sprite2D"]
+texture = ExtResource("1_lxrcn")
