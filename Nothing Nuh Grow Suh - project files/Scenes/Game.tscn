@@ -9,6 +9,12 @@
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
+[node name="Map_Manager" parent="." node_paths=PackedStringArray("grass_layer", "field_layer", "game_tiles") groups=["player_aoi"] instance=ExtResource("4_pcyfr")]
+script = ExtResource("5_g3qqw")
+grass_layer = NodePath("../BG tilemap/Grass")
+field_layer = NodePath("../BG tilemap/Dirt")
+game_tiles = NodePath("../BG tilemap/Game Tiles")
+
 [node name="BG tilemap" type="Node2D" parent="."]
 y_sort_enabled = true
 metadata/_edit_lock_ = true
@@ -65,12 +71,3 @@ limit_right = 1280
 limit_bottom = 720
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="Crop_fields" type="Node2D" parent="."]
-position = Vector2(648, 328)
-
-[node name="Field_Manager" parent="." node_paths=PackedStringArray("grass_layer", "field_layer", "game_tiles") groups=["player_aoi"] instance=ExtResource("4_pcyfr")]
-script = ExtResource("5_g3qqw")
-grass_layer = NodePath("../BG tilemap/Grass")
-field_layer = NodePath("../BG tilemap/Dirt")
-game_tiles = NodePath("../BG tilemap/Game Tiles")
