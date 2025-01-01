@@ -92,9 +92,11 @@ size = Vector2(16, 16)
 size = Vector2(16, 25)
 
 [node name="Door" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_dwcqf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_3pf78")
 autoplay = "default"
 

@@ -15,10 +15,22 @@ run/main_scene="res://Scenes/Game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[debug]
+
+shapes/layer_4=""
+shapes/layer_3="player_influence"
+shapes/layer_2="player"
+shapes/layer_1="objects"
+
 [display]
 
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
+
+[global_group]
+
+player=""
+player_aoi=""
 
 [input]
 
@@ -51,6 +63,18 @@ use={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(165, 13),"global_position":Vector2(174, 59),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+tile_select={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(64, 16),"global_position":Vector2(73, 62),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[layer_names]
+
+2d_physics/layer_1="objects"
+2d_physics/layer_2="player"
+2d_physics/layer_3="player_influence"
+2d_physics/layer_4="tiles"
 
 [rendering]
 
