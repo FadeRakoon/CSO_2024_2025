@@ -1,9 +1,11 @@
 class_name FieldCursor
 extends Node
 
-@export var grass_layer: TileMapLayer #this holds the grass terrain
-@export var field_layer: TileMapLayer #this holds the dirt terrain
-@export var game_tiles: TileMapLayer #this holds the tiles with logic
+@onready var player: Player = $"../Player" #this holds the player node
+@onready var grass_layer: TileMapLayer = $"../BG tilemap/Grass" #this holds the grass terrain
+@onready var field_layer: TileMapLayer = $"../BG tilemap/Dirt"#this holds the dirt terrain
+@onready var game_tiles: TileMapLayer = $"../BG tilemap/Game Tiles" #this holds the tiles with logic
+@onready var nature_tiles: TileMapLayer = $"../BG tilemap/Nature"
 @export var terrain_set: int = 0 #game tiles are on this terrain set
 @export var dirt_terrain: int = 1 #dirt terrain on layer 1
 
@@ -42,7 +44,9 @@ func get_cell_info() -> void: #function to obtain the
 
 func check_cell():
 	var tile = tile_dict.get(cell_pos) #looks up the tile
-	if tile and tile.selectable: #checks if the tile exists and is interactable 
+	if tile and tile.selected and tile.selectable and (cell_pos not in nature_tiles.get_used_cells() and player.current_tool == DataTypes.Tools.TillGrass): 
+		#checks if the tile exists and is interactable 
+		#also checks if there is any nature on the tile and if the player has his tilling tool
 		till_cell() #changes the tile to dirt (may be updated later for planting and other functionality)
 	
 func till_cell() -> void:

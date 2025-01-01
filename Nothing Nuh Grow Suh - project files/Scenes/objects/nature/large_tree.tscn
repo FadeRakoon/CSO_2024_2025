@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bje1sfde48y4i"]
+
+[ext_resource type="Texture2D" uid="uid://xc0ftyxn25y7" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_jxxnb"]
+[ext_resource type="Script" path="res://Scripts/objects/destroyable/destroyables.gd" id="2_hhttm"]
+[ext_resource type="Material" uid="uid://dnjs8uiiobwhs" path="res://Scripts/shaders/shake.tres" id="3_n3bnn"]
+[ext_resource type="PackedScene" uid="uid://gqbromylkeer" path="res://Scenes/objects/hurt_box.tscn" id="3_u8kkd"]
+[ext_resource type="PackedScene" uid="uid://pewwsmobju5d" path="res://Scenes/objects/dmg_manager.tscn" id="4_7qpe3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1pmij"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vw44r"]
+size = Vector2(24, 31)
+
+[node name="Large_Tree" type="Sprite2D"]
+material = ExtResource("3_n3bnn")
+position = Vector2(0, -8)
+texture = ExtResource("1_jxxnb")
+region_enabled = true
+region_rect = Rect2(16, 0, 32, 32)
+script = ExtResource("2_hhttm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+material = ExtResource("3_n3bnn")
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_1pmij")
+
+[node name="HurtBox" parent="." instance=ExtResource("3_u8kkd")]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_vw44r")
+debug_color = Color(0.94499, 0.224917, 0.181962, 0.42)
+
+[node name="Dmg_Manager" parent="." instance=ExtResource("4_7qpe3")]
+max_dmg = 5
+
+[connection signal="mouse_entered" from="HurtBox" to="." method="_on_hurt_box_mouse_entered"]

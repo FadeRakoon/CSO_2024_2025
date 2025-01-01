@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pewwsmobju5d"]
+
+[ext_resource type="Script" path="res://Scripts/objects/destroyable/dmg_manager.gd" id="1_04oud"]
+
+[node name="Dmg_Manager" type="Node2D"]
+script = ExtResource("1_04oud")

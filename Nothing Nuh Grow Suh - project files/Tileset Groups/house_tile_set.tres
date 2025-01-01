@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://2q7c3muk3g57" path="res://Game elements Assets/Tilesets/Wooden_House_Walls_Tilset.png" id="1_bcya2"]
 [ext_resource type="Texture2D" uid="uid://cxppk8nxj0fi6" path="res://Game elements Assets/Tilesets/Wooden_House_Roof_Tilset.png" id="2_0cuk0"]
-[ext_resource type="PackedScene" uid="uid://3k8sj561stkm" path="res://Scenes/door.tscn" id="3_bxqeb"]
+[ext_resource type="PackedScene" uid="uid://3k8sj561stkm" path="res://Scenes/objects/door.tscn" id="3_8g1f2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u6bus"]
 texture = ExtResource("1_bcya2")
@@ -108,7 +108,7 @@ texture = ExtResource("2_0cuk0")
 6:4/0/z_index = 2
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_exx78"]
-scenes/1/scene = ExtResource("3_bxqeb")
+scenes/1/scene = ExtResource("3_8g1f2")
 
 [resource]
 physics_layer_0/collision_layer = 1
