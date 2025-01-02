@@ -1,0 +1,213 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1732688091
+icon.svg::CompressedTexture2D::3914492764568451764::1728396557::1728396563::1::::<><>::
+::res://Assets/::1732688649
+::res://Assets/MPWSP01/::1732688649
+::res://Assets/MPWSP01/attack effects/::1732688649
+attack1.png::CompressedTexture2D::2241764724555742770::1732688649::1732688650::1::::<><>::
+attack2.png::CompressedTexture2D::7731580333399588087::1732688649::1732688650::1::::<><>::
+attack3.png::CompressedTexture2D::9160755240331412778::1732688649::1732688650::1::::<><>::
+attack4.png::CompressedTexture2D::1140477289103586617::1732688649::1732688650::1::::<><>::
+attack5.png::CompressedTexture2D::381461239628951123::1732688649::1732688650::1::::<><>::
+attack6.png::CompressedTexture2D::5459645359228032709::1732688649::1732688650::1::::<><>::
+attack7.png::CompressedTexture2D::779139807090080102::1732688649::1732688650::1::::<><>::
+::res://Assets/MPWSP01/backgrounds/::1732688649
+background1.png::CompressedTexture2D::3720680813935337479::1732688649::1732688650::1::::<><>::
+background2.png::CompressedTexture2D::8786387446594268236::1732688649::1732688650::1::::<><>::
+background3.png::CompressedTexture2D::3344563057656096992::1732688649::1732688650::1::::<><>::
+::res://Assets/MPWSP01/character overworld/::1732688649
+ow1.png::CompressedTexture2D::6060399333410505967::1732688649::1732688650::1::::<><>::
+ow2.png::CompressedTexture2D::6457401578457356201::1732688649::1732688650::1::::<><>::
+ow3.png::CompressedTexture2D::8742159976894317282::1732688649::1732688650::1::::<><>::
+ow4.png::CompressedTexture2D::3162048664539189067::1732688649::1732688650::1::::<><>::
+ow5.png::CompressedTexture2D::5951661875879708528::1732688649::1732688651::1::::<><>::
+ow6.png::CompressedTexture2D::485283593221695098::1732688649::1732688650::1::::<><>::
+ow7.png::CompressedTexture2D::8666967745320608519::1732688649::1732688651::1::::<><>::
+ow8.png::CompressedTexture2D::3668978727069425418::1732688649::1732688651::1::::<><>::
+ow9.png::CompressedTexture2D::1113363307241101522::1732688649::1732688651::1::::<><>::
+ow10.png::CompressedTexture2D::5572734100629234302::1732688649::1732688651::1::::<><>::
+::res://Assets/MPWSP01/menu sprites/::1732688649
+menusprite1.png::CompressedTexture2D::5596983534118180708::1732688649::1732688651::1::::<><>::
+menusprite2.png::CompressedTexture2D::5985954605048267886::1732688649::1732688651::1::::<><>::
+menusprite3.png::CompressedTexture2D::4545602377134800175::1732688649::1732688650::1::::<><>::
+menusprite4.png::CompressedTexture2D::2223685066220981277::1732688649::1732688650::1::::<><>::
+menusprite5.png::CompressedTexture2D::1752272531291589067::1732688649::1732688650::1::::<><>::
+menusprite6.png::CompressedTexture2D::2493980393991078783::1732688649::1732688650::1::::<><>::
+menusprite7.png::CompressedTexture2D::8651071311616645409::1732688649::1732688650::1::::<><>::
+menusprite8.png::CompressedTexture2D::8518147646053018030::1732688649::1732688650::1::::<><>::
+menusprite9.png::CompressedTexture2D::2861130234656997764::1732688649::1732688650::1::::<><>::
+menusprite10.png::CompressedTexture2D::840736630030308763::1732688649::1732688650::1::::<><>::
+menusprite11.png::CompressedTexture2D::8341928757025903938::1732688649::1732688650::1::::<><>::
+menusprite12.png::CompressedTexture2D::24397008741862599::1732688649::1732688650::1::::<><>::
+menusprite13.png::CompressedTexture2D::6231373625174292921::1732688649::1732688650::1::::<><>::
+menusprite14.png::CompressedTexture2D::2724122583096758813::1732688649::1732688650::1::::<><>::
+menusprite15.png::CompressedTexture2D::8802582854789657922::1732688649::1732688650::1::::<><>::
+menusprite16.png::CompressedTexture2D::2090492174734996855::1732688649::1732688650::1::::<><>::
+::res://Assets/MPWSP01/sprites/::1732688649
+sprite1.png::CompressedTexture2D::4775347170150884259::1732688649::1732688650::1::::<><>::
+sprite1_attack.png::CompressedTexture2D::7576562011266638528::1732688649::1732688650::1::::<><>::
+sprite1_idle.png::CompressedTexture2D::522020690230778438::1732688649::1732688650::1::::<><>::
+sprite2.png::CompressedTexture2D::3819453317744479199::1732688649::1732688650::1::::<><>::
+sprite2_attack.png::CompressedTexture2D::2442845717607616036::1732688649::1732688650::1::::<><>::
+sprite2_idle.png::CompressedTexture2D::2486380396364898116::1732688649::1732688650::1::::<><>::
+sprite3.png::CompressedTexture2D::8869846674848103013::1732688649::1732688650::1::::<><>::
+sprite3_attack.png::CompressedTexture2D::2426205130226949889::1732688649::1732688650::1::::<><>::
+sprite3_idle.png::CompressedTexture2D::6338571350871647565::1732688649::1732688651::1::::<><>::
+sprite4.png::CompressedTexture2D::2843206926493346305::1732688649::1732688651::1::::<><>::
+sprite4_attack.png::CompressedTexture2D::6343412735307218194::1732688649::1732688651::1::::<><>::
+sprite4_idle.png::CompressedTexture2D::6792485961303511462::1732688649::1732688651::1::::<><>::
+sprite5.png::CompressedTexture2D::991365897296559715::1732688649::1732688651::1::::<><>::
+sprite5_attack.png::CompressedTexture2D::5531550995276919803::1732688649::1732688651::1::::<><>::
+sprite5_idle.png::CompressedTexture2D::7922840467957992768::1732688649::1732688651::1::::<><>::
+sprite6.png::CompressedTexture2D::3691241305626020910::1732688649::1732688651::1::::<><>::
+sprite6_attack.png::CompressedTexture2D::8203081810689209404::1732688649::1732688651::1::::<><>::
+sprite6_idle.png::CompressedTexture2D::8930407836283427963::1732688649::1732688651::1::::<><>::
+sprite7.png::CompressedTexture2D::883493181142807256::1732688649::1732688651::1::::<><>::
+sprite7_attack.png::CompressedTexture2D::7291131927777247467::1732688649::1732688651::1::::<><>::
+sprite7_idle.png::CompressedTexture2D::5731519023347549238::1732688649::1732688651::1::::<><>::
+sprite8.png::CompressedTexture2D::7106615407481525390::1732688649::1732688651::1::::<><>::
+sprite8_attack.png::CompressedTexture2D::3824165595282163458::1732688649::1732688651::1::::<><>::
+sprite8_idle.png::CompressedTexture2D::21960954205114747::1732688649::1732688651::1::::<><>::
+sprite9.png::CompressedTexture2D::7580083365951820645::1732688649::1732688651::1::::<><>::
+sprite9_attack.png::CompressedTexture2D::1372477677220888962::1732688649::1732688651::1::::<><>::
+sprite9_idle.png::CompressedTexture2D::1437615783949043989::1732688649::1732688651::1::::<><>::
+sprite10.png::CompressedTexture2D::7010753933371206203::1732688649::1732688651::1::::<><>::
+sprite10_attack.png::CompressedTexture2D::2535055548268826314::1732688649::1732688651::1::::<><>::
+sprite10_idle.png::CompressedTexture2D::6551920262468001986::1732688649::1732688651::1::::<><>::
+sprite11.png::CompressedTexture2D::1027288958735220295::1732688649::1732688651::1::::<><>::
+sprite11_attack.png::CompressedTexture2D::3210603526997794486::1732688649::1732688651::1::::<><>::
+sprite11_idle.png::CompressedTexture2D::4140555739036591800::1732688649::1732688651::1::::<><>::
+sprite12.png::CompressedTexture2D::849962590475516596::1732688649::1732688651::1::::<><>::
+sprite12_attack.png::CompressedTexture2D::59796853478151840::1732688649::1732688651::1::::<><>::
+sprite12_idle.png::CompressedTexture2D::8637785329892488580::1732688649::1732688651::1::::<><>::
+sprite13.png::CompressedTexture2D::5557620865662543152::1732688649::1732688651::1::::<><>::
+sprite13_attack.png::CompressedTexture2D::8936057423008598366::1732688649::1732688651::1::::<><>::
+sprite13_idle.png::CompressedTexture2D::420611771656606538::1732688649::1732688651::1::::<><>::
+sprite14.png::CompressedTexture2D::8913251429630555546::1732688649::1732688651::1::::<><>::
+sprite14_attack.png::CompressedTexture2D::7235489169301040618::1732688649::1732688651::1::::<><>::
+sprite14_idle.png::CompressedTexture2D::6930938501561762804::1732688649::1732688651::1::::<><>::
+sprite15.png::CompressedTexture2D::1878863775147919826::1732688649::1732688651::1::::<><>::
+sprite15_attack.png::CompressedTexture2D::2268343907551559476::1732688649::1732688651::1::::<><>::
+sprite15_idle.png::CompressedTexture2D::4645853571741117806::1732688649::1732688651::1::::<><>::
+sprite16.png::CompressedTexture2D::4037251059340593322::1732688649::1732688651::1::::<><>::
+sprite16_attack.png::CompressedTexture2D::6123499918111220887::1732688649::1732688651::1::::<><>::
+sprite16_idle.png::CompressedTexture2D::8871465152692680665::1732688649::1732688651::1::::<><>::
+::res://Assets/MPWSP01/tileset/::1732688649
+tileset.png::CompressedTexture2D::9010973555757406443::1732688649::1732688651::1::::<><>::
+::res://Assets/MPWSP01/UI/::1732688649
+baricon1.png::CompressedTexture2D::3758353909832889770::1732688649::1732688651::1::::<><>::
+baricon2.png::CompressedTexture2D::6555444032271150581::1732688649::1732688651::1::::<><>::
+baricon3.png::CompressedTexture2D::2812171123348129589::1732688649::1732688651::1::::<><>::
+baricon4.png::CompressedTexture2D::4859278433841363984::1732688649::1732688651::1::::<><>::
+baricon5.png::CompressedTexture2D::1253864619746832971::1732688649::1732688650::1::::<><>::
+baricon6.png::CompressedTexture2D::1673762826405132088::1732688649::1732688650::1::::<><>::
+baricon7.png::CompressedTexture2D::7395802586119942706::1732688649::1732688650::1::::<><>::
+options1.png::CompressedTexture2D::6602129217169404479::1732688649::1732688650::1::::<><>::
+options2.png::CompressedTexture2D::9187571605648652297::1732688649::1732688650::1::::<><>::
+options3.png::CompressedTexture2D::7034186128675311155::1732688649::1732688650::1::::<><>::
+options4.png::CompressedTexture2D::5085923420120410362::1732688649::1732688650::1::::<><>::
+options5.png::CompressedTexture2D::2116103342020159881::1732688649::1732688650::1::::<><>::
+options6.png::CompressedTexture2D::5671979126644754947::1732688649::1732688650::1::::<><>::
+options7.png::CompressedTexture2D::7576703418482722359::1732688649::1732688650::1::::<><>::
+options8.png::CompressedTexture2D::6547052632643298111::1732688649::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - Sprites - Basic pack/::1732688648
+::res://Assets/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/::1732688648
+read_me.txt::TextFile::-1::1732688648::0::1::::<><>::
+::res://Assets/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/::1732688648
+Basic Charakter Actions.png::CompressedTexture2D::2351837549914696154::1732688648::1732688650::1::::<><>::
+Basic Charakter Spritesheet.png::CompressedTexture2D::5734270616603949321::1732688648::1732688650::1::::<><>::
+Egg_And_Nest.png::CompressedTexture2D::5322231104588583913::1732688648::1732688650::1::::<><>::
+Free Chicken Sprites.png::CompressedTexture2D::7641024919376227021::1732688648::1732688650::1::::<><>::
+Free Cow Sprites.png::CompressedTexture2D::7528214766587017778::1732688648::1732688650::1::::<><>::
+Tools.png::CompressedTexture2D::8081201098502200324::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/::1732688648
+Basic_Furniture.png::CompressedTexture2D::1509884455115794454::1732688648::1732688650::1::::<><>::
+Basic_Grass_Biom_things.png::CompressedTexture2D::1620000049053993040::1732688648::1732688650::1::::<><>::
+Basic_Plants.png::CompressedTexture2D::7095436761567404904::1732688648::1732688650::1::::<><>::
+Basic_tools_and_meterials.png::CompressedTexture2D::6496138392402734903::1732688648::1732688650::1::::<><>::
+Chest.png::CompressedTexture2D::2611392188740447569::1732688648::1732688650::1::::<><>::
+Egg_item.png::CompressedTexture2D::232631236661110112::1732688648::1732688650::1::::<><>::
+Free_Chicken_House.png::CompressedTexture2D::2728045391728183635::1732688648::1732688650::1::::<><>::
+Paths.png::CompressedTexture2D::9220409821010442246::1732688648::1732688650::1::::<><>::
+Simple_Milk_and_grass_item.png::CompressedTexture2D::6109347640366373775::1732688648::1732688650::1::::<><>::
+Wood_Bridge.png::CompressedTexture2D::245991942942567995::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Sprout Lands color pallet/::1732688648
+Sprout Lands defautlt palette snip.PNG::CompressedTexture2D::1161231095215243161::1732688648::1732688650::1::::<><>::
+Sprout Lands defautlt palette.png::CompressedTexture2D::7076315890901793943::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/::1732688648
+Bitmask references 1.png::CompressedTexture2D::7786939859373933531::1732688648::1732688650::1::::<><>::
+Bitmask references 2.png::CompressedTexture2D::2948533971828279735::1732688648::1732688650::1::::<><>::
+Doors.png::CompressedTexture2D::2805510420780276363::1732688648::1732688650::1::::<><>::
+Fences.png::CompressedTexture2D::6703450347172665701::1732688648::1732688650::1::::<><>::
+Grass.png::CompressedTexture2D::4821409410425892070::1732688648::1732688650::1::::<><>::
+Hills.png::CompressedTexture2D::3026891453206015861::1732688648::1732688650::1::::<><>::
+Tilled_Dirt.png::CompressedTexture2D::2525001860487543755::1732688648::1732688650::1::::<><>::
+Tilled_Dirt_v2.png::CompressedTexture2D::5089764644731371472::1732688648::1732688650::1::::<><>::
+Tilled_Dirt_Wide.png::CompressedTexture2D::5977309378411794322::1732688648::1732688650::1::::<><>::
+Tilled_Dirt_Wide_v2.png::CompressedTexture2D::4563203068690806560::1732688648::1732688650::1::::<><>::
+Water.png::CompressedTexture2D::4997876944708130677::1732688648::1732688650::1::::<><>::
+Wooden_House_Roof_Tilset.png::CompressedTexture2D::766283576103505847::1732688648::1732688650::1::::<><>::
+Wooden_House_Walls_Tilset.png::CompressedTexture2D::4907229108753232333::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/::1732688648
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/::1732688648
+read_me.txt::TextFile::-1::1732688648::0::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/emojis-free/::1732688648
+Emoji_Spritesheet_Free.png::CompressedTexture2D::6172443919738207922::1732688648::1732688650::1::::<><>::
+speech_bubble_grey.png::CompressedTexture2D::5173267887015872543::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/emojis-free/emoji style ui/::1732688648
+Inventory_Blocks_Spritesheet.png::CompressedTexture2D::6181192998297993698::1732688648::1732688650::1::::<><>::
+inventory_example.png::CompressedTexture2D::1154916113732381778::1732688648::1732688650::1::::<><>::
+inventory_example_2.png::CompressedTexture2D::4627571065173410516::1732688648::1732688650::1::::<><>::
+inventory_example_with_slots.png::CompressedTexture2D::4809708271187692810::1732688648::1732688650::1::::<><>::
+inventory_example_with_slots_2.png::CompressedTexture2D::6211165177953341323::1732688648::1732688650::1::::<><>::
+Inventory_Herat_Spritesheet.png::CompressedTexture2D::4582749980904621786::1732688648::1732688650::1::::<><>::
+inventory_Light_example.png::CompressedTexture2D::6457849024370427997::1732688648::1732688650::1::::<><>::
+inventory_Light_example_2.png::CompressedTexture2D::7049708586618529995::1732688648::1732688650::1::::<><>::
+inventory_Light_example_with_slots.png::CompressedTexture2D::5378727696139076550::1732688648::1732688650::1::::<><>::
+Inventory_Light_example_with_slots_2.png::CompressedTexture2D::6658606576725838784::1732688648::1732688650::1::::<><>::
+Inventory_Light_Herat_Spritesheet.png::CompressedTexture2D::807547186477728071::1732688648::1732688650::1::::<><>::
+Inventory_Spritesheet.png::CompressedTexture2D::8322958831166858699::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/emojis-free/emoji style ui/weather/::1732688648
+Weather_Icons_smal_freel.png::CompressedTexture2D::5597687426786355473::1732688648::1732688650::1::::<><>::
+Weather_UI_Free.png::CompressedTexture2D::128211312093697548::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/fonts/::1732688648
+pixel-letters-7-8x14-preview.png::CompressedTexture2D::4459667549212754517::1732688648::1732688650::1::::<><>::
+pixel-letters-7-8x14.png::CompressedTexture2D::3048135644185513097::1732688648::1732688650::1::::<><>::
+pixelFont-7-8x14-sproutLands.ttf::FontFile::604626349683293405::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/::1732688649
+Setting menu.png::CompressedTexture2D::1394301334256032056::1732688649::1732688650::1::::<><>::
+Sprite sheet for Basic Pack.png::CompressedTexture2D::1051427120498618308::1732688649::1732688650::1::::<><>::
+UI Big Play Button.png::CompressedTexture2D::4310920800033949060::1732688649::1732688650::1::::<><>::
+UI Settings Buttons.png::CompressedTexture2D::5315224135271859381::1732688649::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/buttons/::1732688648
+Small Square Buttons.png::CompressedTexture2D::8846314976564744239::1732688648::1732688650::1::::<><>::
+Square Buttons 19x26.png::CompressedTexture2D::3075676650220299357::1732688648::1732688650::1::::<><>::
+Square Buttons 26x19.png::CompressedTexture2D::2549835356000408368::1732688648::1732688650::1::::<><>::
+Square Buttons 26x26.png::CompressedTexture2D::6162276472834310346::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Dialouge UI/::1732688648
+dialog box big.png::CompressedTexture2D::2705177673987585099::1732688648::1732688650::1::::<><>::
+dialog box character finished talking click to continue indicator - spritesheet .png::CompressedTexture2D::5844788444165610458::1732688648::1732688650::1::::<><>::
+dialog box medium.png::CompressedTexture2D::6915214446151063651::1732688648::1732688650::1::::<><>::
+dialog box small.png::CompressedTexture2D::2155584575625538848::1732688648::1732688650::1::::<><>::
+dialog box.png::CompressedTexture2D::246665710177590190::1732688648::1732688650::1::::<><>::
+Premade dialog box  big.png::CompressedTexture2D::294472099813161321::1732688648::1732688650::1::::<><>::
+Premade dialog box medium.png::CompressedTexture2D::3540310673018044536::1732688648::1732688650::1::::<><>::
+Premade dialog box small.png::CompressedTexture2D::5283097557936923108::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Dialouge UI/Emotes/::1732688648
+Teemo Basic emote animations sprite sheet.png::CompressedTexture2D::5751076371004158478::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/::1732688648
+All Icons.png::CompressedTexture2D::6945976707566895022::1732688648::1732688650::1::::<><>::
+white icons.png::CompressedTexture2D::5813599398660986884::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/special icons/::1732688648
+Small Happines-Sadness icons.png::CompressedTexture2D::8377851744470394068::1732688648::1732688650::1::::<><>::
+Special Icons.png::CompressedTexture2D::6427984223124334403::1732688648::1732688650::1::::<><>::
+::res://Assets/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Mouse sprites/::1732688649
+Catpaw holding Mouse icon.png::CompressedTexture2D::2160623901328270691::1732688648::1732688650::1::::<><>::
+Catpaw Mouse icon.png::CompressedTexture2D::4669559706765860296::1732688648::1732688650::1::::<><>::
+Catpaw pointing Mouse icon.png::CompressedTexture2D::1290029195492578946::1732688648::1732688650::1::::<><>::
+Triangle Mouse icon 1.png::CompressedTexture2D::4920648070081672737::1732688649::1732688650::1::::<><>::
+Triangle Mouse icon 2.png::CompressedTexture2D::8826353866158478859::1732688649::1732688650::1::::<><>::
+Triangle Mouse icon 3.png::CompressedTexture2D::4888541821223094904::1732688649::1732688650::1::::<><>::
+::res://Scenes/::1732207981
+::res://Scenes/Buildables/::1732207981
+::res://Scripts/::1732207939
