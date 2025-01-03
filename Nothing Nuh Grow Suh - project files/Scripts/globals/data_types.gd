@@ -4,8 +4,11 @@ enum Tools{
 	None,
 	AxeWood,
 	TillGrass,
+	SelectSeeds,
 	WaterCrops,
+	Build,
 }
+
 #used to assign names to action values
 
 static var tool_dmg: Dictionary = {
