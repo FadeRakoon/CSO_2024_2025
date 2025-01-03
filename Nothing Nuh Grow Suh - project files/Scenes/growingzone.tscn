@@ -1,0 +1,126 @@
+[gd_scene load_steps=16 format=3 uid="uid://cg6boao5vt31k"]
+
+[ext_resource type="Script" path="res://growingzone.gd" id="1_2jrtg"]
+[ext_resource type="Texture2D" uid="uid://br74unjygbpfp" path="res://Game elements Assets/Tilesets/Tilled_Dirt_v2.png" id="2_fa1ly"]
+[ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="3_2nfms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q678"]
+atlas = ExtResource("2_fa1ly")
+region = Rect2(0, 0, 44, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukjm2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q678")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drasl"]
+size = Vector2(22, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl5w8"]
+atlas = ExtResource("3_2nfms")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tro7j"]
+atlas = ExtResource("3_2nfms")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1pqi"]
+atlas = ExtResource("3_2nfms")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx7oh"]
+atlas = ExtResource("3_2nfms")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78nf5"]
+atlas = ExtResource("3_2nfms")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y0cf"]
+atlas = ExtResource("3_2nfms")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p241b"]
+atlas = ExtResource("3_2nfms")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu6a1"]
+atlas = ExtResource("3_2nfms")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrpqk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl5w8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tro7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1pqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx7oh")
+}],
+"loop": true,
+"name": &"corn_growing",
+"speed": 0.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78nf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y0cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p241b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu6a1")
+}],
+"loop": true,
+"name": &"tomato_growing",
+"speed": 0.0
+}]
+
+[node name="growingzone" type="StaticBody2D"]
+script = ExtResource("1_2jrtg")
+
+[node name="tilled_land" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ukjm2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 5.5)
+shape = SubResource("RectangleShape2D_drasl")
+
+[node name="plant" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 9)
+scale = Vector2(0.834955, 0.77027)
+sprite_frames = SubResource("SpriteFrames_lrpqk")
+animation = &"none"
+
+[node name="corngrowtimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="tomatogrowtimer" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="corngrowtimer" to="." method="_on_corngrowtimer_timeout"]
+[connection signal="timeout" from="tomatogrowtimer" to="." method="_on_tomatogrowtimer_timeout"]
