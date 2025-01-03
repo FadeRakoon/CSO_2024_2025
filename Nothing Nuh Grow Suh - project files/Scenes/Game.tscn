@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=7 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Tileset Groups/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/barn.tscn" id="2_fhmj7"]
 [ext_resource type="PackedScene" uid="uid://dkw8ihjedq1lx" path="res://Scenes/player.tscn" id="3_7skrk"]
 [ext_resource type="PackedScene" uid="uid://dxymbt6xp324j" path="res://Scenes/field_cursor_component.tscn" id="4_pcyfr"]
 [ext_resource type="Script" path="res://Scenes/field_cursor_component.gd" id="5_g3qqw"]
+[ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="6_fhfmp"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -71,3 +72,5 @@ limit_right = 1280
 limit_bottom = 720
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="GameScreen" parent="Player" instance=ExtResource("6_fhfmp")]
