@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ToolManager="*res://Scripts/globals/tool_manager.gd"
+
 [debug]
 
 shapes/layer_4=""
