@@ -1419,13 +1419,13 @@ text = "0"
 fit_content = true
 
 [node name="corn" type="AnimatedSprite2D" parent="Inventory"]
-position = Vector2(1129, 158)
+position = Vector2(1127, 183)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ixici")
 animation = &"corn"
 
 [node name="tomato" type="AnimatedSprite2D" parent="Inventory"]
-position = Vector2(1128, 181)
+position = Vector2(1128, 157)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_1021w")
 animation = &"tomato"

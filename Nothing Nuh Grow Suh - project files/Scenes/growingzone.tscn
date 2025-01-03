@@ -73,10 +73,13 @@ animations = [{
 "name": &"corn_growing",
 "speed": 0.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q678")
+}],
 "loop": true,
 "name": &"none",
-"speed": 5.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -109,8 +112,8 @@ position = Vector2(2, 5.5)
 shape = SubResource("RectangleShape2D_drasl")
 
 [node name="plant" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 9)
-scale = Vector2(0.834955, 0.77027)
+position = Vector2(0.500001, 0.500001)
+scale = Vector2(0.977273, 1)
 sprite_frames = SubResource("SpriteFrames_lrpqk")
 animation = &"none"
 

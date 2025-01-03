@@ -7,8 +7,6 @@ func _ready():
 	$AnimatedSprite2D.play("default")
 	
 
-
-
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click"):
 		Global.plantselected = seed_type
