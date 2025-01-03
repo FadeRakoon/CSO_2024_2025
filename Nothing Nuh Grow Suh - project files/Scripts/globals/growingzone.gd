@@ -5,7 +5,6 @@ var plantgrowing = false #initially plant is not growing hence false
 var plant_grown = false #plant grown is false initially
 
 func _physics_process(delta: float) -> void:
-	#print(Global.plantselected)
 	if plantgrowing == false: #if the plant is not growing
 		plant = Global.plantselected 
 
@@ -62,5 +61,3 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				$plant.play("none")
 			else:  #if it's not any of our possible crops
 				pass
-		print(str(Global.numcorn))
-		print(str(Global.numtomato))

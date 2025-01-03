@@ -7,3 +7,8 @@ var player_direction: Vector2
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 #export variable to allow for control when debugging
 #starts the player off with no tool
+
+@export var inv: Inv #connects to inventory class, so player now has inventory attached
+
+func collect(item):
+	inv.insert(item) #passes item to inventory 

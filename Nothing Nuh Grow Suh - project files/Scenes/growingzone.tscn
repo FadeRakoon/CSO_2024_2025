@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cg6boao5vt31k"]
 
-[ext_resource type="Script" path="res://growingzone.gd" id="1_2jrtg"]
+[ext_resource type="Script" path="res://Scripts/globals/growingzone.gd" id="1_2jrtg"]
 [ext_resource type="Texture2D" uid="uid://br74unjygbpfp" path="res://Game elements Assets/Tilesets/Tilled_Dirt_v2.png" id="2_fa1ly"]
 [ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="3_2nfms"]
 

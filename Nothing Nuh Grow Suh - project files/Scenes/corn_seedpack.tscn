@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://51bt6hvvqqq3"]
 
-[ext_resource type="Script" path="res://corn_seedpack.gd" id="1_f2e7l"]
+[ext_resource type="Script" path="res://Scripts/globals/corn_seedpack.gd" id="1_f2e7l"]
 [ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="2_a8hnh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_av6pr"]
