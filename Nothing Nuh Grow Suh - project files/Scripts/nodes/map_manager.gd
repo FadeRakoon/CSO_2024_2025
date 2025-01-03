@@ -1,4 +1,4 @@
-class_name FieldCursor
+class_name MapManager
 extends Node
 
 @onready var player: Player = $"../Player" #this holds the player node
@@ -9,7 +9,7 @@ extends Node
 @export var terrain_set: int = 0 #game tiles are on this terrain set
 @export var dirt_terrain: int = 1 #dirt terrain on layer 1
 
-const tiles = preload("res://Scenes/tiles/tile.tscn") #loads the tile scene
+const tiles = preload("res://Scenes/tile.tscn") #loads the tile scene
 #we create instances of this scene later
 
 var tile_dict = {} #tile dictionary to store where all the tiles are
