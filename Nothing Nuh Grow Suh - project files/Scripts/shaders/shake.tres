@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dnjs8uiiobwhs"]
+
+[ext_resource type="Shader" path="res://Scripts/shaders/object_shake.gdshader" id="1_10dpl"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_10dpl")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 15.0

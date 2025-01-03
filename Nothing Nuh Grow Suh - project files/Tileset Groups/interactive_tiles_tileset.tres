@@ -1,0 +1,29 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://vt4m4ue73k06"]
+
+[ext_resource type="Texture2D" uid="uid://c8rj8t76idmps" path="res://Assets packs/Custom/active_box.png" id="1_jhk6n"]
+[ext_resource type="Texture2D" uid="uid://bjs2mfgt4fx2s" path="res://Assets packs/Custom/clicked_box.png" id="2_iygu8"]
+[ext_resource type="Texture2D" uid="uid://6n75mqwghhe7" path="res://Assets packs/Custom/selected_box.png" id="3_i3b5t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dskxu"]
+texture = ExtResource("1_jhk6n")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbag6"]
+texture = ExtResource("2_iygu8")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6snpr"]
+texture = ExtResource("3_i3b5t")
+0:0/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Grass Terraim"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "Dirt Terrain 1"
+terrain_set_0/terrain_1/color = Color(0.160053, 0.504827, 0.455603, 1)
+sources/0 = SubResource("TileSetAtlasSource_dskxu")
+sources/1 = SubResource("TileSetAtlasSource_pbag6")
+sources/2 = SubResource("TileSetAtlasSource_6snpr")

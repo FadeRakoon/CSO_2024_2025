@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://gqbromylkeer"]
+
+[ext_resource type="Script" path="res://Scripts/objects/destroyable/hurt_box.gd" id="1_uikly"]
+
+[node name="Hurt Box" type="Area2D"]
+script = ExtResource("1_uikly")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

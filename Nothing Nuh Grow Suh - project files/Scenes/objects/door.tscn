@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://3k8sj561stkm"]
 
-[ext_resource type="Script" path="res://Scripts/door.gd" id="1_dwcqf"]
+[ext_resource type="Script" path="res://Scripts/objects/door.gd" id="1_dwcqf"]
 [ext_resource type="Texture2D" uid="uid://bcu13r2skgjt2" path="res://Game elements Assets/Tilesets/Doors.png" id="1_nqoum"]
-[ext_resource type="PackedScene" uid="uid://bhnmbafu30vt4" path="res://Scenes/door_opener.tscn" id="2_6khgm"]
+[ext_resource type="PackedScene" uid="uid://bhnmbafu30vt4" path="res://Scenes/objects/door_opener.tscn" id="2_6khgm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3kqw"]
 atlas = ExtResource("1_nqoum")
