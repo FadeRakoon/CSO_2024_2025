@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctmly4ju86iwx"]
 
-[ext_resource type="Script" path="res://tomato_seedpack.gd" id="1_sbumx"]
+[ext_resource type="Script" path="res://Scripts/objects/tomato_seedpack.gd" id="1_sbumx"]
 [ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="2_xhgka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s15o4"]
@@ -33,7 +33,7 @@ script = ExtResource("1_sbumx")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_8vcns")
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" groups=["seeds"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
 shape = SubResource("CircleShape2D_o6w2b")

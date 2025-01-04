@@ -1,26 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg6boao5vt31k"]
+[gd_scene load_steps=15 format=3 uid="uid://cg6boao5vt31k"]
 
-[ext_resource type="Script" path="res://growingzone.gd" id="1_2jrtg"]
-[ext_resource type="Texture2D" uid="uid://br74unjygbpfp" path="res://Game elements Assets/Tilesets/Tilled_Dirt_v2.png" id="2_fa1ly"]
+[ext_resource type="Script" path="res://Scripts/nodes/growingzone.gd" id="1_2jrtg"]
 [ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="3_2nfms"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6q678"]
-atlas = ExtResource("2_fa1ly")
-region = Rect2(0, 0, 44, 37)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ukjm2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6q678")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://b6apj10var4yu" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide_v2.png" id="4_kpffv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drasl"]
-size = Vector2(22, 23)
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rl5w8"]
 atlas = ExtResource("3_2nfms")
@@ -37,6 +22,10 @@ region = Rect2(48, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vx7oh"]
 atlas = ExtResource("3_2nfms")
 region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l80it"]
+atlas = ExtResource("4_kpffv")
+region = Rect2(48, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78nf5"]
 atlas = ExtResource("3_2nfms")
@@ -75,7 +64,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6q678")
+"texture": SubResource("AtlasTexture_l80it")
 }],
 "loop": true,
 "name": &"none",
@@ -99,23 +88,16 @@ animations = [{
 "speed": 0.0
 }]
 
-[node name="growingzone" type="StaticBody2D"]
+[node name="growingzone" type="Area2D"]
 script = ExtResource("1_2jrtg")
 
-[node name="tilled_land" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_ukjm2")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 5.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_drasl")
 
 [node name="plant" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.500001, 0.500001)
-scale = Vector2(0.977273, 1)
+position = Vector2(-1.3411e-07, 0)
 sprite_frames = SubResource("SpriteFrames_lrpqk")
-animation = &"none"
+animation = &"corn_growing"
 
 [node name="corngrowtimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -123,7 +105,7 @@ wait_time = 5.0
 [node name="tomatogrowtimer" type="Timer" parent="."]
 wait_time = 6.0
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="corngrowtimer" to="." method="_on_corngrowtimer_timeout"]
 [connection signal="timeout" from="tomatogrowtimer" to="." method="_on_tomatogrowtimer_timeout"]

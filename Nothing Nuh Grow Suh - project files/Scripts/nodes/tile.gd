@@ -4,6 +4,7 @@ extends Area2D
 var selected = false #used to determine whether or not the mouse is in the tile area
 var selectable = false #used to check whether or not tile is in player's area of influence
 var clicked = false
+@onready var player: Player = get_node("/root/Game/Player")
 @onready var tile_sprite: TileMap = $"Tile Sprite"
 @onready var tile_info: TileManager = $"Tile Info"
 var cell_pos: Vector2i
@@ -54,4 +55,8 @@ func _process(_delta: float) -> void:
 			tile_sprite.set_cell(0, cell_pos, selected_id, Vector2i(0,0), 0)
 		else:
 			tile_sprite.set_cell(0, cell_pos, active_id, Vector2i(0,0), 0)
-		
+	if selected and Input.is_action_just_pressed("tile_select"):
+		#watering
+		if player.current_tool == DataTypes.Tools.WaterCrops:
+			tile_info.water()
+			print("cell coords: ",tile_info.cell_coords, "moisture: ",tile_info.moisture)

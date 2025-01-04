@@ -9,6 +9,9 @@ var plantable:bool
 var pollution = 0
 var fertility = 0
 var moisture = 0
+const max_moisture = 50
+const max_pollution = 50
+const max_fertility = 50
 
 func _ready() -> void:
 	#gets the cell coords of the tile on the game map7
@@ -17,11 +20,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#every frame the tile checks if it is plantable i.e. is on a dirt tile
 	plantable =  map_manager.field_layer.get_cell_source_id(cell_coords) == 3 #3 is the id of the dirt tiles on the game tileset
-	#below is for debug 
-	#right now it tests to see if changing variable values are stored properly for each tile
-	#checking if clicking a dirt tile will correctly update and store pollution
-	if plantable: 
-		if tile.selected and Input.is_action_just_pressed("tile_select"):
-			print("cell coords: ",cell_coords, " - pollution: ", pollution)
-			pollution += 1
+
+func water() -> void:
+	moisture = clamp(moisture + 10, 0, max_moisture)
+
 	
