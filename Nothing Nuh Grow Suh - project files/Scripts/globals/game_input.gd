@@ -25,4 +25,5 @@ static func is_movement_input() -> bool:
 
 static func using_tool()-> bool:
 	var tool_active: bool = Input.is_action_just_pressed("use")
-	return tool_active
+	return tool_active 
+	

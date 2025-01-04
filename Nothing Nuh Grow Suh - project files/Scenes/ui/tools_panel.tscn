@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dri03y6aouw2d"]
+[gd_scene load_steps=14 format=3 uid="uid://dri03y6aouw2d"]
 
 [ext_resource type="Theme" uid="uid://cwiv3vfpux3da" path="res://Scenes/ui/game_ui__theme.tres" id="1_2ih3r"]
 [ext_resource type="Script" path="res://Scenes/ui/tools_panel.gd" id="2_pfq6w"]
@@ -8,6 +8,8 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymekw"]
 atlas = ExtResource("2_y723o")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="GDScript" id="GDScript_ukspa"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1esr"]
 load_path = "res://.godot/imported/Basic_tools_and_meterials.png-673371b1802b23817ec96d99dc883467.ctex"
@@ -58,6 +60,7 @@ layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_ymekw")
 icon_alignment = 1
+script = SubResource("GDScript_ukspa")
 
 [node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(26, 26)
@@ -87,4 +90,14 @@ theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_girl7")
 icon_alignment = 1
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="focus_entered" from="MarginContainer" to="." method="_on_margin_container_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer" to="." method="_on_margin_container_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer" to="." method="_on_margin_container_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolSeeds" to="." method="_on_tool_seeds_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
+[connection signal="focus_entered" from="MarginContainer/HBoxContainer/ToolBuild" to="." method="_on_tool_build_focus_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolBuild" to="." method="_on_tool_build_pressed"]

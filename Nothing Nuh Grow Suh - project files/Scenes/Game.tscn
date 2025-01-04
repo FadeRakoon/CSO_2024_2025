@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=27 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Tileset Groups/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="2_fhmj7"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/nodes/inventory.gd" id="11_3obbe"]
 [ext_resource type="PackedScene" uid="uid://51bt6hvvqqq3" path="res://Scenes/objects/seed pack/corn_seedpack.tscn" id="11_cvwvo"]
 [ext_resource type="PackedScene" uid="uid://ctmly4ju86iwx" path="res://Scenes/objects/seed pack/tomato_seedpack.tscn" id="12_76hwi"]
+[ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
 [ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="14_knrni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtgcc"]
@@ -1391,6 +1392,8 @@ limit_right = 1280
 limit_bottom = 720
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="GameScreen" parent="Player" groups=["ui"] instance=ExtResource("13_gcsel")]
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("11_3obbe")
