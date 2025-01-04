@@ -10,5 +10,11 @@ var player_direction: Vector2
 
 @export var inv: Inv #connects to inventory class, so player now has inventory attached
 
-func collect(item):
-	inv.insert(item) #passes item to inventory 
+#func collect(item):
+	#inv.insert(item) #passes item to inventory 
+	
+func player():
+	pass
+	
+#func collect(item): #item gotten from wehre item is collected
+	#inv.insert(item) #puttig item in player inventory

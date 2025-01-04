@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=33 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Tileset Groups/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="2_fhmj7"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c38eky3u0l3ek" path="res://Inventory/inv_ui_slot.tscn" id="14_677ng"]
 [ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="14_knrni"]
 [ext_resource type="PackedScene" uid="uid://cqlnvy3btok7y" path="res://Inventory/inventory_ui.tscn" id="17_lwvtc"]
+[ext_resource type="PackedScene" uid="uid://76g4idyuqghb" path="res://Inventory/apple_tree.tscn" id="20_ooqwf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ams3"]
 texture = ExtResource("5_1kjfw")
@@ -1289,6 +1290,9 @@ texture = ExtResource("9_885gs")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bl8hs")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2rqh"]
+radius = 39.9625
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvq3q"]
 atlas = ExtResource("14_knrni")
 region = Rect2(80, 0, 16, 16)
@@ -1447,6 +1451,9 @@ layout_mode = 2
 [node name="Inv_UI_slot9" parent="Player/Inventory_UI/NinePatchRect/GridContainer" instance=ExtResource("14_677ng")]
 layout_mode = 2
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_g2rqh")
+
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("11_3obbe")
 
@@ -1491,3 +1498,9 @@ position = Vector2(1128, 157)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_1021w")
 animation = &"tomato"
+
+[node name="apple_tree" parent="." instance=ExtResource("20_ooqwf")]
+position = Vector2(794, 298)
+
+[node name="apple_tree2" parent="." instance=ExtResource("20_ooqwf")]
+position = Vector2(849, 351)

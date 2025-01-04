@@ -4,6 +4,8 @@ var plant = Global.plantselected #stores seed type from global variable
 var plantgrowing = false #initially plant is not growing hence false
 var plant_grown = false #plant grown is false initially
 
+#@export var item: InvItem #items resource 
+
 func _physics_process(delta: float) -> void:
 	if plantgrowing == false: #if the plant is not growing
 		plant = Global.plantselected 
