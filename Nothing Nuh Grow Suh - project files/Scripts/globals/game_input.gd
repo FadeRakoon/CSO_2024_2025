@@ -26,5 +26,5 @@ static func is_movement_input() -> bool:
 
 static func using_tool()-> bool:
 	var tool_active: bool = Input.is_action_just_pressed("use")
-	return tool_active and not ToolsPanel.using_ui()
+	return tool_active and not ToolsPanel.ui_active
 	

@@ -9,6 +9,15 @@ enum Tools{
 	Build,
 }
 
+enum Plants{
+	None,
+	Tomato,
+	Corn,
+}
+
+enum Builds{
+	None,
+}
 #used to assign names to action values
 
 static var tool_dmg: Dictionary = {

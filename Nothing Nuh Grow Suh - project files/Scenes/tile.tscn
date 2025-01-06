@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/nodes/tile_info.gd" id="3_qtaqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8b6f"]
-size = Vector2(14, 14)
+size = Vector2(16, 16)
 
 [node name="tile" type="Area2D" groups=["player_aoi"]]
 collision_layer = 8

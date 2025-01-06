@@ -54,10 +54,14 @@ func get_cell_info() -> void: #function to obtain the
 
 func check_cell():
 	var tile = tile_dict.get(cell_pos) #looks up the tile
+	var grow_zone = grow_zones_dict.get(cell_pos)
+	var plant_growing: bool = false
 	if tile and tile.selected and tile.selectable and cell_pos not in nature_tiles.get_used_cells() and player.current_tool == DataTypes.Tools.TillGrass: 
 		#checks if the tile exists and is interactable 
 		#also checks if there is any nature on the tile and if the player has his tilling tool
-		if field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
+		if grow_zone:
+			plant_growing = grow_zone.plantgrowing or grow_zone.plant_grown
+		if not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
 			untill_cell() #removes the tile if you click it and theres already dirt there
 		else:
 			till_cell() #changes the tile to dirt (may be updated later for planting and other functionality)

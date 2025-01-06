@@ -1380,7 +1380,7 @@ metadata/_edit_lock_ = true
 z_index = 1
 y_sort_enabled = true
 position = Vector2(648, 328)
-current_tool = 2
+current_plant = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1.00001, -7.99999)
