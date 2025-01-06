@@ -1,6 +1,7 @@
 class_name GameInputEvents
 
 static var direction: Vector2
+static var using_ui: bool = false
 
 static func movement_input() -> Vector2:
 	if Input.is_action_pressed("walk_up"):
@@ -25,5 +26,5 @@ static func is_movement_input() -> bool:
 
 static func using_tool()-> bool:
 	var tool_active: bool = Input.is_action_just_pressed("use")
-	return tool_active 
+	return tool_active and not ToolsPanel.using_ui()
 	

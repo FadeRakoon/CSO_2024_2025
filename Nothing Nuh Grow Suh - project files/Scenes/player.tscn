@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://13ejtg64y5rk" path="res://Game elements Assets/Characters/Basic Charakter Actions.png" id="1_rwqkq"]
 [ext_resource type="Script" path="res://Scripts/nodes/player.gd" id="1_y5aqy"]
 [ext_resource type="Texture2D" uid="uid://dvomevepd04ad" path="res://Game elements Assets/Characters/Basic Charakter Spritesheet.png" id="2_61vos"]
-[ext_resource type="Script" path="res://Scripts/state_machine/node_state_machine.gd" id="3_okg38"]
-[ext_resource type="Script" path="res://Scripts/state_machine/idle.gd" id="4_hbvs4"]
-[ext_resource type="Script" path="res://Scripts/state_machine/walk.gd" id="5_2orip"]
-[ext_resource type="Script" path="res://Scripts/state_machine/chop.gd" id="7_bnyi4"]
-[ext_resource type="Script" path="res://Scripts/state_machine/till.gd" id="8_t13ws"]
-[ext_resource type="Script" path="res://Scripts/state_machine/water.gd" id="9_p01ob"]
+[ext_resource type="Script" path="res://Scripts/player states/node_state_machine.gd" id="3_okg38"]
+[ext_resource type="Script" path="res://Scripts/player states/idle.gd" id="4_hbvs4"]
+[ext_resource type="Script" path="res://Scripts/player states/walk.gd" id="5_2orip"]
+[ext_resource type="Script" path="res://Scripts/player states/chop.gd" id="7_bnyi4"]
+[ext_resource type="Script" path="res://Scripts/player states/till.gd" id="8_t13ws"]
+[ext_resource type="Script" path="res://Scripts/player states/water.gd" id="9_p01ob"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p64nf"]
 radius = 16.0
