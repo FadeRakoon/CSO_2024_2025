@@ -7,7 +7,7 @@ extends Node2D
 #tile state and info variables
 var plantable:bool
 var pollution = 0
-var fertility = 35
+var fertility = 25
 var moisture = 25
 const max_moisture = 50
 const max_pollution = 50
@@ -24,4 +24,6 @@ func _process(delta: float) -> void:
 func water() -> void:
 	moisture = clamp(moisture + 10, 0, max_moisture)
 
+func fertilize() -> void:
+	fertility = clamp(fertility + 5, 0, max_fertility)
 	

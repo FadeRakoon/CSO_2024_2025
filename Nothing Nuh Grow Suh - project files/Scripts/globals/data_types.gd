@@ -7,6 +7,7 @@ enum Tools{
 	TillGrass,
 	PlantCrops,
 	WaterCrops,
+	FertilizeCrops, 
 	Build,
 }
 

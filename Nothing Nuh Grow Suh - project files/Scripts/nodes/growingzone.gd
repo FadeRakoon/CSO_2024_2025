@@ -42,7 +42,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			harvest_crop() 
 		elif player.current_tool == DataTypes.Tools.TillGrass:
 			reset_plant() #the player can use the till tool on a plant to remove it
-		else:
+		elif player.current_tool == DataTypes.Tools.PlantCrops:
 			plant_crop()
 	
 func plant_crop():
