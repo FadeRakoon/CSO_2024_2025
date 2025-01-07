@@ -14,6 +14,7 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_stretch_ratio = 0.0
 theme = ExtResource("1_gepl0")
+metadata/_edit_use_anchors_ = true
 
 [node name="ToolsPanel" parent="MarginContainer" instance=ExtResource("2_pxnhw")]
 layout_mode = 2

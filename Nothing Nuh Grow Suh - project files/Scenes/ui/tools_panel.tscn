@@ -8,6 +8,7 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymekw"]
 atlas = ExtResource("2_y723o")
 region = Rect2(16, 0, 16, 16)
+margin = Rect2(1.5, 1.5, 3, 3)
 
 [sub_resource type="GDScript" id="GDScript_ukspa"]
 
@@ -17,10 +18,12 @@ load_path = "res://.godot/imported/Basic_tools_and_meterials.png-673371b1802b238
 [sub_resource type="AtlasTexture" id="AtlasTexture_2p0sf"]
 atlas = SubResource("CompressedTexture2D_y1esr")
 region = Rect2(32, 0, 16, 16)
+margin = Rect2(1.5, 2, 3, 3)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lp5kl"]
 atlas = ExtResource("3_1lsby")
 region = Rect2(0, 0, 16, 16)
+margin = Rect2(1.5, 1.5, 3, 3)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8pjj6"]
 load_path = "res://.godot/imported/Basic_tools_and_meterials.png-673371b1802b23817ec96d99dc883467.ctex"
@@ -28,6 +31,7 @@ load_path = "res://.godot/imported/Basic_tools_and_meterials.png-673371b1802b238
 [sub_resource type="AtlasTexture" id="AtlasTexture_5byr7"]
 atlas = SubResource("CompressedTexture2D_8pjj6")
 region = Rect2(0, 0, 16, 16)
+margin = Rect2(1.5, 1.5, 3, 3)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jmio1"]
 load_path = "res://.godot/imported/Basic_tools_and_meterials.png-673371b1802b23817ec96d99dc883467.ctex"
@@ -35,60 +39,69 @@ load_path = "res://.godot/imported/Basic_tools_and_meterials.png-673371b1802b238
 [sub_resource type="AtlasTexture" id="AtlasTexture_girl7"]
 atlas = SubResource("CompressedTexture2D_jmio1")
 region = Rect2(32, 16, 16, 16)
+margin = Rect2(1.5, 1.5, 3, 3)
 
 [node name="ToolsPanel" type="PanelContainer"]
-offset_right = 168.0
-offset_bottom = 48.0
-scale = Vector2(2, 2)
+custom_minimum_size = Vector2(322, 82)
+offset_right = 322.0
+offset_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_2ih3r")
 theme_type_variation = &"DarkWoodPanel"
 script = ExtResource("2_pfq6w")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="ToolAxe" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_ymekw")
 icon_alignment = 1
+expand_icon = true
 script = SubResource("GDScript_ukspa")
 
 [node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_2p0sf")
 icon_alignment = 1
+expand_icon = true
 
 [node name="ToolSeeds" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_lp5kl")
 icon_alignment = 1
+expand_icon = true
 
 [node name="ToolWateringCan" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_5byr7")
 icon_alignment = 1
+expand_icon = true
 
 [node name="ToolBuild" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_girl7")
 icon_alignment = 1
+expand_icon = true
 
 [connection signal="focus_entered" from="MarginContainer" to="." method="_on_margin_container_focus_entered"]
 [connection signal="mouse_entered" from="MarginContainer" to="." method="_on_margin_container_mouse_entered"]
