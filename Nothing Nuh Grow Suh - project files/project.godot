@@ -31,7 +31,6 @@ shapes/layer_1="objects"
 
 [display]
 
-window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
 
 [global_group]

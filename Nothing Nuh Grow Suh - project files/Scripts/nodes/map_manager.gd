@@ -23,6 +23,7 @@ var mouse_pos: Vector2
 var cell_pos: Vector2i
 var cell_source_id: int
 var local_cell_pos: Vector2
+var nature_sid: int
 
 func _ready() -> void:
 	#loads the tiles and fills the dictionary when the scence loads
@@ -50,30 +51,30 @@ func get_cell_info() -> void: #function to obtain the
 	cell_pos = grass_layer.local_to_map(mouse_pos) #converts mouse coordinates to cell coordinates
 	cell_source_id = grass_layer.get_cell_source_id(cell_pos) 
 	local_cell_pos = grass_layer.map_to_local(cell_pos) #stores cell coordinates as real coordinates( may be useful later)
-	#print("id: ",cell_source_id) 
+	nature_sid = nature_tiles.get_cell_source_id(cell_pos)
 
 func check_cell():
 	var tile = tile_dict.get(cell_pos) #looks up the tile
 	var grow_zone = grow_zones_dict.get(cell_pos)
-	var plant_growing: bool = false
-	if tile and tile.selected and tile.selectable and cell_pos not in nature_tiles.get_used_cells() and player.current_tool == DataTypes.Tools.TillGrass: 
+	var plant_growing: bool = grow_zone.plantgrowing or grow_zone.plant_grown if grow_zone else false
+	if tile and tile.selected and tile.selectable and player.current_tool == DataTypes.Tools.TillGrass: 
 		#checks if the tile exists and is interactable 
 		#also checks if there is any nature on the tile and if the player has his tilling tool
-		if grow_zone:
-			plant_growing = grow_zone.plantgrowing or grow_zone.plant_grown
-		if not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
+		if nature_sid == 4:
+			nature_tiles.set_cell(cell_pos, -1)
+		elif not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
 			untill_cell() #removes the tile if you click it and theres already dirt there
-		else:
+		elif cell_source_id != -1 and cell_pos not in nature_tiles.get_used_cells():
 			till_cell() #changes the tile to dirt (may be updated later for planting and other functionality)
 	
 func till_cell() -> void:
-	if cell_source_id != -1: #-1 is assigned to unused tiles so this checks if the tiles are used
-		field_layer.set_cells_terrain_connect([cell_pos], terrain_set, dirt_terrain, true) 
-		#this method is what changes the tile to dirt at the specified cell position
-		var grow_zone = grow_zones.instantiate() #creates a grow zone
-		grow_zone.position = grass_layer.map_to_local(cell_pos)
-		grow_zones_dict[cell_pos] = grow_zone
-		add_child(grow_zone)
+	field_layer.set_cells_terrain_connect([cell_pos], terrain_set, dirt_terrain, true) 
+	#this method is what changes the tile to dirt at the specified cell position
+	var grow_zone = grow_zones.instantiate() #creates a grow zone
+	grow_zone.position = grass_layer.map_to_local(cell_pos)
+	grow_zones_dict[cell_pos] = grow_zone
+	add_child(grow_zone)
+
 		
 func untill_cell() -> void:
 	field_layer.set_cell(cell_pos, -1) #removes the tile

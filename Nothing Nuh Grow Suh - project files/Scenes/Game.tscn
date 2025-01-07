@@ -1,20 +1,18 @@
-[gd_scene load_steps=27 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=21 format=4 uid="uid://b1jl36o8dpc4x"]
 
-[ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Tileset Groups/game_tile_set.tres" id="1_1jge1"]
+[ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="2_fhmj7"]
 [ext_resource type="PackedScene" uid="uid://dkw8ihjedq1lx" path="res://Scenes/player.tscn" id="3_7skrk"]
 [ext_resource type="PackedScene" uid="uid://dxymbt6xp324j" path="res://Scenes/map_manager.tscn" id="4_pcyfr"]
 [ext_resource type="Texture2D" uid="uid://biuojioalyqmn" path="res://Game elements Assets/Objects/Basic_Grass_Biom_things.png" id="5_1kjfw"]
 [ext_resource type="Script" path="res://Scripts/nodes/map_manager.gd" id="5_g3qqw"]
 [ext_resource type="PackedScene" uid="uid://dug5jkl2t0bsv" path="res://Scenes/objects/nature/small_tree.tscn" id="6_3i3gt"]
+[ext_resource type="SpriteFrames" uid="uid://dk4f25wmhhexo" path="res://Collections/icons.tres" id="6_np2jc"]
 [ext_resource type="PackedScene" uid="uid://bje1sfde48y4i" path="res://Scenes/objects/nature/large_tree.tscn" id="6_taxp7"]
 [ext_resource type="Texture2D" uid="uid://d1m8ohe4dhb0n" path="res://Assets packs/MPWSP01/tileset/tileset.png" id="8_j11bx"]
 [ext_resource type="Texture2D" uid="uid://qppkgn0r7br3" path="res://Assets packs/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/emojis-free/emoji style ui/inventory_example.png" id="9_885gs"]
 [ext_resource type="Script" path="res://Scripts/nodes/inventory.gd" id="11_3obbe"]
-[ext_resource type="PackedScene" uid="uid://51bt6hvvqqq3" path="res://Scenes/objects/seed pack/corn_seedpack.tscn" id="11_cvwvo"]
-[ext_resource type="PackedScene" uid="uid://ctmly4ju86iwx" path="res://Scenes/objects/seed pack/tomato_seedpack.tscn" id="12_76hwi"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
-[ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="14_knrni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtgcc"]
 texture = ExtResource("8_j11bx")
@@ -1256,14 +1254,18 @@ texture = ExtResource("5_1kjfw")
 8:4/0 = 0
 8:2/size_in_atlas = Vector2i(1, 2)
 8:2/0 = 0
+8:2/0/texture_origin = Vector2i(0, 8)
 3:0/size_in_atlas = Vector2i(2, 2)
 3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 8)
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 5, 4, 5, 4, 14, -4, 14)
 1:0/size_in_atlas = Vector2i(2, 2)
 1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 8)
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 5, 4, 5, 4, 14, -4, 14)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 5, 4, 5, 4, 14, -4, 14)
 0:3/0 = 0
 1:3/0 = 0
@@ -1285,36 +1287,6 @@ custom_data_layer_0/type = 1
 sources/4 = SubResource("TileSetAtlasSource_7ams3")
 sources/6 = SubResource("TileSetScenesCollectionSource_vydu8")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvq3q"]
-atlas = ExtResource("14_knrni")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ixici"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bvq3q")
-}],
-"loop": true,
-"name": &"corn",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0c4c5"]
-atlas = ExtResource("14_knrni")
-region = Rect2(80, 16, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1021w"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0c4c5")
-}],
-"loop": true,
-"name": &"tomato",
-"speed": 5.0
-}]
-
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
@@ -1324,18 +1296,114 @@ script = ExtResource("5_g3qqw")
 [node name="Shop" type="Node2D" parent="."]
 
 [node name="Shop" type="TileMapLayer" parent="Shop"]
-tile_map_data = PackedByteArray("AABAAAgAAAAYABAAAABBAAgAAAAZABAAAABCAAgAAAAaABAAAABDAAgAAAAbABAAAABEAAgAAAAcABAAAABAAAkAAAAYABEAAABBAAkAAAAZABEAAABCAAkAAAAaABEAAABDAAkAAAAbABEAAABEAAkAAAAcABEAAABAAAoAAAAYABIAAABBAAoAAAAZABIAAABCAAoAAAAaABIAAABDAAoAAAAbABIAAABEAAoAAAAcABIAAABAAAsAAAAYABMAAABBAAsAAAAZABMAAABCAAsAAAAaABMAAABDAAsAAAAbABMAAABEAAsAAAAcABMAAABAAAwAAAAYABQAAABBAAwAAAAZABQAAABCAAwAAAAaABQAAABDAAwAAAAbABQAAABEAAwAAAAcABQAAAA=")
+tile_map_data = PackedByteArray("AABDAAgAAAAYABEAAABDAAkAAAAYABIAAABDAAoAAAAYABMAAABDAAsAAAAYABQAAABEAAgAAAAZABEAAABEAAkAAAAZABIAAABEAAoAAAAZABMAAABEAAsAAAAZABQAAABFAAgAAAAaABEAAABFAAkAAAAaABIAAABFAAoAAAAaABMAAABFAAsAAAAaABQAAABGAAgAAAAbABEAAABGAAkAAAAbABIAAABGAAoAAAAbABMAAABGAAsAAAAbABQAAABDAAcAAAAYABAAAABEAAcAAAAZABAAAABFAAcAAAAaABAAAABGAAcAAAAbABAAAABHAAcAAAAcABAAAABHAAgAAAAcABEAAABHAAkAAAAcABIAAABHAAoAAAAcABMAAABHAAsAAAAcABQAAAA=")
 tile_set = SubResource("TileSet_q58cv")
 
-[node name="Inventory" type="TileMapLayer" parent="Shop"]
-tile_map_data = PackedByteArray("AABGAAkAAAABAAIAAABHAAkAAAABAAIAAABFAAgAAAAAAAEAAABGAAgAAAAIAAEAAABHAAgAAAAIAAEAAABIAAgAAAAIAAEAAABJAAgAAAAVAAEAAABJAAkAAAAVAAIAAABJAAoAAAAVAAIAAABFAAkAAAAAAAIAAABFAAoAAAAAAAIAAABFAAsAAAAAAAIAAABFAAwAAAAAAAUAAABGAAwAAAABAAUAAABHAAwAAAABAAUAAABIAAwAAAABAAUAAABJAAwAAAAVAAUAAABJAAsAAAAVAAQAAABGAAoAAAAFAAQAAABHAAoAAAAFAAQAAABIAAkAAAAFAAQAAABIAAoAAAAFAAQAAABIAAsAAAAFAAQAAABHAAsAAAAFAAQAAABGAAsAAAAFAAQAAAA=")
+[node name="Inventory_bg" type="TileMapLayer" parent="Shop"]
+tile_map_data = PackedByteArray("AAA0AAsAAAAEAAMAAAA0AAwAAAAEAAMAAAA1AAsAAAAEAAMAAAA1AAwAAAAEAAMAAAA2AAsAAAAEAAMAAAA2AAwAAAAEAAMAAAA3AAsAAAAEAAMAAAA3AAwAAAAEAAMAAAA4AAsAAAAEAAMAAAA4AAwAAAAEAAMAAAA5AAsAAAAEAAMAAAA5AAwAAAAEAAMAAAA6AAsAAAAEAAMAAAA6AAwAAAAEAAMAAAA7AAsAAAAEAAMAAAA7AAwAAAAEAAMAAAA8AAsAAAAEAAMAAAA8AAwAAAAEAAMAAAA0AAoAAAAJAAEAAAA1AAoAAAAJAAEAAAA2AAoAAAAJAAEAAAA3AAoAAAAJAAEAAAA4AAoAAAAJAAEAAAA5AAoAAAAJAAEAAAA6AAoAAAAJAAEAAAA7AAoAAAAJAAEAAAA8AAoAAAAJAAEAAAA0AA0AAAAJAAUAAAA1AA0AAAAJAAUAAAA2AA0AAAAJAAUAAAA3AA0AAAAJAAUAAAA4AA0AAAAJAAUAAAA5AA0AAAAJAAUAAAA6AA0AAAAJAAUAAAA7AA0AAAAJAAUAAAA8AA0AAAAJAAUAAAA9AAoAAAAVAAEAAAA9AAsAAAAVAAMAAAA9AAwAAAAVAAMAAAA9AA0AAAAVAAUAAAAzAAsAAAAAAAMAAAAzAAwAAAAAAAMAAAAzAA0AAAAAAAUAAAAzAAoAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_5e546")
 
-[node name="tomato_seedpack" parent="Shop" instance=ExtResource("12_76hwi")]
-position = Vector2(929, 180)
+[node name="Crop_inventory" type="Node" parent="Shop"]
+script = ExtResource("11_3obbe")
 
-[node name="corn_seedpack" parent="Shop" instance=ExtResource("11_cvwvo")]
-position = Vector2(892, 199)
+[node name="tomato" type="AnimatedSprite2D" parent="Shop/Crop_inventory"]
+position = Vector2(837, 183)
+sprite_frames = ExtResource("6_np2jc")
+animation = &"Tomato"
+
+[node name="tomatotext" type="RichTextLabel" parent="Shop/Crop_inventory/tomato"]
+offset_left = 14.0
+offset_top = -12.6667
+offset_right = 29.0
+offset_bottom = 10.3333
+text = "0"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="corn" type="AnimatedSprite2D" parent="Shop/Crop_inventory"]
+position = Vector2(837, 204)
+sprite_frames = ExtResource("6_np2jc")
+animation = &"Corn"
+
+[node name="tomatotext" type="RichTextLabel" parent="Shop/Crop_inventory/corn"]
+offset_left = 14.0
+offset_top = -12.6667
+offset_right = 29.0
+offset_bottom = 10.3333
+text = "0"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="onion" type="AnimatedSprite2D" parent="Shop/Crop_inventory"]
+position = Vector2(873.003, 204)
+rotation = 0.000437536
+sprite_frames = ExtResource("6_np2jc")
+animation = &"Onion"
+
+[node name="tomatotext" type="RichTextLabel" parent="Shop/Crop_inventory/onion"]
+offset_left = 14.0
+offset_top = -12.6667
+offset_right = 29.0
+offset_bottom = 10.3333
+text = "0"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="carrot" type="AnimatedSprite2D" parent="Shop/Crop_inventory"]
+position = Vector2(873.003, 183)
+sprite_frames = ExtResource("6_np2jc")
+animation = &"Carrot"
+
+[node name="tomatotext" type="RichTextLabel" parent="Shop/Crop_inventory/carrot"]
+offset_left = 14.0
+offset_top = -12.6667
+offset_right = 29.0
+offset_bottom = 10.3333
+text = "0"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="potato" type="AnimatedSprite2D" parent="Shop/Crop_inventory"]
+position = Vector2(953, 203)
+sprite_frames = ExtResource("6_np2jc")
+animation = &"Potato"
+
+[node name="tomatotext" type="RichTextLabel" parent="Shop/Crop_inventory/potato"]
+offset_left = 14.0
+offset_top = -12.6667
+offset_right = 29.0
+offset_bottom = 10.3333
+text = "0"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="callaloo" type="AnimatedSprite2D" parent="Shop/Crop_inventory"]
+position = Vector2(913, 204)
+sprite_frames = ExtResource("6_np2jc")
+animation = &"Callaloo"
+
+[node name="tomatotext" type="RichTextLabel" parent="Shop/Crop_inventory/callaloo"]
+offset_left = 14.0
+offset_top = -12.6667
+offset_right = 29.0
+offset_bottom = 10.3333
+text = "0"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="pumpkin" type="AnimatedSprite2D" parent="Shop/Crop_inventory"]
+position = Vector2(913, 183)
+sprite_frames = ExtResource("6_np2jc")
+animation = &"Pumpkin"
+
+[node name="tomatotext" type="RichTextLabel" parent="Shop/Crop_inventory/pumpkin"]
+offset_left = 14.0
+offset_top = -12.6667
+offset_right = 29.0
+offset_bottom = 10.3333
+text = "0"
+fit_content = true
+metadata/_edit_use_anchors_ = true
 
 [node name="BG tilemap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1372,7 +1440,7 @@ metadata/_edit_lock_ = true
 [node name="Nature" type="TileMapLayer" parent="BG tilemap"]
 z_index = 1
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAIABkABAAFAAEAAAAIABoABAAGAAEAAAAJABkABAAFAAQAAAAJABoABAAHAAQAAAARACsABAAFAAQAAAARACwABAAGAAQAAAASACsABAAFAAQAAAATACoABAAFAAQAAAATACsABAAFAAQAAAAUACoABAAFAAQAAAAUACsABAAHAAQAAAAVAAkABAAFAAQAAAAVAAoABAAIAAQAAAAWAAgABAAFAAQAAAAWAAkABAAGAAQAAAAWAAoABAAGAAQAAAAWABIABAAIAAAAAAAXAAgABAAFAAQAAAAYABgABAAIAAAAAAAaABIABAAFAAAAAAAdABMABAAHAAIAAAAfABIABAAHAAEAAAAfABYABAAGAAEAAAAjABMABAAFAAAAAAAkABEABAAHAAMAAAAlAA4ABgAAAAAAAgAmAAcABAABAAMAAAAmAAgABAABAAMAAAAmAAkABAABAAMAAAAmAAoABAABAAMAAAAmAAsABAABAAMAAAAmAAwABAABAAMAAAAmAA4ABgAAAAAAAgAmAA8ABgAAAAAAAgAnAAcABAABAAMAAAAnAA8ABgAAAAAAAgAoAAcABAABAAMAAAApAAcABAABAAMAAAAqAAcABAABAAMAAAArAAcABAABAAMAAAArABYABAAHAAIAAAAsAAcABAABAAMAAAAsABMABAAIAAIAAAAtAAcABAABAAMAAAAuAAcABAABAAMAAAAuAA8ABgAAAAAAAgAuABgABAAIAAEAAAAvAAcABAABAAMAAAAvAAgABAABAAMAAAAvAAkABAABAAMAAAAvAAoABAABAAMAAAAvAAsABAABAAMAAAAvAAwABAABAAMAAAAvAA4ABgAAAAAAAgAvAA8ABgAAAAAAAgAwAA4ABgAAAAAAAgAxABQABAAGAAEAAAAyABYABAAFAAMAAAAzABkABAAGAAAAAAA2AAYABAAFAAQAAAA3AAUABAAFAAQAAAA3AAYABAAFAAQAAAA3AAcABAAFAAQAAAA4AAUABAAFAAQAAAA4AAYABAAFAAQAAAA4AAcABAAGAAQAAABFAA8ABgAAAAAAAQBFABAABgAAAAAAAQBFABEABgAAAAAAAQBFABYABgAAAAAAAQBFABcABgAAAAAAAQBFABgABgAAAAAAAQBFAB0ABgAAAAAAAQBFAB4ABgAAAAAAAQBFAB8ABgAAAAAAAQBJAB0ABAAFAAEAAABJAB4ABAAIAAQAAABKAB0ABAAHAAQAAABKAB4ABAAGAAQAAABLAB0ABAAGAAEAAABLAB4ABAAGAAQAAAArABgABgAAAAAAAQAlABgABgAAAAAAAQAzAB0ABgAAAAAAAgAhAB4ABgAAAAAAAgASABUABgAAAAAAAQASABYABgAAAAAAAQASABcABgAAAAAAAQASABgABgAAAAAAAQASABkABgAAAAAAAQASABoABgAAAAAAAQASABsABgAAAAAAAQBFABkABgAAAAAAAQBFACAABgAAAAAAAQBFABIABgAAAAAAAQAjABoABgAAAAAAAQAOACMABgAAAAAAAQAPACYABgAAAAAAAQAaACUABgAAAAAAAQAXACAABgAAAAAAAQAiACMABgAAAAAAAQApACYABgAAAAAAAQAzACMABgAAAAAAAQA+ACUABgAAAAAAAQBGACIABgAAAAAAAQBGACMABgAAAAAAAQAqACEABgAAAAAAAQAUACYABgAAAAAAAgATACEABgAAAAAAAgAgACUABgAAAAAAAgAoACEABgAAAAAAAgAcACIABgAAAAAAAgAdACIABgAAAAAAAgAuACYABgAAAAAAAgAvACYABgAAAAAAAgA6ACQABgAAAAAAAgA4ACEABgAAAAAAAgBEACUABgAAAAAAAgA/ACIABgAAAAAAAgA3ACYABgAAAAAAAgALACcABgAAAAAAAgAJACIABgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAAIABkABAAFAAEAAAAIABoABAAGAAEAAAAJABkABAAFAAQAAAAJABoABAAHAAQAAAARACsABAAFAAQAAAARACwABAAGAAQAAAASACsABAAFAAQAAAATACoABAAFAAQAAAATACsABAAFAAQAAAAUACoABAAFAAQAAAAUACsABAAHAAQAAAAVAAkABAAFAAQAAAAVAAoABAAIAAQAAAAWAAgABAAFAAQAAAAWAAkABAAGAAQAAAAWAAoABAAGAAQAAAAWABIABAAIAAAAAAAXAAgABAAFAAQAAAAYABgABAAIAAAAAAAaABIABAAFAAAAAAAdABMABAAHAAIAAAAfABIABAAHAAEAAAAfABYABAAGAAEAAAAjABMABAAFAAAAAAAkABEABAAHAAMAAAAlAA4ABgAAAAAAAgAmAAcABAABAAMAAAAmAAgABAABAAMAAAAmAAkABAABAAMAAAAmAAoABAABAAMAAAAmAAsABAABAAMAAAAmAAwABAABAAMAAAAmAA4ABgAAAAAAAgAmAA8ABgAAAAAAAgAnAAcABAABAAMAAAAnAA8ABgAAAAAAAgAoAAcABAABAAMAAAApAAcABAABAAMAAAAqAAcABAABAAMAAAArAAcABAABAAMAAAArABYABAAHAAIAAAAsAAcABAABAAMAAAAtAAcABAABAAMAAAAuAAcABAABAAMAAAAuAA8ABgAAAAAAAgAvAAcABAABAAMAAAAvAAgABAABAAMAAAAvAAkABAABAAMAAAAvAAoABAABAAMAAAAvAAsABAABAAMAAAAvAAwABAABAAMAAAAvAA4ABgAAAAAAAgAvAA8ABgAAAAAAAgAwAA4ABgAAAAAAAgAxABQABAAGAAEAAAAyABYABAAFAAMAAAAzABkABAAGAAAAAAA2AAYABAAFAAQAAAA3AAUABAAFAAQAAAA3AAYABAAFAAQAAAA3AAcABAAFAAQAAAA4AAUABAAFAAQAAAA4AAYABAAFAAQAAAA4AAcABAAGAAQAAABFAA8ABgAAAAAAAQBFABAABgAAAAAAAQBFABEABgAAAAAAAQBFABYABgAAAAAAAQBFABcABgAAAAAAAQBFABgABgAAAAAAAQBFAB0ABgAAAAAAAQBFAB4ABgAAAAAAAQBFAB8ABgAAAAAAAQBJAB0ABAAFAAEAAABJAB4ABAAIAAQAAABKAB0ABAAHAAQAAABKAB4ABAAGAAQAAABLAB0ABAAGAAEAAABLAB4ABAAGAAQAAAArABgABgAAAAAAAQAlABgABgAAAAAAAQAzAB0ABgAAAAAAAgAhAB4ABgAAAAAAAgASABUABgAAAAAAAQASABYABgAAAAAAAQASABcABgAAAAAAAQASABgABgAAAAAAAQASABkABgAAAAAAAQASABoABgAAAAAAAQASABsABgAAAAAAAQBFABkABgAAAAAAAQBFACAABgAAAAAAAQBFABIABgAAAAAAAQAjABoABgAAAAAAAQAOACMABgAAAAAAAQAPACYABgAAAAAAAQAaACUABgAAAAAAAQAXACAABgAAAAAAAQAiACMABgAAAAAAAQApACYABgAAAAAAAQAzACMABgAAAAAAAQA+ACUABgAAAAAAAQBGACIABgAAAAAAAQBGACMABgAAAAAAAQAqACEABgAAAAAAAQAUACYABgAAAAAAAgATACEABgAAAAAAAgAgACUABgAAAAAAAgAoACEABgAAAAAAAgAcACIABgAAAAAAAgAdACIABgAAAAAAAgAuACYABgAAAAAAAgAvACYABgAAAAAAAgA6ACQABgAAAAAAAgA4ACEABgAAAAAAAgBEACUABgAAAAAAAgA/ACIABgAAAAAAAgA3ACYABgAAAAAAAgALACcABgAAAAAAAgAJACIABgAAAAAAAgAsABMABAAIAAIAAAAsABQABAAIAAIAAAAhABIABAAIAAIAAAAiABIABAAIAAIAAAAgABIABAAIAAIAAAAhABEABAAIAAIAAAA6ABMABAAIAAIAAAA7ABMABAAIAAIAAABAABoABAAIAAIAAAA4ABwABAAIAAIAAAA9ACEABAAIAAIAAAA8ACEABAAIAAIAAAAkACAABAAIAAIAAAAxACIABAAIAAIAAAAUAB4ABAAIAAIAAAAOACAABAAIAAIAAAAiACUABAAIAAIAAAARACQABAAIAAIAAAAQABAABAAIAAIAAAA=")
 tile_set = SubResource("TileSet_lei84")
 metadata/_edit_lock_ = true
 
@@ -1380,7 +1448,7 @@ metadata/_edit_lock_ = true
 z_index = 1
 y_sort_enabled = true
 position = Vector2(648, 328)
-current_plant = 2
+current_plant = 6
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1.00001, -7.99999)
@@ -1394,33 +1462,3 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="GameScreen" parent="Player" groups=["ui"] instance=ExtResource("13_gcsel")]
-
-[node name="Inventory" type="Node" parent="."]
-script = ExtResource("11_3obbe")
-
-[node name="corntext" type="RichTextLabel" parent="Inventory"]
-offset_left = 1149.0
-offset_top = 170.0
-offset_right = 1189.0
-offset_bottom = 210.0
-text = "0"
-
-[node name="tomatotext" type="RichTextLabel" parent="Inventory"]
-offset_left = 1148.0
-offset_top = 145.0
-offset_right = 1163.0
-offset_bottom = 168.0
-text = "0"
-fit_content = true
-
-[node name="corn" type="AnimatedSprite2D" parent="Inventory"]
-position = Vector2(1127, 183)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_ixici")
-animation = &"corn"
-
-[node name="tomato" type="AnimatedSprite2D" parent="Inventory"]
-position = Vector2(1128, 157)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_1021w")
-animation = &"tomato"

@@ -14,6 +14,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	ui_active = bounds.has_point(get_local_mouse_position()) #checks if the mouse is within the panel
+	#var screen_size = get_viewport().size
+	#get_parent().size = screen_size * 0.9  # Scale to 90% of screen
 	
 func _on_tool_axe_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.AxeWood)

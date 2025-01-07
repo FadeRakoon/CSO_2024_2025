@@ -1,0 +1,92 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://dk4f25wmhhexo"]
+
+[ext_resource type="Texture2D" uid="uid://cbv6r6k3x02u6" path="res://Assets packs/Hana Caraka - Farming n Foraging [sample]/crops/crops - all.png" id="1_ovwvn"]
+[ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="2_7kt41"]
+[ext_resource type="Texture2D" uid="uid://b3anxsylc0wog" path="res://Assets packs/Hana Caraka - Farming n Foraging [sample]/free.png" id="3_s1t3m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5vc3"]
+atlas = ExtResource("1_ovwvn")
+region = Rect2(112, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8blp"]
+atlas = ExtResource("1_ovwvn")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_entqs"]
+atlas = ExtResource("2_7kt41")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkry0"]
+atlas = ExtResource("1_ovwvn")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6oah"]
+atlas = ExtResource("1_ovwvn")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1n83"]
+atlas = ExtResource("3_s1t3m")
+region = Rect2(176, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tin0y"]
+atlas = ExtResource("2_7kt41")
+region = Rect2(80, 16, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5vc3")
+}],
+"loop": false,
+"name": &"Callaloo",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8blp")
+}],
+"loop": false,
+"name": &"Carrot",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_entqs")
+}],
+"loop": false,
+"name": &"Corn",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkry0")
+}],
+"loop": false,
+"name": &"Onion",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6oah")
+}],
+"loop": false,
+"name": &"Potato",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1n83")
+}],
+"loop": false,
+"name": &"Pumpkin",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tin0y")
+}],
+"loop": false,
+"name": &"Tomato",
+"speed": 0.0
+}]

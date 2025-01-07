@@ -9,13 +9,10 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -576.0
-offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
-size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
 theme = ExtResource("1_gepl0")
 
 [node name="ToolsPanel" parent="MarginContainer" instance=ExtResource("2_pxnhw")]

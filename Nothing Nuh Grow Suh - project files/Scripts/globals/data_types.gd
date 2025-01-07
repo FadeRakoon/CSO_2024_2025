@@ -3,8 +3,9 @@ class_name DataTypes
 enum Tools{
 	None,
 	AxeWood,
+	BurnWood,
 	TillGrass,
-	SelectSeeds,
+	PlantCrops,
 	WaterCrops,
 	Build,
 }
@@ -13,6 +14,11 @@ enum Plants{
 	None,
 	Tomato,
 	Corn,
+	Onion, 
+	Carrot, 
+	Potato, 
+	Callaloo,
+	Pumpkin,
 }
 
 enum Builds{

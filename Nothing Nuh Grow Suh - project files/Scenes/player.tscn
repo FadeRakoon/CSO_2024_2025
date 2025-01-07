@@ -410,7 +410,7 @@ collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player_aoi"]]
 position = Vector2(-1.90735e-06, 0)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2.4, 2.4)
 shape = SubResource("CircleShape2D_p64nf")
 debug_color = Color(0.548812, 0.492214, 0.735062, 0.42)
 

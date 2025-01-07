@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxymbt6xp324j" path="res://Scenes/map_manager.tscn" id="1_5x70y"]
 [ext_resource type="Script" path="res://Scripts/nodes/map_manager.gd" id="2_mc5fa"]
-[ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Tileset Groups/game_tile_set.tres" id="3_qrwoe"]
+[ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="3_qrwoe"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="4_kmu7g"]
 [ext_resource type="Texture2D" uid="uid://biuojioalyqmn" path="res://Game elements Assets/Objects/Basic_Grass_Biom_things.png" id="5_4tgsr"]
 [ext_resource type="PackedScene" uid="uid://bje1sfde48y4i" path="res://Scenes/objects/nature/large_tree.tscn" id="6_y16d2"]

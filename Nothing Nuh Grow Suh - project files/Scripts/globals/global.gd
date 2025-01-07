@@ -1,5 +1,12 @@
 extends Node
 
-
-var numcorn = 0 #initialize to 0
-var numtomato = 0 #initialize to 0
+var plant_inventory = {
+	DataTypes.Plants.Tomato: 0,
+	DataTypes.Plants.Corn: 0,
+	DataTypes.Plants.Onion: 0, 
+	DataTypes.Plants.Carrot: 0, 
+	DataTypes.Plants.Potato: 0, 
+	DataTypes.Plants.Callaloo: 0,
+	DataTypes.Plants.Pumpkin: 0,
+	
+}

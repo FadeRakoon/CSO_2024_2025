@@ -32,6 +32,7 @@ script = ExtResource("1_f2e7l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rcrlx")
+animation = &"new_animation"
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D" groups=["seeds"]]
 

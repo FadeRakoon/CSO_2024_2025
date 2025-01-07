@@ -7,8 +7,8 @@ extends Node2D
 #tile state and info variables
 var plantable:bool
 var pollution = 0
-var fertility = 0
-var moisture = 0
+var fertility = 35
+var moisture = 25
 const max_moisture = 50
 const max_pollution = 50
 const max_fertility = 50
