@@ -10,14 +10,15 @@ var plant_grown = false #plant grown is false initially
 var cell_pos: Vector2i
 var plant_queue: Array[DataTypes.Plants] = []
 var interactable: bool = false
+var tile_placed: Tile
 
 func _ready() -> void:
 	plant_animation.play("None")
 	cell_pos = map_manager.grass_layer.local_to_map(position)
+	tile_placed = map_manager.tile_dict.get(cell_pos)
 	
 func _process(delta: float) -> void:
-	#print(Global.plantselected)
-	if plantgrowing == false: #if the plant is not growing
+	if plantgrowing == false: #gets the plant from the player if one isn't already growing
 		plant = player.current_plant
 	
 func _on_area_entered(area: Area2D) -> void:
@@ -30,42 +31,56 @@ func _on_area_exited(area: Area2D) -> void:
 		interactable = false
 #updates the appropriate states when the tile leaves the player's area of influence
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	var tile_placed: Tile = map_manager.tile_dict.get(cell_pos)
-	if Input.is_action_just_pressed("click") and interactable:
-		if not plantgrowing and map_manager.nature_tiles.get_cell_source_id(cell_pos) == -1:
-			if plant: #if the plant is corn
-				plantgrowing = true #now a plant is growing, so true
-				plant_animation.play(str(DataTypes.Plants.find_key(plant))) #plays corn growing animation
-			if tile_placed.tile_info.fertility <= 0:
-				print("soil infertile")
-		elif not plant_grown:
-			print("plant is already growing here") #makes sure multiple plants aren't planted in the same spot
-		if plant_grown:
-			#crop rotation
-			plant_queue.append(plant)
-			if plant_queue.size() > 3:
-				plant_queue.pop_front()
-			elif plant_queue.size() >= 2:
-				if plant_queue.slice(-2,0).all(func (x): return x == plant_queue[0]):
-					#checks if the last 2 crops to be planted are the same and decreases fertility of soil
-					tile_placed.tile_info.fertility -= 5
-					print("unrotated")
-				else: 
-					tile_placed.tile_info.fertility += 3
-					print("rotated")
-			print(plant_queue)
-			#section that deals with plant queue and crop rotation
-			
-			Global.plant_inventory[plant] += 1
-			plant_grown = false
-			plant_animation.play("None")
-			plantgrowing = false
-		elif player.current_tool == DataTypes.Tools.TillGrass:
-			plantgrowing = false
-			plant_grown = false
-			plant_animation.play("None")
-
 func _on_plant_animation_finished() -> void:
 	print("done")
-	plant_grown = true
+	plant_grown = true 
+	
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if Input.is_action_just_pressed("click") and interactable: 
+		#clicking does a lot so this block handles everything
+		if plant_grown:
+			harvest_crop() 
+		elif player.current_tool == DataTypes.Tools.TillGrass:
+			reset_plant() #the player can use the till tool on a plant to remove it
+		else:
+			plant_crop()
+	
+func plant_crop():
+	if not plantgrowing and map_manager.nature_tiles.get_cell_source_id(cell_pos) == -1:
+	#checks first if the tile is occupied by either another plant or something on the nature tile
+		if tile_placed.tile_info.fertility <= 0:
+			print("soil infertile cannot plant")
+		elif plant:
+			#plant a crop if the soil is fertile and a plant is avaiable to be planted
+			plantgrowing = true
+			plant_animation.play(str(DataTypes.Plants.find_key(plant)))
+			tile_placed.tile_info.fertility -= 2 #planting anything takes 2 fertility from the soil
+	elif not plant_grown:
+		print("plant is already growing here")
+
+func harvest_crop():
+	update_crop_rotation() 
+	Global.plant_inventory[plant] += 1 #updates the crop inventory for the player
+	reset_plant() #removes the plant when done
+
+func update_crop_rotation():
+	plant_queue.append(plant) #adds the plant to the queue
+	if plant_queue.size() >= 2:
+		if plant_queue.slice(-2, 0).all(func(x): return x == plant_queue[-1]): 
+			#checks the the two most recently planted crops are the same
+			#using all() and slice() for balance updates later if necessary
+			tile_placed.tile_info.fertility -= 2
+			#removes another 2 fertility if you plant the same crop twice
+			print("unrotated")
+		else:
+			tile_placed.tile_info.fertility += 3
+			#adds 3 fertility if you rotate crops giving the player a net positive in fertility
+			print("rotated")
+	if plant_queue.size() > 3:
+		plant_queue.pop_front() #queue only needs to store past 3 plants
+	print(plant_queue)
+
+func reset_plant():
+	plantgrowing = false
+	plant_grown = false
+	plant_animation.play("None")
