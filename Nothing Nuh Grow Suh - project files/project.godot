@@ -33,6 +33,14 @@ shapes/layer_1="objects"
 
 window/stretch/scale_mode="integer"
 
+[file_customization]
+
+folder_colors={
+"res://Game elements Assets/": "blue",
+"res://Scenes/": "green",
+"res://Scripts/": "orange"
+}
+
 [global_group]
 
 player=""
