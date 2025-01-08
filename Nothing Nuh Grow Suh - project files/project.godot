@@ -21,7 +21,6 @@ Global="*res://Scripts/globals/global.gd"
 ToolManager="*res://Scripts/globals/tool_manager.gd"
 BuildManager="*res://Scripts/globals/build_manager.gd"
 PlantManager="*res://Scripts/globals/plant_manager.gd"
-CoinManager="*res://Scripts/globals/coin_manager.gd"
 
 [debug]
 

@@ -4,6 +4,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_wposn"]
 font = ExtResource("1_5k633")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
 
 [node name="CoinCount" type="Label"]
 offset_right = 40.0

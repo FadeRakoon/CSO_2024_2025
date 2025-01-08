@@ -11,4 +11,4 @@ var plant_inventory = {
 	
 }
 
-var coin = 0 
+var coin: int = 0 #stores the coin value

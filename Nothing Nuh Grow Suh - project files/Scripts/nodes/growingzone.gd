@@ -6,11 +6,12 @@ var plant: DataTypes.Plants #stores seed type from global variable
 var plantgrowing = false #initially plant is not growing hence false
 var plant_grown = false #plant grown is false initially
 @onready var player: Player = get_node("/root/Game/Player")
-@onready var map_manager: MapManager = get_parent()
+@onready var map_manager: MapManager = get_parent() 
 var cell_pos: Vector2i
 var plant_queue: Array[DataTypes.Plants] = []
 var interactable: bool = false
 var tile_placed: Tile
+
 
 func _ready() -> void:
 	plant_animation.play("None")
@@ -60,9 +61,10 @@ func plant_crop():
 
 func harvest_crop():
 	update_crop_rotation() 
+	var global_script = get_node("/root/Global") #refernces global script
 	Global.plant_inventory[plant] += 1 #updates the crop inventory for the player
 	if plant == 1: #checks for tomato
-		Global.coin += 15
+		Global.coin +=15
 	elif plant == 2: #checks for corn
 		Global.coin += 10
 	elif plant == 3: #checks for onion
@@ -77,6 +79,7 @@ func harvest_crop():
 		Global.coin += 5
 	else:
 		Global.coin += 0
+	
 	reset_plant() #removes the plant when done
 
 func update_crop_rotation():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=25 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="2_fhmj7"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/nodes/inventory.gd" id="11_3obbe"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
 [ext_resource type="Script" path="res://Scenes/coin.gd" id="15_3c3is"]
+[ext_resource type="PackedScene" uid="uid://ciba82abjbybb" path="res://Scenes/ui/CoinPanel.tscn" id="16_d4ob0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtgcc"]
 texture = ExtResource("8_j11bx")
@@ -1293,34 +1294,6 @@ sources/6 = SubResource("TileSetScenesCollectionSource_vydu8")
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Coin" type="CanvasLayer" parent="."]
-script = ExtResource("15_3c3is")
-
-[node name="Cointexture" parent="Coin" instance=ExtResource("7_q8m0f")]
-anchors_preset = -1
-anchor_right = 0.0451389
-anchor_bottom = 0.0771605
-offset_right = 53.0
-offset_bottom = 57.0
-size_flags_horizontal = 6
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="CoinCount" parent="Coin" instance=ExtResource("8_h8nxo")]
-anchors_preset = -1
-anchor_left = 0.136
-anchor_top = 0.078
-anchor_right = 0.136
-anchor_bottom = 0.078
-offset_left = -63.672
-offset_top = -17.544
-offset_right = 96.328
-offset_bottom = 50.456
-grow_horizontal = 0
-size_flags_horizontal = 2
-text = "99999"
-metadata/_edit_use_anchors_ = true
-
 [node name="Map_Manager" parent="." groups=["player_aoi"] instance=ExtResource("4_pcyfr")]
 script = ExtResource("5_g3qqw")
 
@@ -1330,7 +1303,7 @@ script = ExtResource("5_g3qqw")
 tile_set = SubResource("TileSet_q58cv")
 
 [node name="Inventory_bg" type="TileMapLayer" parent="Shop"]
-tile_map_data = PackedByteArray("AAA0AAsAAAAEAAMAAAA0AAwAAAAEAAMAAAA1AAsAAAAEAAMAAAA1AAwAAAAEAAMAAAA2AAsAAAAEAAMAAAA2AAwAAAAEAAMAAAA3AAsAAAAEAAMAAAA3AAwAAAAEAAMAAAA4AAsAAAAEAAMAAAA4AAwAAAAEAAMAAAA5AAsAAAAEAAMAAAA5AAwAAAAEAAMAAAA6AAsAAAAEAAMAAAA6AAwAAAAEAAMAAAA7AAsAAAAEAAMAAAA7AAwAAAAEAAMAAAA8AAsAAAAEAAMAAAA8AAwAAAAEAAMAAAA0AAoAAAAJAAEAAAA1AAoAAAAJAAEAAAA2AAoAAAAJAAEAAAA3AAoAAAAJAAEAAAA4AAoAAAAJAAEAAAA5AAoAAAAJAAEAAAA6AAoAAAAJAAEAAAA7AAoAAAAJAAEAAAA0AA0AAAAJAAUAAAA1AA0AAAAJAAUAAAA2AA0AAAAJAAUAAAA3AA0AAAAJAAUAAAA4AA0AAAAJAAUAAAA5AA0AAAAJAAUAAAA6AA0AAAAJAAUAAAA7AA0AAAAJAAUAAAA8AA0AAAAJAAUAAAA9AAoAAAAJAAEAAAA9AAsAAAAIAAIAAAA9AAwAAAAIAAIAAAA9AA0AAAALAAUAAAAzAAsAAAAAAAMAAAAzAAwAAAAAAAMAAAAzAA0AAAAAAAUAAAAzAAoAAAAAAAEAAAA+AAwAAAAVAAMAAAA+AAsAAAAVAAMAAAA+AA0AAAAVAAUAAAA+AAoAAAAVAAEAAAA8AAoAAAAJAAEAAAA=")
+tile_map_data = PackedByteArray("AAA0AAsAAAAEAAMAAAA0AAwAAAAEAAMAAAA1AAsAAAAEAAMAAAA1AAwAAAAEAAMAAAA2AAsAAAAEAAMAAAA2AAwAAAAEAAMAAAA3AAsAAAAEAAMAAAA3AAwAAAAEAAMAAAA4AAsAAAAEAAMAAAA4AAwAAAAEAAMAAAA5AAsAAAAEAAMAAAA5AAwAAAAEAAMAAAA6AAsAAAAEAAMAAAA6AAwAAAAEAAMAAAA7AAsAAAAEAAMAAAA7AAwAAAAEAAMAAAA8AAsAAAAEAAMAAAA8AAwAAAAEAAMAAAA0AAoAAAAJAAEAAAA1AAoAAAAJAAEAAAA2AAoAAAAJAAEAAAA3AAoAAAAJAAEAAAA4AAoAAAAJAAEAAAA5AAoAAAAJAAEAAAA6AAoAAAAJAAEAAAA7AAoAAAAJAAEAAAA0AA0AAAAJAAUAAAA1AA0AAAAJAAUAAAA2AA0AAAAJAAUAAAA3AA0AAAAJAAUAAAA4AA0AAAAJAAUAAAA5AA0AAAAJAAUAAAA6AA0AAAAJAAUAAAA7AA0AAAAJAAUAAAA8AA0AAAAJAAUAAAA9AAoAAAAJAAEAAAA9AAsAAAAIAAIAAAA9AAwAAAAIAAIAAAA9AA0AAAALAAUAAAAzAAsAAAAAAAMAAAAzAAwAAAAAAAMAAAAzAA0AAAAAAAUAAAAzAAoAAAAAAAEAAAA+AAwAAAAVAAMAAAA+AAsAAAAVAAMAAAA+AA0AAAAVAAUAAAA+AAoAAAAVAAEAAAA8AAoAAAAJAAEAAABCAAsAAAAHAAIAAABDAAsAAAAHAAIAAABEAAsAAAAHAAIAAABFAAsAAAAHAAIAAABBAAsAAAAHAAIAAABBAAwAAAAHAAIAAABCAAwAAAAHAAIAAABDAAwAAAAHAAIAAABFAAwAAAAHAAIAAABBAAoAAAAHAAIAAABCAAoAAAAHAAIAAABDAAoAAAAHAAIAAABEAAoAAAAHAAIAAABFAAoAAAAHAAIAAABAAAkAAAAAAAEAAABBAAkAAAAIAAEAAABCAAkAAAAIAAEAAABDAAkAAAAIAAEAAABEAAkAAAAIAAEAAABFAAkAAAAIAAEAAABGAAkAAAAQAAEAAABGAAoAAAALAAIAAABAAAoAAAAAAAIAAABAAA0AAAAAAAUAAABGAA0AAAAPAAUAAABFAA0AAAAUAAUAAABBAA0AAAABAAUAAABAAAwAAAAAAAQAAABAAAsAAAAAAAQAAABGAAwAAAALAAIAAABGAAsAAAALAAIAAABCAA0AAAAHAAUAAABEAA0AAAAHAAUAAABDAA0AAAAHAAUAAABHAAoAAAALAAIAAABHAAsAAAALAAIAAABHAAwAAAALAAIAAABIAAkAAAAVAAEAAABIAA0AAAAVAAUAAABHAA0AAAAPAAUAAABIAAoAAAAVAAQAAABIAAsAAAAVAAQAAABIAAwAAAAVAAQAAABHAAkAAAAQAAEAAABEAAwAAAAHAAIAAAA=")
 tile_set = SubResource("TileSet_5e546")
 
 [node name="Crop_inventory" type="Node" parent="Shop"]
@@ -1492,7 +1465,7 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(648, 328)
 current_tool = 4
-current_plant = 3
+current_plant = 4
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1.00001, -7.99999)
@@ -1506,3 +1479,37 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="GameScreen" parent="Player" groups=["ui"] instance=ExtResource("13_gcsel")]
+
+[node name="CoinPanel" parent="." instance=ExtResource("16_d4ob0")]
+offset_left = 972.0
+offset_top = 18.0
+offset_right = 1151.0
+offset_bottom = 91.0
+
+[node name="Coin" type="CanvasLayer" parent="."]
+script = ExtResource("15_3c3is")
+
+[node name="Cointexture" parent="Coin" instance=ExtResource("7_q8m0f")]
+anchors_preset = -1
+anchor_right = 0.0451389
+anchor_bottom = 0.0771605
+offset_right = 53.0
+offset_bottom = 57.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinCount" parent="Coin" instance=ExtResource("8_h8nxo")]
+anchors_preset = -1
+anchor_left = 0.136
+anchor_top = 0.078
+anchor_right = 0.136
+anchor_bottom = 0.078
+offset_left = -63.672
+offset_top = -17.544
+offset_right = 96.328
+offset_bottom = 50.456
+grow_horizontal = 0
+size_flags_horizontal = 2
+text = "99999"
+metadata/_edit_use_anchors_ = true
