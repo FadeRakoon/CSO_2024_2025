@@ -10,3 +10,5 @@ var plant_inventory = {
 	DataTypes.Plants.Pumpkin: 0,
 	
 }
+
+var coin = 0 

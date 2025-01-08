@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://kfof3a4sl4w2"]
+
+[ext_resource type="Texture2D" uid="uid://cxt07w6yoirmh" path="res://Assets packs/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/special icons/Special Icons.png" id="1_1wyqb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqloa"]
+atlas = ExtResource("1_1wyqb")
+region = Rect2(96, 48, 16, 16)
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 150.0
+offset_bottom = 151.0
+texture = SubResource("AtlasTexture_oqloa")

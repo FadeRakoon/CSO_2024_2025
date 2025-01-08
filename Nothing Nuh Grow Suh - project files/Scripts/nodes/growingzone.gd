@@ -61,6 +61,22 @@ func plant_crop():
 func harvest_crop():
 	update_crop_rotation() 
 	Global.plant_inventory[plant] += 1 #updates the crop inventory for the player
+	if plant == 1: #checks for tomato
+		Global.coin += 15
+	elif plant == 2: #checks for corn
+		Global.coin += 10
+	elif plant == 3: #checks for onion
+		Global.coin += 10
+	elif plant == 4: #checks for carrot
+		Global.coin += 10
+	elif plant == 5: #checks for potato
+		Global.coin += 5
+	elif plant == 6: #checks for callaloo
+		Global.coin += 5
+	elif plant == 7: #checks for pumpkin
+		Global.coin += 5
+	else:
+		Global.coin += 0
 	reset_plant() #removes the plant when done
 
 func update_crop_rotation():

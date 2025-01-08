@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciba82abjbybb"]
+
+[ext_resource type="Theme" uid="uid://cwiv3vfpux3da" path="res://Scenes/ui/game_ui__theme.tres" id="1_btynp"]
+[ext_resource type="PackedScene" uid="uid://kfof3a4sl4w2" path="res://Scenes/ui/Coin.tscn" id="2_u7p4g"]
+[ext_resource type="PackedScene" uid="uid://buo8auxkalbwe" path="res://Scenes/ui/coin_count.tscn" id="3_8phth"]
+
+[node name="CoinPanel" type="PanelContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_bottom = 49.0
+grow_horizontal = 0
+theme = ExtResource("1_btynp")
+theme_type_variation = &"DarkWoodPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" parent="." instance=ExtResource("2_u7p4g")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 20.0
+
+[node name="CoinCount" parent="." instance=ExtResource("3_8phth")]
+layout_mode = 2
+size_flags_horizontal = 10

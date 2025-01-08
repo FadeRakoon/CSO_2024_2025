@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=24 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="2_fhmj7"]
@@ -9,10 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dug5jkl2t0bsv" path="res://Scenes/objects/nature/small_tree.tscn" id="6_3i3gt"]
 [ext_resource type="SpriteFrames" uid="uid://dk4f25wmhhexo" path="res://Collections/icons.tres" id="6_np2jc"]
 [ext_resource type="PackedScene" uid="uid://bje1sfde48y4i" path="res://Scenes/objects/nature/large_tree.tscn" id="6_taxp7"]
+[ext_resource type="PackedScene" uid="uid://kfof3a4sl4w2" path="res://Scenes/ui/Coin.tscn" id="7_q8m0f"]
+[ext_resource type="PackedScene" uid="uid://buo8auxkalbwe" path="res://Scenes/ui/coin_count.tscn" id="8_h8nxo"]
 [ext_resource type="Texture2D" uid="uid://d1m8ohe4dhb0n" path="res://Assets packs/MPWSP01/tileset/tileset.png" id="8_j11bx"]
 [ext_resource type="Texture2D" uid="uid://qppkgn0r7br3" path="res://Assets packs/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/emojis-free/emoji style ui/inventory_example.png" id="9_885gs"]
 [ext_resource type="Script" path="res://Scripts/nodes/inventory.gd" id="11_3obbe"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
+[ext_resource type="PackedScene" uid="uid://ciba82abjbybb" path="res://Scenes/ui/CoinPanel.tscn" id="16_d4ob0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtgcc"]
 texture = ExtResource("8_j11bx")
@@ -1296,11 +1299,10 @@ script = ExtResource("5_g3qqw")
 [node name="Shop" type="Node2D" parent="."]
 
 [node name="Shop" type="TileMapLayer" parent="Shop"]
-tile_map_data = PackedByteArray("AABDAAgAAAAYABEAAABDAAkAAAAYABIAAABDAAoAAAAYABMAAABDAAsAAAAYABQAAABEAAgAAAAZABEAAABEAAkAAAAZABIAAABEAAoAAAAZABMAAABEAAsAAAAZABQAAABFAAgAAAAaABEAAABFAAkAAAAaABIAAABFAAoAAAAaABMAAABFAAsAAAAaABQAAABGAAgAAAAbABEAAABGAAkAAAAbABIAAABGAAoAAAAbABMAAABGAAsAAAAbABQAAABDAAcAAAAYABAAAABEAAcAAAAZABAAAABFAAcAAAAaABAAAABGAAcAAAAbABAAAABHAAcAAAAcABAAAABHAAgAAAAcABEAAABHAAkAAAAcABIAAABHAAoAAAAcABMAAABHAAsAAAAcABQAAAA=")
 tile_set = SubResource("TileSet_q58cv")
 
 [node name="Inventory_bg" type="TileMapLayer" parent="Shop"]
-tile_map_data = PackedByteArray("AAA0AAsAAAAEAAMAAAA0AAwAAAAEAAMAAAA1AAsAAAAEAAMAAAA1AAwAAAAEAAMAAAA2AAsAAAAEAAMAAAA2AAwAAAAEAAMAAAA3AAsAAAAEAAMAAAA3AAwAAAAEAAMAAAA4AAsAAAAEAAMAAAA4AAwAAAAEAAMAAAA5AAsAAAAEAAMAAAA5AAwAAAAEAAMAAAA6AAsAAAAEAAMAAAA6AAwAAAAEAAMAAAA7AAsAAAAEAAMAAAA7AAwAAAAEAAMAAAA8AAsAAAAEAAMAAAA8AAwAAAAEAAMAAAA0AAoAAAAJAAEAAAA1AAoAAAAJAAEAAAA2AAoAAAAJAAEAAAA3AAoAAAAJAAEAAAA4AAoAAAAJAAEAAAA5AAoAAAAJAAEAAAA6AAoAAAAJAAEAAAA7AAoAAAAJAAEAAAA8AAoAAAAJAAEAAAA0AA0AAAAJAAUAAAA1AA0AAAAJAAUAAAA2AA0AAAAJAAUAAAA3AA0AAAAJAAUAAAA4AA0AAAAJAAUAAAA5AA0AAAAJAAUAAAA6AA0AAAAJAAUAAAA7AA0AAAAJAAUAAAA8AA0AAAAJAAUAAAA9AAoAAAAJAAEAAAA9AAsAAAAIAAIAAAA9AAwAAAAIAAIAAAA9AA0AAAALAAUAAAAzAAsAAAAAAAMAAAAzAAwAAAAAAAMAAAAzAA0AAAAAAAUAAAAzAAoAAAAAAAEAAAA+AAwAAAAVAAMAAAA+AAsAAAAVAAMAAAA+AA0AAAAVAAUAAAA+AAoAAAAVAAEAAAA=")
+tile_map_data = PackedByteArray("AAA0AAsAAAAEAAMAAAA0AAwAAAAEAAMAAAA1AAsAAAAEAAMAAAA1AAwAAAAEAAMAAAA2AAsAAAAEAAMAAAA2AAwAAAAEAAMAAAA3AAsAAAAEAAMAAAA3AAwAAAAEAAMAAAA4AAsAAAAEAAMAAAA4AAwAAAAEAAMAAAA5AAsAAAAEAAMAAAA5AAwAAAAEAAMAAAA6AAsAAAAEAAMAAAA6AAwAAAAEAAMAAAA7AAsAAAAEAAMAAAA7AAwAAAAEAAMAAAA8AAsAAAAEAAMAAAA8AAwAAAAEAAMAAAA0AAoAAAAJAAEAAAA1AAoAAAAJAAEAAAA2AAoAAAAJAAEAAAA3AAoAAAAJAAEAAAA4AAoAAAAJAAEAAAA5AAoAAAAJAAEAAAA6AAoAAAAJAAEAAAA7AAoAAAAJAAEAAAA0AA0AAAAJAAUAAAA1AA0AAAAJAAUAAAA2AA0AAAAJAAUAAAA3AA0AAAAJAAUAAAA4AA0AAAAJAAUAAAA5AA0AAAAJAAUAAAA6AA0AAAAJAAUAAAA7AA0AAAAJAAUAAAA8AA0AAAAJAAUAAAA9AAoAAAAJAAEAAAA9AAsAAAAIAAIAAAA9AAwAAAAIAAIAAAA9AA0AAAALAAUAAAAzAAsAAAAAAAMAAAAzAAwAAAAAAAMAAAAzAA0AAAAAAAUAAAAzAAoAAAAAAAEAAAA+AAwAAAAVAAMAAAA+AAsAAAAVAAMAAAA+AA0AAAAVAAUAAAA+AAoAAAAVAAEAAAA8AAoAAAAJAAEAAABCAAsAAAAHAAIAAABDAAsAAAAHAAIAAABEAAsAAAAHAAIAAABFAAsAAAAHAAIAAABBAAsAAAAHAAIAAABBAAwAAAAHAAIAAABCAAwAAAAHAAIAAABDAAwAAAAHAAIAAABFAAwAAAAHAAIAAABEAAwAAAAHAAIAAABBAAoAAAAHAAIAAABCAAoAAAAHAAIAAABDAAoAAAAHAAIAAABEAAoAAAAHAAIAAABFAAoAAAAHAAIAAABAAAkAAAAAAAEAAABBAAkAAAAIAAEAAABCAAkAAAAIAAEAAABDAAkAAAAIAAEAAABEAAkAAAAIAAEAAABFAAkAAAAIAAEAAABGAAkAAAAQAAEAAABGAAoAAAALAAIAAABAAAoAAAAAAAIAAABAAA0AAAAAAAUAAABGAA0AAAAPAAUAAABFAA0AAAAUAAUAAABBAA0AAAABAAUAAABAAAwAAAAAAAQAAABAAAsAAAAAAAQAAABGAAwAAAALAAIAAABGAAsAAAALAAIAAABCAA0AAAAHAAUAAABEAA0AAAAHAAUAAABDAA0AAAAHAAUAAABHAAoAAAALAAIAAABHAAsAAAALAAIAAABHAAwAAAALAAIAAABIAAkAAAAVAAEAAABIAA0AAAAVAAUAAABHAA0AAAAPAAUAAABIAAoAAAAVAAQAAABIAAsAAAAVAAQAAABIAAwAAAAVAAQAAABHAAkAAAAQAAEAAAA=")
 tile_set = SubResource("TileSet_5e546")
 
 [node name="Crop_inventory" type="Node" parent="Shop"]
@@ -1419,6 +1421,20 @@ fit_content = true
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Coin" parent="Shop" instance=ExtResource("7_q8m0f")]
+offset_left = 1027.0
+offset_top = 156.0
+offset_right = 1080.0
+offset_bottom = 213.0
+
+[node name="CoinCount" parent="Shop" instance=ExtResource("8_h8nxo")]
+offset_left = 1072.0
+offset_top = 173.0
+offset_right = 1152.0
+offset_bottom = 201.0
+size_flags_vertical = 10
+text = "99999"
+
 [node name="BG tilemap" type="Node2D" parent="."]
 y_sort_enabled = true
 metadata/_edit_lock_ = true
@@ -1476,3 +1492,9 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="GameScreen" parent="Player" groups=["ui"] instance=ExtResource("13_gcsel")]
+
+[node name="CoinPanel" parent="." instance=ExtResource("16_d4ob0")]
+offset_left = 972.0
+offset_top = 18.0
+offset_right = 1151.0
+offset_bottom = 91.0
