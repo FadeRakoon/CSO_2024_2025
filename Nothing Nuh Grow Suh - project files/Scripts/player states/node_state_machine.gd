@@ -13,6 +13,7 @@ var parent_node_name: String
 
 
 func _ready() -> void:
+	current_node_state = initial_node_state
 	parent_node_name = get_parent().name
 	#gets the name of the player node
 	for child in get_children():
@@ -29,6 +30,7 @@ func _ready() -> void:
 		current_node_state = initial_node_state
 		current_node_state_name = current_node_state.name.to_lower()
 		#initialises the current state
+	return
 
 
 func _process(delta : float) -> void:

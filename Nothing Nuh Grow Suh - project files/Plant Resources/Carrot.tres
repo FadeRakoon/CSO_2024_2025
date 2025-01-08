@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="crop" load_steps=2 format=3 uid="uid://bsb7p2w4nvbln"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/crop.gd" id="1_ojpj1"]
+
+[resource]
+script = ExtResource("1_ojpj1")
+plant_name = "Carrot"
+days_grown = 0
+growth_time = 2
+min_fertility = 10
+min_moist = 10
+sell_value = 5

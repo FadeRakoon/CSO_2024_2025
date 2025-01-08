@@ -25,6 +25,7 @@ func _on_tool_tilling_pressed() -> void:
 
 func _on_tool_seeds_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.PlantCrops)
+	PlantManager.select_plant(DataTypes.Plants.Carrot)
 
 func _on_tool_watering_can_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)

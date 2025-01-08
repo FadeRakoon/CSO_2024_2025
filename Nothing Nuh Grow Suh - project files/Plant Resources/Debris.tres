@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="crop" load_steps=2 format=3 uid="uid://bkjf6lrm6s14j"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/crop.gd" id="1_otgqx"]
+
+[resource]
+script = ExtResource("1_otgqx")
+plant_name = "Debris"
+days_grown = 0
+growth_time = 0
+min_fertility = 0
+min_moist = 0
+sell_value = 0

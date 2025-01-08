@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="crop" load_steps=2 format=3 uid="uid://1x54nxbhv8bo"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/crop.gd" id="1_r1c0n"]
+
+[resource]
+script = ExtResource("1_r1c0n")
+plant_name = "Callaloo"
+days_grown = 0
+growth_time = 3
+min_fertility = 10
+min_moist = 10
+sell_value = 5

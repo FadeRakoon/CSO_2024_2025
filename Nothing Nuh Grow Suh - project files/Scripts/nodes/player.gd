@@ -14,6 +14,7 @@ func _ready():
 	ToolManager.connect("tool_selected", _on_tool_selected)
 	PlantManager.connect("plant_selected", _on_plant_selected)
 	BuildManager.connect("build_selected", _on_build_selected)
+	current_plant = DataTypes.Plants.None
 
 func _on_tool_selected(tool: DataTypes.Tools) -> void:
 	current_tool = tool

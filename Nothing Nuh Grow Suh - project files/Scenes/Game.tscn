@@ -1309,7 +1309,7 @@ script = ExtResource("11_3obbe")
 [node name="tomato" type="AnimatedSprite2D" parent="Shop/Crop_inventory"]
 position = Vector2(835, 183)
 sprite_frames = ExtResource("6_np2jc")
-animation = &"Tomato"
+animation = &"Callaloo"
 
 [node name="tomatotext" type="RichTextLabel" parent="Shop/Crop_inventory/tomato"]
 clip_contents = false

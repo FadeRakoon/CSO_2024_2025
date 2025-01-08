@@ -21,6 +21,7 @@ Global="*res://Scripts/globals/global.gd"
 ToolManager="*res://Scripts/globals/tool_manager.gd"
 BuildManager="*res://Scripts/globals/build_manager.gd"
 PlantManager="*res://Scripts/globals/plant_manager.gd"
+ActionManager="*res://Scripts/globals/Action_Manager.gd"
 
 [debug]
 
@@ -32,14 +33,6 @@ shapes/layer_1="objects"
 [display]
 
 window/stretch/scale_mode="integer"
-
-[file_customization]
-
-folder_colors={
-"res://Game elements Assets/": "blue",
-"res://Scenes/": "green",
-"res://Scripts/": "orange"
-}
 
 [global_group]
 

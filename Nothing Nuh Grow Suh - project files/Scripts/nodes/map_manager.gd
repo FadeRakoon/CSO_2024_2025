@@ -40,6 +40,7 @@ func _ready() -> void:
 			grow_zone.position = local_cell_pos #places a grow zone at the cell position of the dirt layer
 			grow_zones_dict[cell] = grow_zone
 			add_child(grow_zone)
+	return
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("tile_select"):

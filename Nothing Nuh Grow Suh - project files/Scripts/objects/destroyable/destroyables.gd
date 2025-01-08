@@ -22,6 +22,7 @@ func _ready() -> void:
 	#the hurt box holds a hurt signale emitted when the object takes damage
 	dmg_manager.max_dmg_reached.connect(on_max)
 	#the damange manager holds a max damage reached signal emitted to destroy the object when the object takes its max allowed damange
+	return 
 	
 func on_hurt(hit_dmg: int) -> void:
 	print("hit") #debug statement
