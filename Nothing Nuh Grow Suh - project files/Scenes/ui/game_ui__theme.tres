@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://cwiv3vfpux3da"]
+[gd_resource type="Theme" load_steps=35 format=3 uid="uid://cwiv3vfpux3da"]
 
 [ext_resource type="Texture2D" uid="uid://cxw75k57b7pup" path="res://Game elements Assets/ui/basic ui sprites.png" id="1_aavua"]
+[ext_resource type="FontFile" uid="uid://derpp2ldfp4dp" path="res://Game elements Assets/ui/pixelFont-7-8x14-sproutLands.ttf" id="2_3l8ql"]
+[ext_resource type="Texture2D" uid="uid://cy1yhsf5jptq2" path="res://Game elements Assets/ui/Nothing Nuh Grow Suh  logo 16x9 .png" id="2_5dlsx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icjrl"]
 atlas = ExtResource("1_aavua")
@@ -12,6 +14,81 @@ texture_margin_left = 7.0
 texture_margin_top = 7.0
 texture_margin_right = 7.0
 texture_margin_bottom = 7.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j5k0f"]
+load_path = "res://.godot/imported/basic ui sprites.png-9e8700413a2721e6dff458b50664b25b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef8xu"]
+atlas = SubResource("CompressedTexture2D_j5k0f")
+region = Rect2(11, 11, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdwlf"]
+texture = SubResource("AtlasTexture_ef8xu")
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4sfc2"]
+load_path = "res://.godot/imported/basic ui sprites.png-9e8700413a2721e6dff458b50664b25b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qfd4"]
+atlas = SubResource("CompressedTexture2D_4sfc2")
+region = Rect2(11, 107, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onow3"]
+texture = SubResource("AtlasTexture_6qfd4")
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jk1y3"]
+load_path = "res://.godot/imported/basic ui sprites.png-9e8700413a2721e6dff458b50664b25b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnjlb"]
+atlas = SubResource("CompressedTexture2D_jk1y3")
+region = Rect2(11, 107, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3slh"]
+texture = SubResource("AtlasTexture_pnjlb")
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u77tw"]
+atlas = ExtResource("1_aavua")
+region = Rect2(11, 155, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1eton"]
+texture = SubResource("AtlasTexture_u77tw")
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sequ3"]
+load_path = "res://.godot/imported/basic ui sprites.png-9e8700413a2721e6dff458b50664b25b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp0p1"]
+atlas = SubResource("CompressedTexture2D_sequ3")
+region = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_girdp"]
+texture = SubResource("AtlasTexture_dp0p1")
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ahfp"]
+texture = ExtResource("2_5dlsx")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hlt3d"]
 load_path = "res://.godot/imported/basic ui sprites.png-9e8700413a2721e6dff458b50664b25b.ctex"
@@ -83,6 +160,16 @@ texture_margin_bottom = 6.0
 [resource]
 DarkWoodPanel/base_type = &"PanelContainer"
 DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_aqxmu")
+GameMenuButton/base_type = &"Button"
+GameMenuButton/font_sizes/font_size = 36
+GameMenuButton/fonts/font = ExtResource("2_3l8ql")
+GameMenuButton/styles/disabled = SubResource("StyleBoxTexture_wdwlf")
+GameMenuButton/styles/focus = SubResource("StyleBoxTexture_onow3")
+GameMenuButton/styles/hover = SubResource("StyleBoxTexture_o3slh")
+GameMenuButton/styles/normal = SubResource("StyleBoxTexture_1eton")
+GameMenuButton/styles/pressed = SubResource("StyleBoxTexture_girdp")
+MainMenuBack/base_type = &"Panel"
+MainMenuBack/styles/panel = SubResource("StyleBoxTexture_3ahfp")
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
