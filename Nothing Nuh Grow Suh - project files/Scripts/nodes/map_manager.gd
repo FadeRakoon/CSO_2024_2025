@@ -59,8 +59,8 @@ func check_cell():
 	var tile = tile_dict.get(cell_pos) #looks up the tile
 	var grow_zone = grow_zones_dict.get(cell_pos)
 	var plant_growing: bool = grow_zone.plantgrowing or grow_zone.plant_grown if grow_zone else false
-	var nature_clear: bool = cell_source_id != -1 and cell_pos not in nature_tiles.get_used_cells()
-	if tile and tile.selected and tile.selectable:
+	var has_tree: bool = nature_tiles.get_cell_source_id(cell_pos) == 6
+	if tile and tile.selected and tile.selectable and not has_tree:
 		if player.current_tool == DataTypes.Tools.TillGrass: 
 			#checks if the tile exists and is interactable 
 			if not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
@@ -70,7 +70,7 @@ func check_cell():
 		elif player.current_tool == DataTypes.Tools.BurnWood:
 			var cell: Vector2i
 			burn_grass(cell_pos)
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.8).timeout
 			for x in [-1,0,1]:
 				for y in [-1,0,1]:
 					cell = Vector2i(x,y) + cell_pos
@@ -97,5 +97,5 @@ func burn_grass(cell: Vector2i) -> void:
 		var burnt_tile = burn_tiles.instantiate()
 		burnt_tile.position = grass_layer.map_to_local(cell)
 		add_child(burnt_tile)
-		burnt_tile.burning = true
+		burnt_tile.burn()
 		till_cell(cell)

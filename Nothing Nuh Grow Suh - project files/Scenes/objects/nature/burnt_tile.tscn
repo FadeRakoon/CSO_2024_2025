@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://t2hucnpp07y2"]
 
 [ext_resource type="Material" uid="uid://1iek3c83iw5c" path="res://Collections/shaders/flames.tres" id="1_ojyu4"]
-[ext_resource type="Script" path="res://Scenes/objects/nature/burnt_tile.gd" id="1_pjy8t"]
+[ext_resource type="Script" path="res://Scripts/objects/burnt_tile.gd" id="1_pjy8t"]
 [ext_resource type="Texture2D" uid="uid://prsp3bd37pvn" path="res://Game elements Assets/Tilesets/Grass.png" id="2_qa3np"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ptvep"]

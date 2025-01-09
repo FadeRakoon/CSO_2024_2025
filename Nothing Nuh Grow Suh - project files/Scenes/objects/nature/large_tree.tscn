@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bje1sfde48y4i"]
 
 [ext_resource type="Texture2D" uid="uid://xc0ftyxn25y7" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_jxxnb"]
-[ext_resource type="Script" path="res://Scripts/objects/destroyable/destroyables.gd" id="2_hhttm"]
+[ext_resource type="Script" path="res://Scripts/objects/destroyable/large_tree.gd" id="3_3lvf8"]
 [ext_resource type="Material" uid="uid://dnjs8uiiobwhs" path="res://Collections/shaders/shake.tres" id="3_n3bnn"]
 [ext_resource type="PackedScene" uid="uid://gqbromylkeer" path="res://Scenes/objects/hurt_box.tscn" id="3_u8kkd"]
 [ext_resource type="PackedScene" uid="uid://pewwsmobju5d" path="res://Scenes/objects/dmg_manager.tscn" id="4_7qpe3"]
@@ -18,7 +18,7 @@ position = Vector2(0, -8)
 texture = ExtResource("1_jxxnb")
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
-script = ExtResource("2_hhttm")
+script = ExtResource("3_3lvf8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 material = ExtResource("3_n3bnn")
