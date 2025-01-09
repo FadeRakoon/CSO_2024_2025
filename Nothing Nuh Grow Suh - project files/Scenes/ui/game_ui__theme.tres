@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=35 format=3 uid="uid://cwiv3vfpux3da"]
 
 [ext_resource type="Texture2D" uid="uid://cxw75k57b7pup" path="res://Game elements Assets/ui/basic ui sprites.png" id="1_aavua"]
-[ext_resource type="FontFile" uid="uid://derpp2ldfp4dp" path="res://Game elements Assets/ui/pixelFont-7-8x14-sproutLands.ttf" id="2_3l8ql"]
+[ext_resource type="FontFile" uid="uid://xeide5dah3dj" path="res://Game elements Assets/ui/Minecraft Seven_2.ttf" id="2_4p072"]
 [ext_resource type="Texture2D" uid="uid://cy1yhsf5jptq2" path="res://Game elements Assets/ui/Nothing Nuh Grow Suh  logo 16x9 .png" id="2_5dlsx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icjrl"]
@@ -161,8 +161,8 @@ texture_margin_bottom = 6.0
 DarkWoodPanel/base_type = &"PanelContainer"
 DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_aqxmu")
 GameMenuButton/base_type = &"Button"
-GameMenuButton/font_sizes/font_size = 36
-GameMenuButton/fonts/font = ExtResource("2_3l8ql")
+GameMenuButton/font_sizes/font_size = 24
+GameMenuButton/fonts/font = ExtResource("2_4p072")
 GameMenuButton/styles/disabled = SubResource("StyleBoxTexture_wdwlf")
 GameMenuButton/styles/focus = SubResource("StyleBoxTexture_onow3")
 GameMenuButton/styles/hover = SubResource("StyleBoxTexture_o3slh")
