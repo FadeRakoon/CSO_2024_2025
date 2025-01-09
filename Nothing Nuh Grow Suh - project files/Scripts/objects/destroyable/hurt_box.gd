@@ -9,6 +9,7 @@ var interactable: bool = false
 var active: bool = false
 #boolean flags to keep track of player interaction with the object
 signal hurt
+signal burn
 #declaring hurt signal
 
 func _ready() -> void:
@@ -35,8 +36,11 @@ func _process(_delta: float) -> void:
 		tool = player.current_tool #obtains the tool the player is using
 	if Input.is_action_just_pressed("tile_select") and interactable and active:
 		#this if block applies the damage to the object when the object is hit (clicked by the mouse)
-		if (required_tool and tool == required_tool) or not required_tool:
-			var dmg_value = DataTypes.tool_dmg.get(tool)
+		var dmg_value = DataTypes.tool_dmg.get(tool)
+		if tool == DataTypes.Tools.BurnWood:
+			if dmg_value: #checks if the associated tool has a damage value 
+				burn.emit(dmg_value)
+		elif (required_tool and tool == required_tool) or not required_tool:
 			#looks up the damage value of the tool 
 			if dmg_value: #checks if the associated tool has a damage value 
 				hurt.emit(dmg_value) #emits the hurt signal along with how much damage the tool did
