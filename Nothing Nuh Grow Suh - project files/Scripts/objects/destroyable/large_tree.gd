@@ -10,6 +10,7 @@ extends Sprite2D
 var nature_tiles: TileMapLayer
 var cell_pos: Vector2i
 var local_pos: Vector2
+var fires = preload("res://Scenes/objects/fire_large.tscn")
 #declares nodes for the nature tilemap layer of the game which holds all the destroyable objects and variables for the position of the object
 
 func _ready() -> void:
@@ -37,6 +38,9 @@ func on_hurt(hit_dmg: int) -> void:
 	
 func on_burn(tick_dmg: int) -> void:
 	modulate = Color(0.5, 0.5, 0.5, 1.0)
+	var fire = fires.instantiate()
+	fire.position = Vector2(0,4)
+	add_child(fire)
 	for i in range(0, dmg_manager.max_dmg):
 		dmg_manager.apply_dmg(tick_dmg)
 		print("tick")

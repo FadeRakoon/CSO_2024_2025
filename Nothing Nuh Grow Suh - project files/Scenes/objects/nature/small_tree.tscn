@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dug5jkl2t0bsv"]
+[gd_scene load_steps=7 format=3 uid="uid://dug5jkl2t0bsv"]
 
-[ext_resource type="Material" uid="uid://dnjs8uiiobwhs" path="res://Scripts/shaders/shake.tres" id="1_jflc6"]
 [ext_resource type="Texture2D" uid="uid://xc0ftyxn25y7" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_lxrcn"]
-[ext_resource type="Script" path="res://Scripts/objects/destroyable/destroyables.gd" id="2_17q2u"]
+[ext_resource type="Script" path="res://Scripts/objects/destroyable/small_tree.gd" id="2_17q2u"]
 [ext_resource type="PackedScene" uid="uid://gqbromylkeer" path="res://Scenes/objects/hurt_box.tscn" id="2_xd6ld"]
 [ext_resource type="PackedScene" uid="uid://pewwsmobju5d" path="res://Scenes/objects/dmg_manager.tscn" id="4_2wmot"]
 
@@ -13,8 +12,7 @@ radius = 4.0
 size = Vector2(16, 28)
 
 [node name="Small_Tree" type="Sprite2D"]
-material = ExtResource("1_jflc6")
-position = Vector2(0, -7)
+position = Vector2(0, -8)
 texture = ExtResource("1_lxrcn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 28)
