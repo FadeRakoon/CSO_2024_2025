@@ -19,6 +19,7 @@ func _ready() -> void:
 	cell_pos = nature_tiles.local_to_map(local_pos)
 	#gets the position on the tilemap of the obeject
 	hurt_box.hurt.connect(on_hurt)
+	hurt_box.burn.connect(on_burn)
 	#the hurt box holds a hurt signale emitted when the object takes damage
 	dmg_manager.max_dmg_reached.connect(on_max)
 	#the damange manager holds a max damage reached signal emitted to destroy the object when the object takes its max allowed damange
@@ -33,6 +34,13 @@ func on_hurt(hit_dmg: int) -> void:
 	material.set_shader_parameter("shake_intensity", 0.0)
 	#a shader has been applied to the object that shakes it
 	#this chunk of code changes the shake_intensity parameter of the shader and sets it back to 0 after 1 second
+	
+func on_burn(tick_dmg: int) -> void:
+	modulate = Color(0.5, 0.5, 0.5, 1.0)
+	for i in range(0, dmg_manager.max_dmg):
+		dmg_manager.apply_dmg(tick_dmg)
+		print("tick")
+		await get_tree().create_timer(0.7).timeout
 	
 func on_max() -> void:
 	print("Max dmg") #debug statement

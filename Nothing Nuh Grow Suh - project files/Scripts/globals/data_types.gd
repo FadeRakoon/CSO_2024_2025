@@ -29,6 +29,7 @@ enum Builds{
 
 static var tool_dmg: Dictionary = {
 	1: 1,
+	2: 1,
 }
 #used to assign damage values to tools
 #expandable if we choose to get more tools (currently limited by asset pack)
