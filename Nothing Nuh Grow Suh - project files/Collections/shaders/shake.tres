@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dnjs8uiiobwhs"]
 
-[ext_resource type="Shader" path="res://Scripts/shaders/object_shake.gdshader" id="1_10dpl"]
+[ext_resource type="Shader" path="res://Collections/shaders/object_shake.gdshader" id="1_10dpl"]
 
 [resource]
 resource_local_to_scene = true

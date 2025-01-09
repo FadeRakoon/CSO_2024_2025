@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://1iek3c83iw5c"]
+
+[ext_resource type="Shader" path="res://Collections/shaders/tree_burn.gdshader" id="1_tu1f0"]
+
+[sub_resource type="Gradient" id="Gradient_5uisf"]
+colors = PackedColorArray(1, 0, 0, 1, 0.949219, 0.785319, 0.0370789, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q8ecl"]
+gradient = SubResource("Gradient_5uisf")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rjt7w"]
+noise_type = 0
+seed = 3
+frequency = 0.0345
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2sg3x"]
+seamless = true
+seamless_blend_skirt = 0.215
+noise = SubResource("FastNoiseLite_rjt7w")
+
+[resource]
+shader = ExtResource("1_tu1f0")
+shader_parameter/integrity = 0.265
+shader_parameter/burn_size = 1.381
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_2sg3x")
+shader_parameter/burn_texture = SubResource("GradientTexture1D_q8ecl")

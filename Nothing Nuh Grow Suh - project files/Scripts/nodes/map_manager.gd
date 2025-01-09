@@ -13,6 +13,7 @@ extends Node
 
 const tiles = preload("res://Scenes/tile.tscn") #loads the tile scene
 const grow_zones = preload("res://Scenes/growingzone.tscn")
+const burn_tiles = preload("res://Scenes/objects/nature/burnt_tile.tscn")
 #we create instances of this scene later
 
 var tile_dict = {} #tile dictionary to store where all the tiles are
@@ -46,7 +47,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("tile_select"):
 		get_cell_info() #obtains the cell information
 		check_cell() #checks the tile dictionary to see if the tile can be interacted with based on the player
-
+	
 func get_cell_info() -> void: #function to obtain the 
 	mouse_pos = grass_layer.get_local_mouse_position()
 	cell_pos = grass_layer.local_to_map(mouse_pos) #converts mouse coordinates to cell coordinates
@@ -58,15 +59,19 @@ func check_cell():
 	var tile = tile_dict.get(cell_pos) #looks up the tile
 	var grow_zone = grow_zones_dict.get(cell_pos)
 	var plant_growing: bool = grow_zone.plantgrowing or grow_zone.plant_grown if grow_zone else false
-	if tile and tile.selected and tile.selectable and player.current_tool == DataTypes.Tools.TillGrass: 
-		#checks if the tile exists and is interactable 
-		#also checks if there is any nature on the tile and if the player has his tilling tool
-		if nature_sid == 4:
-			nature_tiles.set_cell(cell_pos, -1)
-		elif not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
-			untill_cell() #removes the tile if you click it and theres already dirt there
-		elif cell_source_id != -1 and cell_pos not in nature_tiles.get_used_cells():
-			till_cell() #changes the tile to dirt (may be updated later for planting and other functionality)
+	var nature_clear: bool = cell_source_id != -1 and cell_pos not in nature_tiles.get_used_cells()
+	if tile and tile.selected and tile.selectable:
+		if player.current_tool == DataTypes.Tools.TillGrass: 
+			#checks if the tile exists and is interactable 
+			#also checks if there is any nature on the tile and if the player has his tilling tool
+			if nature_sid == 4:
+				nature_tiles.set_cell(cell_pos, -1)
+			elif not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
+				untill_cell() #removes the tile if you click it and theres already dirt there
+			elif nature_clear:
+				till_cell() #changes the tile to dirt (may be updated later for planting and other functionality)
+		elif player.current_tool == DataTypes.Tools.BurnWood and nature_clear:
+			burn_grass()
 	
 func till_cell() -> void:
 	field_layer.set_cells_terrain_connect([cell_pos], terrain_set, dirt_terrain, true) 
@@ -75,11 +80,15 @@ func till_cell() -> void:
 	grow_zone.position = grass_layer.map_to_local(cell_pos)
 	grow_zones_dict[cell_pos] = grow_zone
 	add_child(grow_zone)
-
-		
+	
 func untill_cell() -> void:
 	field_layer.set_cell(cell_pos, -1) #removes the tile
 	remove_child(grow_zones_dict[cell_pos]) #removes the growth zone
 	grow_zones_dict.erase(cell_pos) #frees space in the dictionary
 		
-	
+func burn_grass() -> void:
+	var burnt_tile = burn_tiles.instantiate()
+	burnt_tile.position = grass_layer.map_to_local(cell_pos)
+	add_child(burnt_tile)
+	burnt_tile.burning = true
+	till_cell()
