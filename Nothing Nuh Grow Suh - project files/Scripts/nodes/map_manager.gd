@@ -63,32 +63,39 @@ func check_cell():
 	if tile and tile.selected and tile.selectable:
 		if player.current_tool == DataTypes.Tools.TillGrass: 
 			#checks if the tile exists and is interactable 
-			#also checks if there is any nature on the tile and if the player has his tilling tool
-			if nature_sid == 4:
-				nature_tiles.set_cell(cell_pos, -1)
-			elif not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
-				untill_cell() #removes the tile if you click it and theres already dirt there
-			elif nature_clear:
-				till_cell() #changes the tile to dirt (may be updated later for planting and other functionality)
-		elif player.current_tool == DataTypes.Tools.BurnWood and nature_clear:
-			burn_grass()
+			if not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
+				untill_cell(cell_pos) #removes the tile if you click it and theres already dirt there
+			else:
+				till_cell(cell_pos) #changes the tile to dirt (may be updated later for planting and other functionality)
+		elif player.current_tool == DataTypes.Tools.BurnWood:
+			var cell: Vector2i
+			burn_grass(cell_pos)
+			await get_tree().create_timer(1).timeout
+			for x in [-1,0,1]:
+				for y in [-1,0,1]:
+					cell = Vector2i(x,y) + cell_pos
+					burn_grass(cell)
+			
+				
 	
-func till_cell() -> void:
-	field_layer.set_cells_terrain_connect([cell_pos], terrain_set, dirt_terrain, true) 
+func till_cell(cell: Vector2i) -> void:
+	nature_tiles.set_cell(cell, -1)
+	field_layer.set_cells_terrain_connect([cell], terrain_set, dirt_terrain, true) 
 	#this method is what changes the tile to dirt at the specified cell position
 	var grow_zone = grow_zones.instantiate() #creates a grow zone
-	grow_zone.position = grass_layer.map_to_local(cell_pos)
-	grow_zones_dict[cell_pos] = grow_zone
+	grow_zone.position = grass_layer.map_to_local(cell)
+	grow_zones_dict[cell] = grow_zone
 	add_child(grow_zone)
 	
-func untill_cell() -> void:
-	field_layer.set_cell(cell_pos, -1) #removes the tile
-	remove_child(grow_zones_dict[cell_pos]) #removes the growth zone
-	grow_zones_dict.erase(cell_pos) #frees space in the dictionary
+func untill_cell(cell: Vector2i) -> void:
+	field_layer.set_cell(cell, -1) #removes the tile
+	remove_child(grow_zones_dict[cell]) #removes the growth zone
+	grow_zones_dict.erase(cell) #frees space in the dictionary
 		
-func burn_grass() -> void:
-	var burnt_tile = burn_tiles.instantiate()
-	burnt_tile.position = grass_layer.map_to_local(cell_pos)
-	add_child(burnt_tile)
-	burnt_tile.burning = true
-	till_cell()
+func burn_grass(cell: Vector2i) -> void:
+	if cell not in field_layer.get_used_cells():
+		var burnt_tile = burn_tiles.instantiate()
+		burnt_tile.position = grass_layer.map_to_local(cell)
+		add_child(burnt_tile)
+		burnt_tile.burning = true
+		till_cell(cell)

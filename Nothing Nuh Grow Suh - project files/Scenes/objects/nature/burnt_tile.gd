@@ -18,4 +18,3 @@ func _process(delta: float) -> void:
 			value = end_value
 			burning = false
 		grass.material.set_shader_parameter("integrity", value)
-		print(value)  # Print the current value to the output for testing
