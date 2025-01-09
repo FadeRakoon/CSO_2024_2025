@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://buo8auxkalbwe"]
+
+[ext_resource type="FontVariation" uid="uid://cexwr3uubbvec" path="res://Scenes/ui/zx_variation.tres" id="1_5k633"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wposn"]
+font = ExtResource("1_5k633")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="CoinCount" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "0"
+label_settings = SubResource("LabelSettings_wposn")
