@@ -27,7 +27,8 @@ func _ready() -> void:
 	return 
 	
 func on_hurt(hit_dmg: int) -> void:
-	print("hit") #debug statement
+	#print("hit") #debug statement
+	ActionManager.action_performed.emit()
 	dmg_manager.apply_dmg(hit_dmg)
 	#damage manager has the function apply damage that updates the amount of damange the object has taken
 	material.set_shader_parameter("shake_intensity", 1.0)
@@ -41,12 +42,13 @@ func on_burn(tick_dmg: int) -> void:
 	var fire = fires.instantiate()
 	fire.position = Vector2(0,4)
 	add_child(fire)
+	ActionManager.action_performed.emit()
 	for i in range(0, dmg_manager.max_dmg):
 		dmg_manager.apply_dmg(tick_dmg)
-		print("tick")
+		#print("tick")
 		await get_tree().create_timer(0.7).timeout
 	
 func on_max() -> void:
-	print("Max dmg") #debug statement
+	#print("Max dmg") #debug statement
 	nature_tiles.set_cell(cell_pos, -1, Vector2i(0,0), 0) #clears the tile on the nature layer
 	queue_free() #deletes the object
