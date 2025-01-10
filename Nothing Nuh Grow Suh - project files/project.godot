@@ -22,6 +22,8 @@ ToolManager="*res://Scripts/globals/tool_manager.gd"
 BuildManager="*res://Scripts/globals/build_manager.gd"
 PlantManager="*res://Scripts/globals/plant_manager.gd"
 ActionManager="*res://Scripts/globals/Action_Manager.gd"
+GameManager="*res://Scripts/globals/game_manager.gd"
+SceneManager="*res://Scripts/globals/scene_manager.gd"
 
 [debug]
 

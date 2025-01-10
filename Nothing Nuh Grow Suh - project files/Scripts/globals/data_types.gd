@@ -1,5 +1,11 @@
 class_name DataTypes
 
+enum map{
+	Jamaica,
+	Barbados,
+	Trinidad
+}
+
 enum Tools{
 	None,
 	AxeWood,
