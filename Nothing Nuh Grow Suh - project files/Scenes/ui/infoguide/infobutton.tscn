@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnw8ur1np8ejc"]
+
+[ext_resource type="Texture2D" uid="uid://btsalxges32s0" path="res://Scenes/ui/infoguide/Book_Sheet_64x64.png" id="1_lyxx4"]
+[ext_resource type="Script" path="res://Scenes/ui/infoguide/infobutton.gd" id="2_41e7s"]
+[ext_resource type="FontVariation" uid="uid://cexwr3uubbvec" path="res://Scenes/ui/zx_variation.tres" id="3_k3pda"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v057k"]
+atlas = ExtResource("1_lyxx4")
+region = Rect2(28, 14, 34, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5h37"]
+atlas = ExtResource("1_lyxx4")
+region = Rect2(514, 140, 60, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_232t5"]
+line_spacing = 0.0
+font = ExtResource("3_k3pda")
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_v057k")
+texture_pressed = SubResource("AtlasTexture_p5h37")
+stretch_mode = 0
+script = ExtResource("2_41e7s")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = 5.0
+offset_right = 21.0
+offset_bottom = 19.0
+scale = Vector2(2, 2)
+text = "i"
+label_settings = SubResource("LabelSettings_232t5")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

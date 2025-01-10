@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=25 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="2_fhmj7"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/nodes/inventory.gd" id="11_3obbe"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
 [ext_resource type="Script" path="res://Scenes/coin.gd" id="15_3c3is"]
+[ext_resource type="PackedScene" uid="uid://dnw8ur1np8ejc" path="res://Scenes/ui/infoguide/infobutton.tscn" id="17_d6ns1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtgcc"]
 texture = ExtResource("8_j11bx")
@@ -1506,3 +1507,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="GameScreen" parent="Player" groups=["ui"] instance=ExtResource("13_gcsel")]
+
+[node name="TextureButton" parent="Player/GameScreen" instance=ExtResource("17_d6ns1")]
+offset_left = 30.0
+offset_top = 100.0
+offset_right = 70.0
+offset_bottom = 148.0
+metadata/_edit_use_anchors_ = true

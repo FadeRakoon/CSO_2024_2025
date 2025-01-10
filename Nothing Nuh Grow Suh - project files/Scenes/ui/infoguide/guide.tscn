@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://sb5i6bkvx66q"]
+
+[ext_resource type="Texture2D" uid="uid://clnqd7u8j6luc" path="res://Assets packs/MPWSP01/character overworld/ow10.png" id="1_07ybo"]
+[ext_resource type="Script" path="res://Scripts/objects/interactable_component.gd" id="1_oeun7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxwp5"]
+atlas = ExtResource("1_07ybo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu0uy"]
+atlas = ExtResource("1_07ybo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2v0p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxwp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu0uy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="Guide" type="Node2D"]
+script = ExtResource("1_oeun7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a2v0p")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.547231
