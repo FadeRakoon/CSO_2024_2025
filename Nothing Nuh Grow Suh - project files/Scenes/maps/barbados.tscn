@@ -1,13 +1,17 @@
-[gd_scene load_steps=12 format=4 uid="uid://c70xxgcqdjscx"]
+[gd_scene load_steps=16 format=4 uid="uid://c70xxgcqdjscx"]
 
+[ext_resource type="Script" path="res://Scenes/coin.gd" id="1_57wnr"]
 [ext_resource type="PackedScene" uid="uid://dxymbt6xp324j" path="res://Scenes/map_manager.tscn" id="1_t1i8s"]
 [ext_resource type="Script" path="res://Scripts/nodes/map_manager.gd" id="2_gavj4"]
+[ext_resource type="PackedScene" uid="uid://kfof3a4sl4w2" path="res://Scenes/ui/Coin.tscn" id="2_on4xb"]
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="3_h3yqn"]
+[ext_resource type="PackedScene" uid="uid://buo8auxkalbwe" path="res://Scenes/ui/coin_count.tscn" id="3_s35kp"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="4_v1vo8"]
 [ext_resource type="Texture2D" uid="uid://biuojioalyqmn" path="res://Game elements Assets/Objects/Basic_Grass_Biom_things.png" id="5_hhq08"]
 [ext_resource type="PackedScene" uid="uid://bje1sfde48y4i" path="res://Scenes/objects/nature/large_tree.tscn" id="6_1272o"]
 [ext_resource type="PackedScene" uid="uid://dug5jkl2t0bsv" path="res://Scenes/objects/nature/small_tree.tscn" id="7_yueox"]
 [ext_resource type="PackedScene" uid="uid://dkw8ihjedq1lx" path="res://Scenes/player.tscn" id="8_wuem2"]
+[ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="9_lllt4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ams3"]
 texture = ExtResource("5_hhq08")
@@ -71,6 +75,34 @@ sources/6 = SubResource("TileSetScenesCollectionSource_vydu8")
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
+[node name="Coin" type="CanvasLayer" parent="."]
+script = ExtResource("1_57wnr")
+
+[node name="Cointexture" parent="Coin" instance=ExtResource("2_on4xb")]
+anchors_preset = -1
+anchor_right = 0.0451389
+anchor_bottom = 0.0771605
+offset_right = 53.0
+offset_bottom = 57.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinCount" parent="Coin" instance=ExtResource("3_s35kp")]
+anchors_preset = -1
+anchor_left = 0.136
+anchor_top = 0.078
+anchor_right = 0.136
+anchor_bottom = 0.078
+offset_left = -63.672
+offset_top = -17.544
+offset_right = 96.328
+offset_bottom = 50.456
+grow_horizontal = 0
+size_flags_horizontal = 2
+text = "99999"
+metadata/_edit_use_anchors_ = true
+
 [node name="Map_Manager" parent="." groups=["player_aoi"] instance=ExtResource("1_t1i8s")]
 script = ExtResource("2_gavj4")
 
@@ -129,3 +161,5 @@ limit_right = 1680
 limit_bottom = 1920
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="GameScreen" parent="Player" groups=["ui"] instance=ExtResource("9_lllt4")]
