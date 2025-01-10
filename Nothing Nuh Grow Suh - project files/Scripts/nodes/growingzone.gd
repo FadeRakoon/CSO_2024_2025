@@ -6,7 +6,7 @@ var plant: DataTypes.Plants #stores seed type from global variable
 var plantgrowing = false #initially plant is not growing hence false
 var plant_grown = false #plant grown is false initially
 @onready var player: Player = get_node("/root/Game/Player")
-@onready var map_manager: MapManager = get_parent() 
+@onready var map_manager = get_parent() 
 var cell_pos: Vector2i
 var plant_queue: Array[DataTypes.Plants] = []
 var interactable: bool = false

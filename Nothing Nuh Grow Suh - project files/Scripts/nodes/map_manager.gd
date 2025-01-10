@@ -24,8 +24,12 @@ var cell_pos: Vector2i
 var cell_source_id: int
 var local_cell_pos: Vector2
 var nature_sid: int
+var map_pollution : int
+var pollution_modifiers : int
 
 func _ready() -> void:
+	
+	map_pollution = 0
 	#loads the tiles and fills the dictionary when the scence loads
 	for cell in grass_layer.get_used_cells(): #get_used_cells() returns an interable of all the non empty tiles and we check each of them
 		local_cell_pos = grass_layer.map_to_local(cell)
@@ -82,4 +86,7 @@ func untill_cell() -> void:
 	remove_child(grow_zones_dict[cell_pos]) #removes the growth zone
 	grow_zones_dict.erase(cell_pos) #frees space in the dictionary
 		
-	
+
+func update_map_pollution():
+	for tile in tile_dict:
+		pass

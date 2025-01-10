@@ -2,7 +2,7 @@ class_name TileManager
 extends Node2D
 
 @onready var tile:Tile = get_parent() #gets a reference to the tile parent
-@onready var map_manager:MapManager = tile.get_parent() #gets a reference to the map manager node 
+@onready var map_manager = tile.get_parent() #gets a reference to the map manager node 
 @onready var cell_coords: Vector2i
 #tile state and info variables
 var plantable:bool
