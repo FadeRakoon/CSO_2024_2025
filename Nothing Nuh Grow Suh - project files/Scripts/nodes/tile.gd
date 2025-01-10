@@ -59,6 +59,8 @@ func _process(_delta: float) -> void:
 		#watering
 		if player.current_tool == DataTypes.Tools.WaterCrops:
 			tile_info.water()
+			ActionManager.action_performed.emit()
 		if player.current_tool == DataTypes.Tools.FertilizeCrops:
 			tile_info.fertilize()
+			ActionManager.action_performed.emit()
 		#print("cell coords: ",tile_info.cell_coords, "fertility: ",tile_info.fertility)

@@ -65,7 +65,6 @@ func plant_crop():
 func harvest_crop():
 	update_crop_rotation() 
 	plant_scene.harvest()
-	ActionManager.action_performed.emit()
 	reset_plant() #removes the plant when done
 
 func update_crop_rotation():
@@ -88,4 +87,5 @@ func reset_plant():
 	plantgrowing = false
 	plant_grown = false
 	plant_scene.set_crop(DataTypes.Plants.None)
+	ActionManager.action_performed.emit() #emits an action on harvest and ond destroying plant
 	#plant_animation.play("None")
