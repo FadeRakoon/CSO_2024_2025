@@ -40,13 +40,6 @@ theme_type_variation = &"GameMenuButton"
 action_mode = 0
 text = "START"
 
-[node name="SelectMap" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 58)
-layout_mode = 2
-theme_type_variation = &"GameMenuButton"
-action_mode = 0
-text = "SELECT MAP"
-
 [node name="Exit" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 58)
 layout_mode = 2
