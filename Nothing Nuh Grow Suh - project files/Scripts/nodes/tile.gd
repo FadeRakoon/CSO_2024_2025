@@ -12,6 +12,7 @@ var active_id = 0
 var clicked_id = 1
 var selected_id = 2
 
+
 func _ready() -> void:
 	visible = false #hides the tiles by default
 	cell_pos = tile_sprite.get_used_cells(0)[0]
@@ -50,6 +51,9 @@ func _on_area_exited(area: Area2D) -> void:
 #updates the appropriate states when the tile leaves the player's area of influence
 
 func _process(_delta: float) -> void:
+	var poll_ratio = tile_info.pollution / tile_info.max_pollution
+	tile_sprite.modulate = Color.WHITE.lerp(Color.DARK_MAGENTA, poll_ratio)
+
 	if not clicked:
 		if selected:
 			tile_sprite.set_cell(0, cell_pos, selected_id, Vector2i(0,0), 0)

@@ -20,6 +20,8 @@ var tile_dict = {} #tile dictionary to store where all the tiles are
 var grow_zones_dict = {}
 #may or may not need to include a grow zone dictionary to keep track of them? we see when we see
 
+var map_pollution : int
+var pollution_modifiers : int
 var mouse_pos: Vector2
 var cell_pos: Vector2i
 var cell_source_id: int
@@ -27,6 +29,9 @@ var local_cell_pos: Vector2
 var nature_sid: int
 
 func _ready() -> void:
+	
+	map_pollution = 0
+	pollution_modifiers = 0
 	#loads the tiles and fills the dictionary when the scence loads
 	for cell in grass_layer.get_used_cells(): #get_used_cells() returns an interable of all the non empty tiles and we check each of them
 		local_cell_pos = grass_layer.map_to_local(cell)
@@ -48,6 +53,9 @@ func _input(event: InputEvent) -> void:
 		get_cell_info() #obtains the cell information
 		check_cell() #checks the tile dictionary to see if the tile can be interacted with based on the player
 	
+func _process(delta):
+	update_map_pollution()
+
 func get_cell_info() -> void: #function to obtain the 
 	mouse_pos = grass_layer.get_local_mouse_position()
 	cell_pos = grass_layer.local_to_map(mouse_pos) #converts mouse coordinates to cell coordinates
@@ -103,3 +111,24 @@ func burn_grass(cell: Vector2i) -> void:
 	add_child(burnt_tile)
 	burnt_tile.burn()
 	till_cell(cell)
+	tile_dict[cell].tile_info.pollution += 50
+	
+	
+func get_map_pollution() -> int:
+	return map_pollution
+
+func set_map_pollution(poll_value) -> void:
+	map_pollution = poll_value
+	return
+
+func calc_pollution() -> int :
+	var cumul_pollution = 0
+	for t in tile_dict.keys():
+		cumul_pollution += tile_dict[t].tile_info.pollution
+	return cumul_pollution
+
+func update_map_pollution() -> int:
+	var new_poll = calc_pollution() + pollution_modifiers
+	map_pollution = new_poll
+	print(map_pollution)
+	return map_pollution
