@@ -15,12 +15,7 @@ https://cupnooble.itch.io/sprout-lands-ui-pack
 
 ^ (same Creator as Pack used for backgrounds to keep theme consistent)
 
-# Notes for first submission
-
-The project as of November 30, 2024:
-- Character movement functional
-- Scripts for various player actions functional, but yet to be implemented
-- Game map complete
+# Notes for judges
 
 Running the executable:
 - Download the files "Nothing Nuh Grow Suh.exe" and "Nothing Nuh Grow Suh.pck" in the game builds folder 
