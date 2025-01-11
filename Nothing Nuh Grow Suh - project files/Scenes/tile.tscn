@@ -20,6 +20,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player_aoi"]]
+visible = false
 shape = SubResource("RectangleShape2D_l8b6f")
 
 [node name="Tile Info" type="Node2D" parent="."]
