@@ -1,7 +1,7 @@
 extends Node
 
-var main_scene_path: String = "res://Scenes/ui/game_menu_screen.tscn"
-var main
+var main_scene_path: String = "" #path to main scene
+var main_scene_level_root_path: String = "" #path to main scene level root node
 
 
 # Called when the node enters the scene tree for the first time.

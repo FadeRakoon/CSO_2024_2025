@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://c70xxgcqdjscx"]
 
-[ext_resource type="Script" path="res://Scripts/nodes/coin.gd" id="1_57wnr"]
+[ext_resource type="Script" path="res://Scenes/coin.gd" id="1_57wnr"]
 [ext_resource type="PackedScene" uid="uid://dxymbt6xp324j" path="res://Scenes/map_manager.tscn" id="1_t1i8s"]
 [ext_resource type="Script" path="res://Scripts/nodes/map_manager.gd" id="2_gavj4"]
 [ext_resource type="PackedScene" uid="uid://kfof3a4sl4w2" path="res://Scenes/ui/Coin.tscn" id="2_on4xb"]
