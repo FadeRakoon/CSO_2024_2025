@@ -130,5 +130,5 @@ func calc_pollution() -> int :
 func update_map_pollution() -> int:
 	var new_poll = calc_pollution() + pollution_modifiers
 	map_pollution = new_poll
-	print(map_pollution)
+	#print(map_pollution)
 	return map_pollution
