@@ -13,7 +13,7 @@ func _ready() -> void:
 func fade_to_black() -> void:
 	layer  = 2
 	var tween = get_tree().create_tween()
-	tween.tween_property($ColorRect, "modulate:a", 0.5, fade_time)
+	tween.tween_property($ColorRect, "modulate:a", 0.7, fade_time)
 	await tween.finished
 
 func fade_to_clear() -> void:
