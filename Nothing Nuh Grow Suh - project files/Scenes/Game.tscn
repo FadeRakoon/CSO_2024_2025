@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=17 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="2_fhmj7"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://kfof3a4sl4w2" path="res://Scenes/ui/Coin.tscn" id="7_q8m0f"]
 [ext_resource type="PackedScene" uid="uid://buo8auxkalbwe" path="res://Scenes/ui/coin_count.tscn" id="8_h8nxo"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
-[ext_resource type="Script" path="res://Scenes/coin.gd" id="15_3c3is"]
+[ext_resource type="PackedScene" uid="uid://c4carka6ralva" path="res://Scenes/day_transition.tscn" id="13_w2ff0"]
+[ext_resource type="Script" path="res://Scripts/nodes/coin.gd" id="15_3c3is"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ams3"]
 texture = ExtResource("5_1kjfw")
@@ -78,6 +79,9 @@ sources/6 = SubResource("TileSetScenesCollectionSource_vydu8")
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+
+[node name="Day_Transition" parent="." instance=ExtResource("13_w2ff0")]
+layer = -1
 
 [node name="Coin" type="CanvasLayer" parent="."]
 script = ExtResource("15_3c3is")
@@ -151,7 +155,7 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." instance=ExtResource("3_7skrk")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(648, 328)
+position = Vector2(688, 272)
 current_tool = 2
 current_plant = 7
 

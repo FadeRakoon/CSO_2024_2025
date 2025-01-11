@@ -32,7 +32,6 @@ func _ready() -> void:
 		#initialises the current state
 	return
 
-
 func _process(delta : float) -> void:
 	if current_node_state:
 		current_node_state._on_process(delta)
