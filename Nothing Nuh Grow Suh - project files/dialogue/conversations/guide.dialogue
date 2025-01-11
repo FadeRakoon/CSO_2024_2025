@@ -1,0 +1,39 @@
+~ start
+Farmer Joe: [[Hi there!]] Welcome to the information panel, where you can learn more about farming techniques or look at our game guide. Press "SPACEBAR" to continue.
+Farmer Joe: What would you like to do? Click one of the options.
+- Game Instructions
+	Farmer Joe: There are a lot of things you can do in this game. For starters, you can plant crops and harvest crops (which increases your coin balance).
+	Farmer Joe: Click on the book icon at the top left of the screen below the coin counter to reveal this information tab again.
+- Farming Techniques in the Caribbean
+		Farmer Joe: Choose a farming technique.
+		- Slash and Burn
+			Farmer Joe: Slash and burn is when farmers cut down plants and trees in a small area and burn them. The ashes make ths soil rich and ready for planting. This gives the soil more nutrients.
+		- Crop Rotation
+			Farmer Joe: Crop rotation is when you plant different crops in the same spot instead of the same crop in the same spot. Doing this keeps the soil healthy and keeps pests and diseases away.
+		- Composting
+			Farmer Joe: You can make compost using food scraps and leaves, and the plant bits break down to make healthy soil called compost. Composting gives the soil nutrients for strong, healthy plants.
+		- Terracing
+			Farmer Joe: This is where flat steps are made on hillsides to grow crops. It stops rain from washing away the soil and helps crops grow better.
+		- Mulching
+			Farmer Joe: Mulching is when the soil is covered with dry leaves, grass or straw. Doing this keeps the soil cool, saves water and prevents weeds from growing too much.
+- Adverse Events
+		Farmer Joe: Choose an adverse event to hear more about:
+		- Hurricanes
+			Farmer Joe: Hurricanes are strong storms with heavy winds and rain that can destroy crops, flood fields and destroy farmers' homes and tools. You can protect your farm by planting trees to block the wind,
+			harvesting crops before the storm comes and putting equipment and animals in a safe space.
+		- Drought
+			Farmer Joe: A drought happens when it doesn't rain for a long time and the soil and plants dry out. Without water, plants don't grow as well. When drought happens you can save water using drip irrigation
+			(a way to water plants slowly), growing crops that can resist drought and mulching the soil to keep it moist.
+		- Flooding
+			Farmer Joe: Flooding can happen when there is too much rain and too much water on the land, which can damage crops, wash away seeds and make the soil less healthy. To combat flooding, proper drainage, planting on 
+			higher ground and avoiding planting during rainy seasons are helpful tips.
+		- Pests and Diseases
+			Farmer Joe: Bugs and diseases can harm plants and make it hard to grow more food that is safe to eat. You have to make sure to check plants regularly for bugs or spots, use natural pest control and rotate crops to keep the pests and
+			diseases away.
+		- Soil Erosion
+			Farmer Joe: Soil erosion happens when wind or rain washes way the top soil, which is the most fertile part for growing plants. You can plant small plants on hills to hold the soil in place,
+			use terracing and avoid cutting down too many trees, as strong tree roots help to hold the soil together.
+- Start again => start
+- End the conversation => END
+Farmer Joe: Happy farming! More information can be found at www.google.com.
+=> END
