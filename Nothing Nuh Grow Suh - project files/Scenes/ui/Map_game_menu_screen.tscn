@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://cr66q0gow8vnb"]
+
+[ext_resource type="Script" path="res://Scenes/ui/game_menu_screen.gd" id="1_8o7ru"]
+[ext_resource type="Theme" uid="uid://cwiv3vfpux3da" path="res://Scenes/ui/game_ui__theme.tres" id="2_vpxbl"]
+[ext_resource type="FontFile" uid="uid://xeide5dah3dj" path="res://Game elements Assets/ui/Minecraft Seven_2.ttf" id="3_oe2jh"]
+[ext_resource type="Texture2D" uid="uid://cxw75k57b7pup" path="res://Game elements Assets/ui/basic ui sprites.png" id="4_vcraa"]
+[ext_resource type="Texture2D" uid="uid://dd8m7f4fbk68q" path="res://Misc resources/map images/jamaica.png" id="5_28ymr"]
+[ext_resource type="Texture2D" uid="uid://qss4x3k14wsb" path="res://Misc resources/map images/barbados.png" id="6_bq8ie"]
+[ext_resource type="Texture2D" uid="uid://2c2d3rcu4kw4" path="res://Misc resources/map images/trinidad.png" id="7_llpwl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12m03"]
+atlas = ExtResource("4_vcraa")
+region = Rect2(367, 190, 34, 34)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgxjq"]
+texture = SubResource("AtlasTexture_12m03")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[node name="GameMenuScreen" type="CanvasLayer"]
+script = ExtResource("1_8o7ru")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vpxbl")
+theme_type_variation = &"MainMenuBack"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -107.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_vpxbl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="StartGameButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 58)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+action_mode = 0
+text = "START"
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.82606, 0.82606, 0.82606, 1)
+theme_override_fonts/font = ExtResource("3_oe2jh")
+theme_override_font_sizes/font_size = 16
+text = "SELECT MAP TO START"
+horizontal_alignment = 1
+
+[node name="Map Selection panel" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Jamaica_Map" type="Button" parent="Panel/MarginContainer/VBoxContainer/Map Selection panel"]
+custom_minimum_size = Vector2(100, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_oe2jh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fgxjq")
+toggle_mode = true
+text = "Jamaica"
+icon = ExtResource("5_28ymr")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Barbados_Map" type="Button" parent="Panel/MarginContainer/VBoxContainer/Map Selection panel"]
+custom_minimum_size = Vector2(100, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_oe2jh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fgxjq")
+toggle_mode = true
+text = "Barbados"
+icon = ExtResource("6_bq8ie")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Trinidad_Map" type="Button" parent="Panel/MarginContainer/VBoxContainer/Map Selection panel"]
+custom_minimum_size = Vector2(100, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_oe2jh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fgxjq")
+toggle_mode = true
+text = "Trinidad"
+icon = ExtResource("7_llpwl")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Exit" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 58)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+action_mode = 0
+text = "EXIT"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
