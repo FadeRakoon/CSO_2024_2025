@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="disaster" load_steps=2 format=3 uid="uid://cxn0sdi25wyjb"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/Disaster.gd" id="1_y5nm4"]
+
+[resource]
+script = ExtResource("1_y5nm4")
+pollution_threshold = 100
+disaster_name = "Climate Driven Flooding"
+disaster_description = "Widespread destruction of crops"
+dist_probability = 40
