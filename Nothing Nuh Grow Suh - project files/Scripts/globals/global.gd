@@ -12,3 +12,5 @@ var plant_inventory = {
 }
 
 var coin: int = 0 #stores the coin value
+
+const BURN_POLLUTION = 10

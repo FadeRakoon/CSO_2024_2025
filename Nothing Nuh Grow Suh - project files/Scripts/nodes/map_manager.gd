@@ -28,10 +28,17 @@ var cell_source_id: int
 var local_cell_pos: Vector2
 var nature_sid: int
 
+var disasters_dict = {
+	
+	"Flood" : load("res://Resource Files/Disasters/Flood.tres"),
+	"Acid" : load("res://Resource Files/Disasters/AcidRain.tres")
+}
+
 func _ready() -> void:
 	
 	map_pollution = 0
 	pollution_modifiers = 0
+	ActionManager.time_advanced.connect(_on_time_advanced)
 	#loads the tiles and fills the dictionary when the scence loads
 	for cell in grass_layer.get_used_cells(): #get_used_cells() returns an interable of all the non empty tiles and we check each of them
 		local_cell_pos = grass_layer.map_to_local(cell)
@@ -88,9 +95,7 @@ func check_cell():
 					cell = Vector2i(x,y) + cell_pos
 					if cell not in field_layer.get_used_cells():
 						burn_grass(cell)
-			
-				
-	
+
 func till_cell(cell: Vector2i) -> void:
 	nature_tiles.set_cell(cell, -1)
 	field_layer.set_cells_terrain_connect([cell], terrain_set, dirt_terrain, true) 
@@ -100,6 +105,41 @@ func till_cell(cell: Vector2i) -> void:
 	grow_zones_dict[cell] = grow_zone
 	add_child(grow_zone)
 	
+func _on_time_advanced():
+	
+	var possible_disasters : Array
+	var growth_enabled = true
+	
+	for cell in grass_layer.get_used_cells():
+		if field_layer.get_cell_source_id(cell) == 3 :
+			grow_zones_dict[cell].plant_scene.fertility = tile_dict[cell].tile_info.fertility
+			grow_zones_dict[cell].plant_scene.moisture = tile_dict[cell].tile_info.moisture
+	
+	for event in disasters_dict.keys():
+		if map_pollution > disasters_dict[event].pollution_threshold :
+			possible_disasters.append(disasters_dict[event])
+	
+	if not possible_disasters.is_empty(): 
+		var round_disaster = possible_disasters.pick_random()
+		if randi_range(0, 100) < round_disaster.dist_probability :
+			match round_disaster.disaster_name:
+				"Acid Rain" :
+					growth_enabled = false
+				"Flood" :
+					for zone in grow_zones_dict:
+						if randi_range(0, 100) < round_disaster.dist_probability :
+							grow_zones_dict[zone].reset_plant()
+	if not growth_enabled :
+		for zone in grow_zones_dict:
+			grow_zones_dict[zone].plant_scene.circumstance = false
+	else : 
+		for zone in grow_zones_dict:
+			grow_zones_dict[zone].plant_scene.circumstance = true
+	
+	
+
+
+
 func untill_cell(cell: Vector2i) -> void:
 	field_layer.set_cell(cell, -1) #removes the tile
 	remove_child(grow_zones_dict[cell]) #removes the growth zone
@@ -111,7 +151,7 @@ func burn_grass(cell: Vector2i) -> void:
 	add_child(burnt_tile)
 	burnt_tile.burn()
 	till_cell(cell)
-	tile_dict[cell].tile_info.pollution += 50
+	tile_dict[cell].tile_info.pollution += Global.BURN_POLLUTION
 	
 	
 func get_map_pollution() -> int:

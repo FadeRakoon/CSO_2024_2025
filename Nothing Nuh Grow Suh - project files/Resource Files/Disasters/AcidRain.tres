@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="disaster" load_steps=2 format=3 uid="uid://cvd08gme2riiy"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/Disaster.gd" id="1_rekuj"]
+
+[resource]
+script = ExtResource("1_rekuj")
+pollution_threshold = 100
+disaster_name = "Acid Rain"
+disaster_description = "Chance that crops will not grow today"
+dist_probability = 40
