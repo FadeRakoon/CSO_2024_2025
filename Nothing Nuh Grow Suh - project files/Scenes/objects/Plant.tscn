@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1q05y43h6sd5"]
 
-[ext_resource type="Script" path="res://Scenes/objects/plants.gd" id="1_6xdo4"]
+[ext_resource type="Script" path="res://Scripts/nodes/plants.gd" id="1_6xdo4"]
 [ext_resource type="SpriteFrames" uid="uid://dxv6266tu2d2t" path="res://Collections/crops.tres" id="2_ithvm"]
 
 [node name="Plant" type="Node2D"]

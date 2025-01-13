@@ -89,7 +89,7 @@ animations = [{
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2it2o"]
-size = Vector2(16, 25)
+size = Vector2(16, 29)
 
 [node name="Door" type="StaticBody2D"]
 y_sort_enabled = true
@@ -107,5 +107,7 @@ shape = SubResource("RectangleShape2D_ctxla")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
 z_index = 1
-position = Vector2(0, 2.5)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_2it2o")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

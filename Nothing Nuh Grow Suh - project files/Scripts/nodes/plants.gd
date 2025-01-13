@@ -27,7 +27,7 @@ func set_crop(plant_type : DataTypes.Plants):
 	plant_instance = load(resource_path).duplicate()
 	
 	#bind passes a variable that will be used as the argument when a signal's observer function is called
-	ActionManager.time_advanced.connect(grow_plant.bind(growth_factor))
+	ActionManager.night.connect(grow_plant.bind(growth_factor))
 	#Set animation and initialise
 	sprite.animation = plant_instance.plant_name
 	sprite.frame = 0
@@ -36,7 +36,6 @@ func set_crop(plant_type : DataTypes.Plants):
 	
 	 
 func grow_plant(growth_mag : int):
-	
 	update_can_grow()
 	if can_grow and plant_instance:
 			var days_grown = plant_instance.get_days_grown()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=20 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://c4carka6ralva" path="res://Scenes/day_transition.tscn" id="1_hmsbn"]
+[ext_resource type="Gradient" uid="uid://dniqajjicx3pr" path="res://Collections/day_night_gradient.tres" id="2_1im6a"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="2_fhmj7"]
 [ext_resource type="PackedScene" uid="uid://dkw8ihjedq1lx" path="res://Scenes/player.tscn" id="3_7skrk"]
 [ext_resource type="PackedScene" uid="uid://dxymbt6xp324j" path="res://Scenes/map_manager.tscn" id="4_pcyfr"]
@@ -14,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
 [ext_resource type="Script" path="res://Scripts/nodes/coin.gd" id="15_3c3is"]
 [ext_resource type="PackedScene" uid="uid://dnw8ur1np8ejc" path="res://Scenes/ui/infoguide/infobutton.tscn" id="17_d6ns1"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ksjt4"]
+gradient = ExtResource("2_1im6a")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ams3"]
 texture = ExtResource("5_1kjfw")
@@ -82,8 +86,8 @@ sources/6 = SubResource("TileSetScenesCollectionSource_vydu8")
 y_sort_enabled = true
 
 [node name="Day Transition" parent="." instance=ExtResource("1_hmsbn")]
-layer = -1
-fade_time = 1.5
+transition_gradient = SubResource("GradientTexture1D_ksjt4")
+fade_time = 4.0
 
 [node name="Coin" type="CanvasLayer" parent="."]
 script = ExtResource("15_3c3is")
@@ -158,7 +162,7 @@ metadata/_edit_lock_ = true
 z_index = 1
 y_sort_enabled = true
 position = Vector2(688, 264)
-current_tool = 4
+current_tool = 2
 current_plant = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

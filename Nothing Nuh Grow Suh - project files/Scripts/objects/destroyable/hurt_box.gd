@@ -39,10 +39,12 @@ func _process(_delta: float) -> void:
 		var dmg_value = DataTypes.tool_dmg.get(tool)
 		if tool == DataTypes.Tools.BurnWood:
 			if dmg_value: #checks if the associated tool has a damage value 
-				burn.emit(dmg_value)
+				if ActionManager.has_actions():	
+					burn.emit(dmg_value)
 		elif (required_tool and tool == required_tool) or not required_tool:
 			#looks up the damage value of the tool 
 			if dmg_value: #checks if the associated tool has a damage value 
-				hurt.emit(dmg_value) #emits the hurt signal along with how much damage the tool did
+				if ActionManager.has_actions():
+					hurt.emit(dmg_value) #emits the hurt signal along with how much damage the tool did
 				#whatever function was connected to this signal (on_hurt in the object script) will have the damage value passed to it
 	

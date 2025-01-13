@@ -1,14 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4carka6ralva"]
+[gd_scene load_steps=4 format=3 uid="uid://c4carka6ralva"]
 
 [ext_resource type="Script" path="res://Scripts/nodes/day_transition.gd" id="1_4mdng"]
+[ext_resource type="Gradient" uid="uid://dniqajjicx3pr" path="res://Collections/day_night_gradient.tres" id="2_wfyku"]
 
-[node name="Day Transition" type="CanvasLayer"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l5beg"]
+gradient = ExtResource("2_wfyku")
+
+[node name="Day Transition" type="CanvasModulate"]
 script = ExtResource("1_4mdng")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+transition_gradient = SubResource("GradientTexture1D_l5beg")
