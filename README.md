@@ -28,6 +28,8 @@ Viewing project files:
 - Click the "Start Godot Editor" button
 - All the scripts, scenes and assets are now viewable
 
+Please see the link to a Google Document with images to follow along to run our project: https://docs.google.com/document/d/1eon3dxvcbDPeA4oCUx00yFeRWksgeFu8A_YzMBjm2Ww/edit?usp=sharing
+
 # Technical Documentation
 
 Please see the link to a Google Document containing more information on our project: https://docs.google.com/document/d/16Pj2TyGX3ypZaMqVnBPXmOSDebkD5SU7TBVSSJI8_gk/edit?usp=sharing
