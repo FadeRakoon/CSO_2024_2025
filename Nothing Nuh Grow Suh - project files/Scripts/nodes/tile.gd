@@ -62,9 +62,11 @@ func _process(_delta: float) -> void:
 	if selected and Input.is_action_just_pressed("tile_select"):
 		#watering
 		if player.current_tool == DataTypes.Tools.WaterCrops:
-			tile_info.water()
-			ActionManager.action_performed.emit()
+			if ActionManager.has_actions():
+				tile_info.water()
+				ActionManager.action_performed.emit()
 		if player.current_tool == DataTypes.Tools.FertilizeCrops:
-			tile_info.fertilize()
-			ActionManager.action_performed.emit()
+			if ActionManager.has_actions():	
+				tile_info.fertilize()
+				ActionManager.action_performed.emit()
 		#print("cell coords: ",tile_info.cell_coords, "fertility: ",tile_info.fertility)

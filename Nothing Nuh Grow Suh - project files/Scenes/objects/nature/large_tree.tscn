@@ -29,6 +29,7 @@ position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_1pmij")
 
 [node name="HurtBox" parent="." instance=ExtResource("3_u8kkd")]
+scale = Vector2(1.00752, 1)
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]

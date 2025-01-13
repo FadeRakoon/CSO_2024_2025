@@ -38,7 +38,7 @@ func _ready() -> void:
 	
 	map_pollution = 0
 	pollution_modifiers = 0
-	ActionManager.time_advanced.connect(_on_time_advanced)
+	ActionManager.night.connect(_on_time_advanced)
 	#loads the tiles and fills the dictionary when the scence loads
 	for cell in grass_layer.get_used_cells(): #get_used_cells() returns an interable of all the non empty tiles and we check each of them
 		local_cell_pos = grass_layer.map_to_local(cell)
@@ -75,7 +75,7 @@ func check_cell():
 	var grow_zone = grow_zones_dict.get(cell_pos)
 	var plant_growing: bool = grow_zone.plantgrowing or grow_zone.plant_grown if grow_zone else false
 	var has_tree: bool = nature_tiles.get_cell_source_id(cell_pos) == 6
-	if tile and tile.selected and tile.selectable and not has_tree:
+	if tile and tile.selected and tile.selectable and not has_tree and ActionManager.has_actions():
 		if player.current_tool == DataTypes.Tools.TillGrass: 
 			#checks if the tile exists and is interactable 
 			if not plant_growing and field_layer.get_cell_source_id(cell_pos) == 3: #tests for dirt
