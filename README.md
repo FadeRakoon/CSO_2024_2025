@@ -25,6 +25,7 @@ Viewing project files:
 - Download the "Nothing Nuh Grow Suh - project files" zip file 
 - Go to this link: https://editor.godotengine.org/releases/latest/
 - Upload the zip folder to the Preload project ZIP area
+- Click the "Start Godot Editor" button
 - All the scripts, scenes and assets are now viewable
 
 # Technical Documentation
