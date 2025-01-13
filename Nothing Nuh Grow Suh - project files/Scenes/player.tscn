@@ -416,7 +416,7 @@ debug_color = Color(0.548812, 0.492214, 0.735062, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4i43s")
-animation = &"chop_back"
+animation = &"water_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
