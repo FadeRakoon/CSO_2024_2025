@@ -1,19 +1,19 @@
 extends CanvasLayer
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#pass # Replace with function body.
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+	#pass
 
 
 func _on_start_game_button_pressed() -> void:
-	pass # Replace with function body.
-
+	GameManager.start_game()
+	queue_free()
 
 func _on_exit_pressed() -> void:
-	pass # Replace with function body.
+	GameManager.exit_game()

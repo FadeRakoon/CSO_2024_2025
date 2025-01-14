@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cr66q0gow8vnb"]
 
-[ext_resource type="Script" path="res://Scenes/ui/game_menu_screen.gd" id="1_8o7ru"]
+[ext_resource type="Script" path="res://Scenes/ui/map_game_menu_screen.gd" id="1_jekdt"]
 [ext_resource type="Theme" uid="uid://cwiv3vfpux3da" path="res://Scenes/ui/game_ui__theme.tres" id="2_vpxbl"]
 [ext_resource type="FontFile" uid="uid://xeide5dah3dj" path="res://Game elements Assets/ui/Minecraft Seven_2.ttf" id="3_oe2jh"]
 [ext_resource type="Texture2D" uid="uid://cxw75k57b7pup" path="res://Game elements Assets/ui/basic ui sprites.png" id="4_vcraa"]
@@ -19,8 +19,8 @@ texture_margin_top = 1.0
 texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 
-[node name="GameMenuScreen" type="CanvasLayer"]
-script = ExtResource("1_8o7ru")
+[node name="GameMapMenuScreen" type="CanvasLayer"]
+script = ExtResource("1_jekdt")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -117,4 +117,7 @@ action_mode = 0
 text = "EXIT"
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Map Selection panel/Jamaica_Map" to="." method="_on_jamaica_map_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Map Selection panel/Barbados_Map" to="." method="_on_barbados_map_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Map Selection panel/Trinidad_Map" to="." method="_on_trinidad_map_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
