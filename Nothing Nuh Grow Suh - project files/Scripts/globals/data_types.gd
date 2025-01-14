@@ -1,11 +1,11 @@
 class_name DataTypes
 
-enum map{
-	None,
-	Jamaica,
-	Barbados,
-	Trinidad
-}
+#enum map{
+	#None,
+	#Jamaica,
+	#Barbados,
+	#Trinidad
+#}
 
 enum Tools{
 	None,

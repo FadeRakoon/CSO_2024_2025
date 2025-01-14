@@ -12,24 +12,23 @@ func show_game_menu_screen() ->void:
 	get_tree().root.add_child(game_menu_screen_instance)
 
 
-var selected_map: DataTypes.map = DataTypes.map.None
-signal map_selected (map: DataTypes.map) #declaration for signal to get what button user pressed on map selection
-func Map_select (map: DataTypes.map) -> void:
-	map_selected.emit(map)
-	selected_map = map
+#var selected_map: DataTypes.map = DataTypes.map.None
+#signal map_selected (map: DataTypes.map) #declaration for signal to get what button user pressed on map selection
+#func Map_select (map: DataTypes.map) -> void:
+	#map_selected.emit(map)
+	#selected_map = map
 
 
 func start_game() -> void:
-	#laod map selection after player presses start
-	SceneManager.load_mapSelect_scene_container()
-	
 	#load main scene
+	queue_free()
 	SceneManager.load_main_scene_container()
-	
+	##load map selection after player presses start
+	#SceneManager.load_mapSelect_scene_container()
 	#Map_select()
  
-	print ("game: ",DataTypes.map.keys()[selected_map])
-	var map:String = DataTypes.map.keys()[selected_map] #string for map chosen from map selection
+	#print ("game: ",DataTypes.map.keys()[selected_map])
+	#var map:String = DataTypes.map.keys()[selected_map] #string for map chosen from map selection
 	
 	#various failed attempts at fixing this  (dont remove)
 	#match selected_map:
@@ -42,7 +41,8 @@ func start_game() -> void:
 	#print ("",map)
 	#assert (selected_map > 0)
 	
-	SceneManager.load_level(map)
+	SceneManager.load_level()
+	#SceneManager.load_level(map)
 
 	
 func exit_game() -> void:

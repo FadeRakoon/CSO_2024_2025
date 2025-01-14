@@ -18,10 +18,13 @@ func _on_exit_pressed() -> void:
 
 
 func _on_jamaica_map_pressed() -> void:
-	GameManager.Map_select(DataTypes.map.Jamaica)
+	#GameManager.Map_select(DataTypes.map.Jamaica)
+	SceneManager.Map_select("Jamaica")
 
 func _on_barbados_map_pressed() -> void:
-	GameManager.Map_select(DataTypes.map.Barbados)
+	#GameManager.Map_select(DataTypes.map.Barbados)
+	SceneManager.Map_select("Barbados")
 
 func _on_trinidad_map_pressed() -> void:
-	GameManager.Map_select(DataTypes.map.Trinidad)
+	#GameManager.Map_select(DataTypes.map.Trinidad)
+	SceneManager.Map_select("Trinidad")
