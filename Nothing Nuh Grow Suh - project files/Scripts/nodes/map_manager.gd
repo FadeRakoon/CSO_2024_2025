@@ -29,6 +29,7 @@ var cell_pos: Vector2i
 var cell_source_id: int
 var local_cell_pos: Vector2
 var nature_sid: int
+var is_small: bool
 
 var disasters_dict = {
 	
@@ -72,14 +73,15 @@ func get_cell_info() -> void: #function to obtain the
 	local_cell_pos = grass_layer.map_to_local(cell_pos) #stores cell coordinates as real coordinates( may be useful later) #can confirm was useful later :D
 	nature_sid = nature_tiles.get_cell_source_id(cell_pos)
 
+func has_tree(cell) -> bool:
+	return nature_tiles.get_cell_source_id(cell) == 6 or cell in tree_zones_dict
+
 func check_cell():
 	var tile = tile_dict.get(cell_pos) #looks up the tile
 	var tree_zone = tree_zones.instantiate()
 	var grow_zone = grow_zones_dict.get(cell_pos)
 	var plant_growing: bool = grow_zone.plantgrowing or grow_zone.plant_grown if grow_zone else false
-	var has_tree: bool = nature_tiles.get_cell_source_id(cell_pos) == 6 or cell_pos in tree_zones_dict
-	if tile and tile.selected and tile.selectable and not has_tree and ActionManager.has_actions():
-		
+	if tile and tile.selected and tile.selectable and not has_tree(cell_pos) and ActionManager.has_actions():
 		if player.current_tool == DataTypes.Tools.TillGrass: 
 			#checks if the tile exists and is interactable 
 			if not cell_pos in tree_zones_dict:
@@ -98,21 +100,36 @@ func check_cell():
 				ActionManager.action_performed.emit()
 				burn_grass(cell_pos)
 			await get_tree().create_timer(0.8).timeout
-			for x in [-1,0,1]:
-				for y in [-1,0,1]:
+			for x in range(-2, 3): #iterates from -2 to 2
+				for y in  range(-2, 3):
 					cell = Vector2i(x,y) + cell_pos
-					if cell not in field_layer.get_used_cells() and cell in tile_dict:
+					if cell not in field_layer.get_used_cells() and cell in tile_dict and not (abs(x) == 2 or abs(y) == 2) and not has_tree(cell):#applies burn efect within 1 cell radius
 						burn_grass(cell)
+					if cell in tile_dict:
+						tile_dict[cell].tile_info.pollution += Global.BURN_POLLUTION
 						
-		elif player.current_tool == DataTypes.Tools.PlantCrops and player.current_plant == DataTypes.Plants.Trees and not cell_pos in tree_zones_dict and not cell_pos in grow_zones_dict:
-			ActionManager.action_performed.emit()
-			tree_zone.position = local_cell_pos
-			add_child(tree_zone)
-			tree_zone.free.connect(remove_tree.bind(tree_zone, cell_pos))
-			tree_zones_dict[cell_pos] = tree_zone
-			
-			
+		elif player.current_tool == DataTypes.Tools.PlantCrops and player.current_plant == DataTypes.Plants.Trees and not (cell_pos in tree_zones_dict or cell_pos in grow_zones_dict):
+			const small_rate = 0.5
+			is_small = randf() < small_rate
+			if CostManager.can_afford_plant(player.current_plant, is_small):
+				ActionManager.action_performed.emit()
+				tree_zone.position = local_cell_pos
+				add_child(tree_zone)
+				tree_zone.free.connect(remove_tree.bind(tree_zone, cell_pos))
+				tree_zone.burn.connect(on_tree_burn.bind(cell_pos))
+				tree_zones_dict[cell_pos] = tree_zone
+
+
+func on_tree_burn(tree_pos):
+	var cell: Vector2i
+	for x in range(-1, 2): #iterates from -2 to 2
+		for y in  range(-1, 2):
+			cell = Vector2i(x,y) + tree_pos
+			if cell in tile_dict:
+				tile_dict[cell].tile_info.pollution += Global.BURN_POLLUTION
+
 func remove_tree(tree_zone, cell: Vector2i):
+	print("Got here")
 	remove_child(tree_zone)	
 	tree_zones_dict.erase(cell_pos)
 	tree_zone.queue_free()
@@ -169,7 +186,6 @@ func burn_grass(cell: Vector2i) -> void:
 	add_child(burnt_tile)
 	burnt_tile.burn()
 	till_cell(cell)
-	tile_dict[cell].tile_info.pollution += Global.BURN_POLLUTION
 	tile_dict[cell].tile_info.fertility += Global.BURN_FERTILITY
 	
 func get_map_pollution() -> int:

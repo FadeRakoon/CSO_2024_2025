@@ -13,7 +13,7 @@ var cell_pos: Vector2i
 var local_pos: Vector2
 var fires = preload("res://Scenes/objects/fire_small.tscn")
 signal max
-#declares nodes for the nature tilemap layer of the game which holds all the destroyable objects and variables for the position of the object
+signal burn
 
 func _ready() -> void:
 	#initialises variables
@@ -43,6 +43,7 @@ func on_hurt(hit_dmg: int) -> void:
 	#this chunk of code changes the shake_intensity parameter of the shader and sets it back to 0 after 1 second
 	
 func on_burn(tick_dmg: int) -> void:
+	burn.emit()
 	modulate = Color(0.5, 0.5, 0.5, 1.0)
 	var fire = fires.instantiate()
 	fire.position = Vector2(0,4)

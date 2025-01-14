@@ -10,3 +10,4 @@ growth_time = 5
 min_fertility = 10
 min_moist = 5
 sell_value = 0
+cost = 15

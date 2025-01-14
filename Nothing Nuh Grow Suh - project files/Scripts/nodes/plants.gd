@@ -28,7 +28,10 @@ func set_crop(plant_type : DataTypes.Plants):
 	plant_instance = load(resource_path).duplicate()
 	
 	#bind passes a variable that will be used as the argument when a signal's observer function is called
+	Global.coin -= plant_instance.cost
 	ActionManager.night.connect(grow_plant.bind(growth_factor))
+	ActionManager.time_advanced.connect(update_can_grow)
+	ActionManager.time_advanced.connect(update_plant_growth)
 	#Set animation and initialise
 	sprite.animation = plant_instance.plant_name
 	sprite.frame = 0
@@ -37,7 +40,6 @@ func set_crop(plant_type : DataTypes.Plants):
 	
 	 
 func grow_plant(growth_mag : int):
-	update_can_grow()
 	if can_grow and plant_instance:
 			var days_grown = plant_instance.get_days_grown()
 			plant_instance.set_days_grown(days_grown + growth_mag)
@@ -55,12 +57,22 @@ func set_can_grow(value : bool):
 	can_grow = value
 	
 func update_can_grow():
-	fertility = get_parent().tile_placed.tile_info.fertility
-	moisture = get_parent().tile_placed.tile_info.moisture
-	pollution = get_parent().tile_placed.tile_info.pollution
-	set_can_grow(fertility >= plant_instance.min_fertility and moisture >= plant_instance.min_moist and circumstance and pollution < 40)
-	return
+	if get_parent().plantgrowing:
+		fertility = get_parent().tile_placed.tile_info.fertility
+		moisture = get_parent().tile_placed.tile_info.moisture
+		pollution = get_parent().tile_placed.tile_info.pollution
+		print("plant moisture: ", moisture)
+		set_can_grow(fertility >= plant_instance.min_fertility and moisture >= plant_instance.min_moist and circumstance and pollution < 40)
+		return
+
+func update_plant_growth():
+	if get_parent().plantgrowing:
+		print("update moisture: ", moisture)
+	
+func calculate_sell_loss():
+	pass
 	
 func _process(delta: float) -> void:
 	if plant_instance:
 		grown = plant_instance.is_fully_grown()
+	

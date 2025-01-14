@@ -14,16 +14,16 @@ var plant_instance : Resource
 var small_tree
 var large_tree
 signal free
+signal burn
 var is_small: bool
 
 const small_trees = preload("res://Scenes/objects/nature/small_tree.tscn")
 const large_trees = preload("res://Scenes/objects/nature/large_tree.tscn")
-const small_rate = 0.5
 
 func _ready() -> void:
 	static_body_2d.collision_layer = 1
-	is_small = randf() < small_rate
 	var map:MapManager = get_parent()
+	is_small = map.is_small
 	tile_placed = map.tile_dict[map.cell_pos]
 	set_can_grow(true)
 	#File path for the plant resource "Resource Folder + Name of the Plant + Resource File Extension"
@@ -32,6 +32,7 @@ func _ready() -> void:
 	can_grow = true
 	#load and create a copy of the resource
 	plant_instance = load(resource_path).duplicate()
+	Global.coin -= plant_instance.cost
 	
 	#bind passes a variable that will be used as the argument when a signal's observer function is called
 	ActionManager.night.connect(grow_plant.bind(growth_factor))
@@ -48,12 +49,13 @@ func grow_plant(growth_mag : int):
 	if can_grow and plant_instance:
 		var days_grown = plant_instance.get_days_grown()
 		plant_instance.set_days_grown(days_grown + growth_mag)
-		sprite.frame = plant_instance.get_current_growth_frame(frame_count) - 1
+		sprite.frame = plant_instance.get_current_growth_frame(frame_count) 
 		#print(sprite.frame)
 		if sprite.frame == 2:
 			small_tree = small_trees.instantiate()
 			add_child(small_tree)
 			small_tree.max.connect(on_max)
+			small_tree.burn.connect(on_burn)
 			static_body_2d.collision_layer = 2
 		elif small_tree:
 			remove_child(small_tree)
@@ -62,6 +64,7 @@ func grow_plant(growth_mag : int):
 			large_tree = large_trees.instantiate()
 			add_child(large_tree)
 			large_tree.max.connect(on_max)
+			large_tree.burn.connect(on_burn)
 			static_body_2d.collision_layer = 2
 		elif large_tree:
 			remove_child(large_tree)
@@ -80,4 +83,6 @@ func update_can_grow():
 func on_max():
 	free.emit()
 		
+func on_burn():
+	burn.emit()
 		

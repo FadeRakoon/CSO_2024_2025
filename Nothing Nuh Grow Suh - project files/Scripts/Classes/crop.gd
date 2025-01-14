@@ -18,6 +18,7 @@ signal plant_destroyed
 @export var min_fertility : int
 @export var min_moist : int
 @export var sell_value : int
+@export var cost : int
 
 func is_fully_grown() -> bool :
 	return days_grown >= growth_time
@@ -27,7 +28,7 @@ func can_grow(tile_moist, tile_fert):
 
 func get_current_growth_frame(frame_count : int):
 	#print(days_grown,"/",frame_count,"/",growth_time)
-	return round(days_grown * (float(frame_count) / growth_time))
+	return round(days_grown * (float(frame_count) / growth_time)) - 1
 
 func set_days_grown(days):
 	days_grown = days
