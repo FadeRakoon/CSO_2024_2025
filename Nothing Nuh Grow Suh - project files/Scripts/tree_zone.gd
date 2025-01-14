@@ -18,7 +18,7 @@ var is_small: bool
 
 const small_trees = preload("res://Scenes/objects/nature/small_tree.tscn")
 const large_trees = preload("res://Scenes/objects/nature/large_tree.tscn")
-const small_rate = 0.65
+const small_rate = 0.5
 
 func _ready() -> void:
 	static_body_2d.collision_layer = 1
@@ -48,7 +48,8 @@ func grow_plant(growth_mag : int):
 	if can_grow and plant_instance:
 		var days_grown = plant_instance.get_days_grown()
 		plant_instance.set_days_grown(days_grown + growth_mag)
-		sprite.frame = plant_instance.get_current_growth_frame(frame_count)
+		sprite.frame = plant_instance.get_current_growth_frame(frame_count) - 1
+		#print(sprite.frame)
 		if sprite.frame == 2:
 			small_tree = small_trees.instantiate()
 			add_child(small_tree)

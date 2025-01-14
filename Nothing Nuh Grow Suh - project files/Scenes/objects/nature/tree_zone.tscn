@@ -59,9 +59,7 @@ shape = SubResource("RectangleShape2D_o838p")
 y_sort_enabled = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_rmqx8")
-animation = &"large"
-frame = 1
-frame_progress = 0.965062
+animation = &"small"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 y_sort_enabled = true

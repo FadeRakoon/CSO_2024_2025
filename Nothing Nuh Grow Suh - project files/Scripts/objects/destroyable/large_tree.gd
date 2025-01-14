@@ -48,8 +48,9 @@ func on_burn(tick_dmg: int) -> void:
 	fire.position = Vector2(0,4)
 	add_child(fire)
 	ActionManager.action_performed.emit()
+	var tree = get_tree()
 	for i in range(0, dmg_manager.max_dmg):
-		var timer  = get_tree().create_timer(0.7)
+		var timer = tree.create_timer(0.7)
 		dmg_manager.apply_dmg(tick_dmg)
 		#print("tick")
 		await timer.timeout

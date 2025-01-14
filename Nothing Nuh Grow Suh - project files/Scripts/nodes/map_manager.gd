@@ -77,7 +77,7 @@ func check_cell():
 	var tree_zone = tree_zones.instantiate()
 	var grow_zone = grow_zones_dict.get(cell_pos)
 	var plant_growing: bool = grow_zone.plantgrowing or grow_zone.plant_grown if grow_zone else false
-	var has_tree: bool = nature_tiles.get_cell_source_id(cell_pos) == 6 and not cell_pos in tree_zones_dict
+	var has_tree: bool = nature_tiles.get_cell_source_id(cell_pos) == 6 or cell_pos in tree_zones_dict
 	if tile and tile.selected and tile.selectable and not has_tree and ActionManager.has_actions():
 		
 		if player.current_tool == DataTypes.Tools.TillGrass: 
