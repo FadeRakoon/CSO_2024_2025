@@ -76,7 +76,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_oe2jh")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fgxjq")
-toggle_mode = true
 text = "Jamaica"
 icon = ExtResource("5_28ymr")
 icon_alignment = 1
@@ -89,7 +88,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_oe2jh")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fgxjq")
-toggle_mode = true
 text = "Barbados"
 icon = ExtResource("6_bq8ie")
 icon_alignment = 1
@@ -102,7 +100,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_oe2jh")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fgxjq")
-toggle_mode = true
 text = "Trinidad"
 icon = ExtResource("7_llpwl")
 icon_alignment = 1
@@ -117,7 +114,4 @@ action_mode = 0
 text = "EXIT"
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Map Selection panel/Jamaica_Map" to="." method="_on_jamaica_map_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Map Selection panel/Barbados_Map" to="." method="_on_barbados_map_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Map Selection panel/Trinidad_Map" to="." method="_on_trinidad_map_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
