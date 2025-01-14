@@ -1,13 +1,14 @@
 extends CanvasLayer
 
+
 # Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#pass # Replace with function body.
-#
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
 
 
 func _on_start_game_button_pressed() -> void:
@@ -18,10 +19,10 @@ func _on_exit_pressed() -> void:
 
 
 func _on_jamaica_map_pressed() -> void:
-	GameManager.Map_select(DataTypes.map.Jamaica)
+	GameManager.Map = "Jamaica" 
 
 func _on_barbados_map_pressed() -> void:
-	GameManager.Map_select(DataTypes.map.Barbados)
+	GameManager.Map = "Barbados"
 
 func _on_trinidad_map_pressed() -> void:
-	GameManager.Map_select(DataTypes.map.Trinidad)
+	GameManager.Map = "Trinidad"
