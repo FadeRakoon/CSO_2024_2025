@@ -52,6 +52,7 @@ func load_level() -> void:
 	print ("level check1: ",level)
 	print ("map check1: ",selected_map)
 	load_mapSelect_scene_container()
+	queue_free()
 	#await map_selected
 	
 	#match selected_map:
