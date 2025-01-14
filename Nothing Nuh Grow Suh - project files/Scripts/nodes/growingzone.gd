@@ -50,7 +50,7 @@ func plant_crop():
 	#checks first if the tile is occupied by either another plant or something on the nature tile
 		if tile_placed.tile_info.fertility <= 0:
 			print("soil infertile cannot plant")
-		elif player.current_plant != DataTypes.Plants.None:
+		elif player.current_plant != DataTypes.Plants.None and player.current_plant!=DataTypes.Plants.Trees:
 			#plant a crop if the soil is fertile and a plant is avaiable to be planted
 			
 			#plant_animation.play(str(DataTypes.Plants.find_key(plant)))

@@ -13,6 +13,10 @@ collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_u6jbh")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.535156, 1, 0.814789, 1)
+
 [node name="Tile Sprite" type="TileMap" parent="."]
 position = Vector2(-8, 8)
 tile_set = ExtResource("2_n4fod")

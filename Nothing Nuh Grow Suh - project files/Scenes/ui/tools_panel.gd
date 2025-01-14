@@ -31,4 +31,5 @@ func _on_tool_watering_can_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
 
 func _on_tool_build_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.Build)
+	ToolManager.select_tool(DataTypes.Tools.PlantCrops)
+	PlantManager.select_plant(DataTypes.Plants.Trees)

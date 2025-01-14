@@ -26,7 +26,7 @@ func can_grow(tile_moist, tile_fert):
 	return tile_moist >= min_moist and tile_fert >= min_fertility
 
 func get_current_growth_frame(frame_count : int):
-	return round(days_grown * (frame_count / growth_time))
+	return round(days_grown * (float(frame_count) / growth_time))
 
 func set_days_grown(days):
 	days_grown = days

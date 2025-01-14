@@ -9,6 +9,7 @@ var grown: bool
 var circumstance : bool
 var fertility : int
 var moisture : int 
+var pollution: int
 
 func set_crop(plant_type : DataTypes.Plants):
 	
@@ -54,7 +55,10 @@ func set_can_grow(value : bool):
 	can_grow = value
 	
 func update_can_grow():
-	set_can_grow(fertility >= plant_instance.min_fertility and moisture >= plant_instance.min_moist and circumstance)
+	fertility = get_parent().tile_placed.tile_info.fertility
+	moisture = get_parent().tile_placed.tile_info.moisture
+	pollution = get_parent().tile_placed.tile_info.pollution
+	set_can_grow(fertility >= plant_instance.min_fertility and moisture >= plant_instance.min_moist and circumstance and pollution < 40)
 	return
 	
 func _process(delta: float) -> void:

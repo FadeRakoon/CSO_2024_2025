@@ -26,6 +26,7 @@ enum Plants{
 	Potato, 
 	Callaloo,
 	Pumpkin,
+	Trees,
 }
 
 enum Builds{
