@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpyl0i1cptnfe"]
+[gd_scene load_steps=7 format=3 uid="uid://cpyl0i1cptnfe"]
 
+[ext_resource type="Script" path="res://Scenes/ui/Music.gd" id="1_fr5gf"]
 [ext_resource type="Theme" uid="uid://cwiv3vfpux3da" path="res://Scenes/ui/game_ui__theme.tres" id="1_gepl0"]
 [ext_resource type="PackedScene" uid="uid://dri03y6aouw2d" path="res://Scenes/ui/tools_panel.tscn" id="2_pxnhw"]
 [ext_resource type="PackedScene" uid="uid://c6j6sdw7ljbqs" path="res://Scenes/ui/plant_panel.tscn" id="3_5sifm"]
 [ext_resource type="Texture2D" uid="uid://cuyf44lq0r2nt" path="res://Misc resources/custom_mute_icon.png" id="4_a5dmc"]
+[ext_resource type="AudioStream" uid="uid://c74j1feqw3d0p" path="res://Misc resources/audio/game-music-loop combined.mp3" id="6_wmxtl"]
 
 [node name="GameScreen" type="CanvasLayer"]
+script = ExtResource("1_fr5gf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -63,3 +66,9 @@ mouse_default_cursor_shape = 2
 icon = ExtResource("4_a5dmc")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wmxtl")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer3/MuteButtonPanel/Mute_Music" to="." method="_on_mute_music_pressed"]
