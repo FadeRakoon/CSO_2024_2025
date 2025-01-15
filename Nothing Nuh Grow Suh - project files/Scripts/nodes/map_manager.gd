@@ -112,7 +112,7 @@ func check_cell():
 					if cell not in field_layer.get_used_cells() and cell in tile_dict and not (abs(x) == 2 or abs(y) == 2) and not has_tree(cell):#applies burn efect within 1 cell radius
 						burn_grass(cell)
 					if cell in tile_dict:
-						tile_dict[cell].tile_info.pollution += Global.BURN_POLLUTION
+						tile_dict[cell].tile_info.pollution = clamp(tile_dict[cell].tile_info.pollution + Global.BURN_POLLUTION, 0 , tile_dict[cell].tile_info.max_pollution)
 						
 		elif player.current_tool == DataTypes.Tools.PlantCrops and player.current_plant == DataTypes.Plants.Trees and not (cell_pos in tree_zones_dict or cell_pos in grow_zones_dict):
 			const small_rate = 0.5
@@ -192,8 +192,7 @@ func burn_grass(cell: Vector2i) -> void:
 	add_child(burnt_tile)
 	burnt_tile.burn()
 	till_cell(cell)
-	tile_dict[cell].tile_info.fertility += Global.BURN_FERTILITY
-	
+	tile_dict[cell].tile_info.fertilize(Global.BURN_FERTILITY)
 func get_map_pollution() -> int:
 	return map_pollution
 

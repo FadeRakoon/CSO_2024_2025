@@ -7,8 +7,8 @@
 [node name="TextBox" type="MarginContainer"]
 top_level = true
 z_index = 1
-offset_right = 42.0
-offset_bottom = 43.0
+offset_right = 79.0
+offset_bottom = 32.0
 script = ExtResource("1_u7hya")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -29,6 +29,7 @@ theme_override_constants/margin_bottom = 8
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_vrxsr")
 theme_override_font_sizes/font_size = 8

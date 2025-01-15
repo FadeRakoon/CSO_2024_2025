@@ -73,11 +73,11 @@ func update_can_grow():
 		pollution = tile_info.pollution
 		set_can_grow(fertility >= plant_instance.min_fertility and moisture >= plant_instance.min_moist and circumstance and pollution < 40)
 		if not moisture >= plant_instance.min_moist:
-			print('plant cant grow soil too dry')
+			TextManger.say(["Plant can't grow","The soil is too dry"])
 		if not fertility >= plant_instance.min_fertility:
-			print('plant cant grow soil too infertile')
+			TextManger.say(["Plant can't grow","The soil is too infertile"])
 		if not  pollution < 40:
-			print('plant cant grow soil too polluted')
+			TextManger.say(["Plant can't grow","The soil is too polluted"])
 		return
 	
 func calculate_sell_loss():

@@ -51,7 +51,7 @@ func plant_crop():
 	if not plantgrowing and map_manager.nature_tiles.get_cell_source_id(cell_pos) == -1:
 	#checks first if the tile is occupied by either another plant or something on the nature tile
 		if tile_placed.tile_info.fertility <= 5:
-			print("soil infertile cannot plant")
+			TextManger.say(["Cannot plant here","The soil is too infertile"])
 		elif player.current_plant != DataTypes.Plants.None and player.current_plant!=DataTypes.Plants.Trees:
 			#plant a crop if the soil is fertile and a plant is avaiable to be planted
 			
@@ -62,7 +62,7 @@ func plant_crop():
 			tile_placed.tile_info.fertilize(Global.PLANT_FERTILITY_LOSS) #planting anything takes 2 fertility from the soil
 			ActionManager.action_performed.emit()
 	elif not plant_grown:
-		print("plant is already growing here")
+		TextManger.say(["A plant is already growing here"])
 
 func harvest_crop():
 	update_crop_rotation() 
