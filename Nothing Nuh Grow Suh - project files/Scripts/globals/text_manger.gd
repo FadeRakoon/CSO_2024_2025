@@ -41,7 +41,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			return 
 		_show_text_box()
 	
-		
 func _process(delta: float) -> void:
 	if Player.export_postion and is_dialog_active:
 		text_box.global_position = Player.export_postion - Vector2(text_box.size.x/2, (text_box.size.y/2 + 30))
