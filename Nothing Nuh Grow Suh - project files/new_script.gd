@@ -8,5 +8,5 @@ func can_afford_plant(plant_type: DataTypes.Plants) -> bool:
 	#bind passes a variable that will be used as the argument when a signal's observer function is called
 	var affordable = Global.coin >= plant_instance.cost
 	if not affordable:
-		print("Not enough coins to plant")
+		TextManger.say(["Not enough coins to plant"])
 	return affordable

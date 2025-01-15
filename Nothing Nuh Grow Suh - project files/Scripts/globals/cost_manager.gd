@@ -13,7 +13,7 @@ func can_afford_plant(plant_type: DataTypes.Plants, is_small = false) -> bool:
 		var plant_instance = load(resource_path).duplicate() 
 		var affordable = Global.coin >= plant_instance.cost
 		if not affordable:
-			print("Not enough coins to plant")
+			TextManger.say(["Not enough coins to plant"])
 		return affordable
 	else:
 		return false

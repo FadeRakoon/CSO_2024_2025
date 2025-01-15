@@ -8,6 +8,7 @@ var player_direction: Vector2
 @export var current_plant: DataTypes.Plants = DataTypes.Plants.None
 @export var current_build: DataTypes.Builds = DataTypes.Builds.None
 static var export_postion: Vector2
+static var export_height: Vector2
 #export variable to allow for control when debugging
 #starts the player off with no tool
 

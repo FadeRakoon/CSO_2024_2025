@@ -47,6 +47,7 @@ func _input(_event: InputEvent) -> void:
 		print("moisture: ", tile_info.moisture)
 		print("pollution: ", tile_info.pollution)
 		print("---------------------------------\n")
+		TextManger.say(["fertility: " + str(tile_info.fertility)])
 		
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_aoi"):
