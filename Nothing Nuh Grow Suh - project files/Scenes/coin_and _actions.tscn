@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://cto25uxqi34oa"]
+
+[ext_resource type="Script" path="res://Scripts/nodes/coin_and_actions.gd" id="1_wnrwp"]
+[ext_resource type="Texture2D" uid="uid://cxt07w6yoirmh" path="res://Assets packs/Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/special icons/Special Icons.png" id="2_sdc3r"]
+[ext_resource type="FontVariation" uid="uid://cexwr3uubbvec" path="res://Scenes/ui/zx_variation.tres" id="3_poo4a"]
+[ext_resource type="Texture2D" uid="uid://dvomevepd04ad" path="res://Game elements Assets/Characters/Basic Charakter Spritesheet.png" id="4_ixbqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqloa"]
+atlas = ExtResource("2_sdc3r")
+region = Rect2(96, 48, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wposn"]
+font = ExtResource("3_poo4a")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d34gc"]
+atlas = ExtResource("4_ixbqv")
+region = Rect2(8, 8, 32, 32)
+
+[node name="Coin and Actions" type="CanvasLayer"]
+script = ExtResource("1_wnrwp")
+
+[node name="Cointexture" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.0451389
+anchor_bottom = 0.0771605
+offset_right = 53.0
+offset_bottom = 57.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_oqloa")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinCount" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.136
+anchor_top = 0.078
+anchor_right = 0.136
+anchor_bottom = 0.078
+offset_left = -63.672
+offset_top = -17.544
+offset_right = 96.328
+offset_bottom = 50.456
+grow_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+text = "99999"
+label_settings = SubResource("LabelSettings_wposn")
+metadata/_edit_use_anchors_ = true
+
+[node name="ActionsTexture" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.0451389
+anchor_bottom = 0.0771605
+offset_top = 104.0
+offset_right = 53.0
+offset_bottom = 161.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_d34gc")
+metadata/_edit_use_anchors_ = true
+
+[node name="ActionsCount" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.136
+anchor_top = 0.078
+anchor_right = 0.136
+anchor_bottom = 0.078
+offset_left = -60.672
+offset_top = 77.456
+offset_right = 99.328
+offset_bottom = 145.456
+grow_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+text = "99999"
+label_settings = SubResource("LabelSettings_wposn")
+metadata/_edit_use_anchors_ = true

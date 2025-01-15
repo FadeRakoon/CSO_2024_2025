@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void: #shows dialogue box when button is pressed
 	var balloon: GameDialogue = balloon_scene.instantiate()
-	get_tree().current_scene.add_child(balloon)
+	get_parent().add_child(balloon)
 	balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start")

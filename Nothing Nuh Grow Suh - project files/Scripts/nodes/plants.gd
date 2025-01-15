@@ -61,13 +61,12 @@ func update_can_grow():
 		fertility = get_parent().tile_placed.tile_info.fertility
 		moisture = get_parent().tile_placed.tile_info.moisture
 		pollution = get_parent().tile_placed.tile_info.pollution
-		print("plant moisture: ", moisture)
 		set_can_grow(fertility >= plant_instance.min_fertility and moisture >= plant_instance.min_moist and circumstance and pollution < 40)
 		return
 
 func update_plant_growth():
 	if get_parent().plantgrowing:
-		print("update moisture: ", moisture)
+		pass
 	
 func calculate_sell_loss():
 	pass
