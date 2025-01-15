@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://byk0dccaqtriw"]
+
+[ext_resource type="Script" path="res://Scenes/ui/disaster_notif.gd" id="1_8kars"]
+
+[node name="DisasterNotif" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8kars")
+
+[node name="AcidRainNotif" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="AcidRain" type="Label" parent="AcidRainNotif"]
+layout_mode = 2
+
+[node name="FloodNotif" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Flood" type="Label" parent="FloodNotif"]
+layout_mode = 2

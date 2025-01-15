@@ -67,6 +67,10 @@ icon = ExtResource("4_a5dmc")
 icon_alignment = 1
 expand_icon = true
 
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Background_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_wmxtl")
 autoplay = true

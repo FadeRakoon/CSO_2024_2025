@@ -41,3 +41,9 @@ static var tool_dmg: Dictionary = {
 }
 #used to assign damage values to tools
 #expandable if we choose to get more tools (currently limited by asset pack)
+
+enum Disaster{
+	None,
+	AcidRain,
+	Flood,
+}

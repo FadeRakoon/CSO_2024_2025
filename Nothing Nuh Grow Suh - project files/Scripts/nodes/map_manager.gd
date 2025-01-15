@@ -168,8 +168,10 @@ func _on_time_advanced():
 		if randi_range(0, 100) < round_disaster.dist_probability :
 			match round_disaster.disaster_name:
 				"Acid Rain" :
+					DisasterManager.disaster_warn(DataTypes.Disaster.AcidRain)
 					growth_enabled = false
 				"Flood" :
+					DisasterManager.disaster_warn(DataTypes.Disaster.Flood)
 					for zone in grow_zones_dict:
 						if randi_range(0, 100) < round_disaster.dist_probability :
 							grow_zones_dict[zone].reset_plant()
