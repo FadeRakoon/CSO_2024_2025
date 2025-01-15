@@ -7,6 +7,6 @@ specular_color = Color(0.784314, 0.203922, 0.996078, 1)
 
 [node name="Mask" type="Sprite2D"]
 position = Vector2(2.68221e-07, 3.27826e-07)
-scale = Vector2(16, 16)
+scale = Vector2(14, 14)
 texture = SubResource("CanvasTexture_vhbf7")
 script = ExtResource("1_4fuak")

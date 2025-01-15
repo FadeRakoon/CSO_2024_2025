@@ -27,11 +27,8 @@ func perform_action():
 	#this is a failsafe in case multiple actions happen at once before the next day transitions
 	action_count = clamp( action_count - 1, 0, action_count)
 	#print("actions left: ",action_count)
-	#if action_count <= 0 :
-		#Advance time after action counts fall to zero
-		#time_advanced.emit()
-		#reset_action_count()
-	
+	if action_count <= 0 :
+		TextManger.say(["Actions depleted", "Sleep to reset them"])
 
 #Function that executes after time is advanced
 func on_time_advanced():
