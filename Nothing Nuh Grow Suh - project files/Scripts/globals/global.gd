@@ -11,10 +11,7 @@ var plant_inventory = {
 	
 }
 
-var coin: int =  50#stores the coin value
+var coin: int =  15#stores the coin value
 
 const BURN_POLLUTION = 10
 const BURN_FERTILITY = 15
-const PLANT_WATER_LOSS = -3
-const PLANT_FERTILITY_LOSS = -2
-const PLANT_FERTILITY_GAIN = 3

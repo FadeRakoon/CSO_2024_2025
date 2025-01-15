@@ -6,7 +6,7 @@
 script = ExtResource("1_eg7px")
 plant_name = "Pumpkin"
 days_grown = 0
-growth_time = 6
+growth_time = 2
 min_fertility = 10
 min_moist = 10
 sell_value = 10

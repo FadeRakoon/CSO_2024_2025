@@ -6,7 +6,7 @@
 script = ExtResource("1_34fob")
 plant_name = "Onion"
 days_grown = 0
-growth_time = 3
+growth_time = 2
 min_fertility = 10
 min_moist = 10
 sell_value = 10
