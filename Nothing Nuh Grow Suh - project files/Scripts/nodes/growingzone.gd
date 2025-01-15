@@ -42,7 +42,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			harvest_crop() 
 		elif player.current_tool == DataTypes.Tools.TillGrass:
 			reset_plant() #the player can use the till tool on a plant to remove it
-		elif player.current_tool == DataTypes.Tools.PlantCrops:
+		elif player.current_tool == DataTypes.Tools.PlantCrops and CostManager.can_afford_plant(player.current_plant):
 			plant_crop()
 	
 func plant_crop():
@@ -50,7 +50,7 @@ func plant_crop():
 	#checks first if the tile is occupied by either another plant or something on the nature tile
 		if tile_placed.tile_info.fertility <= 0:
 			print("soil infertile cannot plant")
-		elif player.current_plant != DataTypes.Plants.None:
+		elif player.current_plant != DataTypes.Plants.None and player.current_plant!=DataTypes.Plants.Trees:
 			#plant a crop if the soil is fertile and a plant is avaiable to be planted
 			
 			#plant_animation.play(str(DataTypes.Plants.find_key(plant)))

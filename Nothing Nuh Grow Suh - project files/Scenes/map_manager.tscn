@@ -1,3 +1,4 @@
 [gd_scene format=3 uid="uid://dxymbt6xp324j"]
 
-[node name="map manager" type="Node"]
+[node name="map manager" type="Node2D"]
+y_sort_enabled = true

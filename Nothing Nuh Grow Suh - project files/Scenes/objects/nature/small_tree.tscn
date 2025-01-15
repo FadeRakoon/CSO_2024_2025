@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dug5jkl2t0bsv"]
+[gd_scene load_steps=9 format=3 uid="uid://dug5jkl2t0bsv"]
 
 [ext_resource type="Material" uid="uid://dnjs8uiiobwhs" path="res://Collections/shaders/shake.tres" id="1_07xdp"]
 [ext_resource type="Texture2D" uid="uid://xc0ftyxn25y7" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_lxrcn"]
@@ -12,7 +12,11 @@ radius = 4.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw44r"]
 size = Vector2(16, 28)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p8yle"]
+radius = 13.3333
+
 [node name="Small_Tree" type="Sprite2D"]
+y_sort_enabled = true
 material = ExtResource("1_07xdp")
 position = Vector2(0, -8)
 texture = ExtResource("1_lxrcn")
@@ -21,6 +25,7 @@ region_rect = Rect2(0, 0, 16, 28)
 script = ExtResource("2_17q2u")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -28,6 +33,7 @@ position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_1pmij")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_xd6ld")]
+y_sort_enabled = true
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
@@ -35,6 +41,19 @@ shape = SubResource("RectangleShape2D_vw44r")
 debug_color = Color(0.94499, 0.224917, 0.181962, 0.42)
 
 [node name="Dmg_Manager" parent="." instance=ExtResource("4_2wmot")]
+y_sort_enabled = true
 max_dmg = 3
+
+[node name="Area2D" type="Area2D" parent="." groups=["tree_aoi"]]
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["tree_aoi"]]
+y_sort_enabled = true
+position = Vector2(0, 8)
+scale = Vector2(2.4, 2.4)
+shape = SubResource("CircleShape2D_p8yle")
+debug_color = Color(0.548812, 0.492214, 0.735062, 0.42)
 
 [connection signal="mouse_entered" from="HurtBox" to="." method="_on_hurt_box_mouse_entered"]

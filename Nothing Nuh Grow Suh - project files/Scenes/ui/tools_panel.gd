@@ -29,6 +29,8 @@ func _on_tool_seeds_pressed() -> void:
 
 func _on_tool_watering_can_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
+	#ToolManager.select_tool(DataTypes.Tools.BurnWood) #repurposing this button for burning for debug
 
 func _on_tool_build_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.Build)
+	ToolManager.select_tool(DataTypes.Tools.PlantCrops)
+	PlantManager.select_plant(DataTypes.Plants.Trees)

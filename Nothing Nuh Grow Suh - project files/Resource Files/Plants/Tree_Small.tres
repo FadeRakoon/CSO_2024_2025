@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="crop" load_steps=2 format=3 uid="uid://bfsuv2rrtfiw4"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/crop.gd" id="1_8uiu8"]
+
+[resource]
+script = ExtResource("1_8uiu8")
+plant_name = "Small Tree"
+days_grown = 0
+growth_time = 4
+min_fertility = 10
+min_moist = 5
+sell_value = 0
+cost = 12
