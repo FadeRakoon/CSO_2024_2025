@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=18 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://c4carka6ralva" path="res://Scenes/day_transition.tscn" id="1_hmsbn"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dug5jkl2t0bsv" path="res://Scenes/objects/nature/small_tree.tscn" id="6_3i3gt"]
 [ext_resource type="PackedScene" uid="uid://bje1sfde48y4i" path="res://Scenes/objects/nature/large_tree.tscn" id="6_taxp7"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
+[ext_resource type="PackedScene" uid="uid://baxhn6mfvtma7" path="res://audio/music/Background_Music.tscn" id="13_q5pe3"]
 [ext_resource type="PackedScene" uid="uid://dnw8ur1np8ejc" path="res://Scenes/ui/infoguide/infobutton.tscn" id="17_d6ns1"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ksjt4"]
@@ -152,3 +153,5 @@ offset_top = 127.0
 offset_right = 69.0
 offset_bottom = 175.0
 metadata/_edit_use_anchors_ = true
+
+[node name="OnTheFarmMusic" parent="." instance=ExtResource("13_q5pe3")]

@@ -30,6 +30,8 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SceneManager="*res://Scripts/globals/scene_manager.gd"
 GameManager="*res://Scripts/globals/game_manager.gd"
 CostManager="*res://Scripts/globals/cost_manager.gd"
+OnTheFarmMusic="*res://audio/music/Background_Music.tscn"
+MusicManager="*res://Scripts/globals/music_manager.gd"
 
 [debug]
 
@@ -45,6 +47,12 @@ window/stretch/scale_mode="integer"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://audio/": "red"
+}
 
 [global_group]
 
