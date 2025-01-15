@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c70xxgcqdjscx"]
+[gd_scene load_steps=18 format=4 uid="uid://c70xxgcqdjscx"]
 
 [ext_resource type="PackedScene" uid="uid://c4carka6ralva" path="res://Scenes/day_transition.tscn" id="1_m4ag6"]
 [ext_resource type="PackedScene" uid="uid://dxymbt6xp324j" path="res://Scenes/map_manager.tscn" id="1_t1i8s"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dug5jkl2t0bsv" path="res://Scenes/objects/nature/small_tree.tscn" id="7_yueox"]
 [ext_resource type="PackedScene" uid="uid://dkw8ihjedq1lx" path="res://Scenes/player.tscn" id="8_wuem2"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="9_lllt4"]
+[ext_resource type="PackedScene" uid="uid://dnw8ur1np8ejc" path="res://Scenes/ui/infoguide/infobutton.tscn" id="13_pytt5"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_80ig5"]
 gradient = ExtResource("2_6d7co")
@@ -144,4 +145,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="GameScreen" parent="Player" groups=["ui"] instance=ExtResource("9_lllt4")]
-visible = false
+
+[node name="TextureButton" parent="Player/GameScreen" instance=ExtResource("13_pytt5")]
+offset_left = 31.0
+offset_top = 244.0
+offset_right = 71.0
+offset_bottom = 292.0
+metadata/_edit_use_anchors_ = true

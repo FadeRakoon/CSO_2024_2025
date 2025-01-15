@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b1jl36o8dpc4x"]
+[gd_scene load_steps=17 format=4 uid="uid://b1jl36o8dpc4x"]
 
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="1_1jge1"]
 [ext_resource type="PackedScene" uid="uid://c4carka6ralva" path="res://Scenes/day_transition.tscn" id="1_hmsbn"]
@@ -10,10 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/nodes/map_manager.gd" id="5_g3qqw"]
 [ext_resource type="PackedScene" uid="uid://dug5jkl2t0bsv" path="res://Scenes/objects/nature/small_tree.tscn" id="6_3i3gt"]
 [ext_resource type="PackedScene" uid="uid://bje1sfde48y4i" path="res://Scenes/objects/nature/large_tree.tscn" id="6_taxp7"]
-[ext_resource type="PackedScene" uid="uid://kfof3a4sl4w2" path="res://Scenes/ui/Coin.tscn" id="7_q8m0f"]
-[ext_resource type="PackedScene" uid="uid://buo8auxkalbwe" path="res://Scenes/ui/coin_count.tscn" id="8_h8nxo"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
-[ext_resource type="Script" path="res://Scripts/nodes/coin_and_actions.gd" id="15_3c3is"]
 [ext_resource type="PackedScene" uid="uid://dnw8ur1np8ejc" path="res://Scenes/ui/infoguide/infobutton.tscn" id="17_d6ns1"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ksjt4"]
@@ -88,33 +85,6 @@ y_sort_enabled = true
 [node name="Day Transition" parent="." instance=ExtResource("1_hmsbn")]
 transition_gradient = SubResource("GradientTexture1D_ksjt4")
 fade_time = 4.0
-
-[node name="Coin" type="CanvasLayer" parent="."]
-script = ExtResource("15_3c3is")
-
-[node name="Cointexture" parent="Coin" instance=ExtResource("7_q8m0f")]
-anchors_preset = -1
-anchor_right = 0.0451389
-anchor_bottom = 0.0771605
-offset_right = 53.0
-offset_bottom = 57.0
-size_flags_horizontal = 6
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="CoinCount" parent="Coin" instance=ExtResource("8_h8nxo")]
-anchors_preset = -1
-anchor_bottom = 0.0123457
-offset_left = 113.0
-offset_top = 36.0
-offset_right = 273.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-text = "99999"
-metadata/_edit_use_anchors_ = true
 
 [node name="Map_Manager" parent="." groups=["player_aoi"] instance=ExtResource("4_pcyfr")]
 script = ExtResource("5_g3qqw")

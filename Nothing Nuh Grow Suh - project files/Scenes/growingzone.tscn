@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_drasl")
 [node name="plant" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.3411e-07, 0)
 sprite_frames = ExtResource("2_ymk30")
-animation = &"Corn"
+animation = &"Callaloo"
 
 [node name="Plant" parent="." instance=ExtResource("3_ryh5y")]
 

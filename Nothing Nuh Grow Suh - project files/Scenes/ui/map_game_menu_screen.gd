@@ -22,11 +22,11 @@ func _on_barbados_map_pressed() -> void:
 	if not isclicked:
 		isMapSelected = true
 		isclicked = true
-		SceneManager.Map_select("Barbados")
+		GameManager.Map_select("Barbados")
 
 func _on_trinidad_map_pressed() -> void:
 	#GameManager.Map_select(DataTypes.map.Trinidad)
 	if not isclicked:
 		isMapSelected = true
 		isclicked = true
-		SceneManager.Map_select("Trinidad")
+		GameManager.Map_select("Trinidad")
