@@ -1,5 +1,6 @@
 extends CanvasLayer
 var isMapSelected:bool = false
+var isclicked: bool = false
 
 func _on_start_game_button_pressed() -> void:
 	if isMapSelected :
@@ -11,15 +12,21 @@ func _on_exit_pressed() -> void:
 
 func _on_jamaica_map_pressed() -> void:
 	#GameManager.Map_select(DataTypes.map.Jamaica)
-	isMapSelected = true
-	GameManager.Map_select("Jamaica")
+	if not isclicked:
+		isMapSelected = true
+		isclicked = true
+		GameManager.Map_select("Jamaica")
 
 func _on_barbados_map_pressed() -> void:
 	#GameManager.Map_select(DataTypes.map.Barbados)
-	isMapSelected = true
-	SceneManager.Map_select("Barbados")
+	if not isclicked:
+		isMapSelected = true
+		isclicked = true
+		SceneManager.Map_select("Barbados")
 
 func _on_trinidad_map_pressed() -> void:
 	#GameManager.Map_select(DataTypes.map.Trinidad)
-	isMapSelected = true
-	SceneManager.Map_select("Trinidad")
+	if not isclicked:
+		isMapSelected = true
+		isclicked = true
+		SceneManager.Map_select("Trinidad")

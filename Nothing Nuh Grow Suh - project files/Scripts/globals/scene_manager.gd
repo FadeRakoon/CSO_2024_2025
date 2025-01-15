@@ -10,7 +10,6 @@ var level_scenes : Dictionary ={
 	"Jamaica" : "res://Scenes/maps/jamaica.tscn",
 	"Barbados" : "res://Scenes/maps/barbados.tscn",
 	"Trinidad" : "res://Scenes/maps/trinidad.tscn",
-	
 }
 
 #loads the main scene itself (since it is the main menu we want them to see the menu first)
@@ -24,6 +23,7 @@ func load_main_scene_container() -> void:
 #swaps scenes to load different "levels"
 func load_level(selected_map :String) -> void:
 	var scene_path: String = level_scenes.get(selected_map)
+	
 	#print("Scene path check1: ", scene_path)
 	
 	#if scene path empty then we cant load it

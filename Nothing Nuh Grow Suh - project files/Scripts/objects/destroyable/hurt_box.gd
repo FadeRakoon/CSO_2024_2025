@@ -1,7 +1,7 @@
 class_name HurtBox
 extends Area2D
 
-@onready var player: Player = get_node("/root/Game/Player") #obtains the payer node
+@onready var player: Player = get_node("/root/MainScene/LevelRoot/Game/Player") #obtains the payer node
 var tool: DataTypes.Tools = DataTypes.Tools.None
 var required_tool: DataTypes.Tools
 #delaring current tool and required tool variables

@@ -4,7 +4,7 @@ extends Area2D
 var selected = false #used to determine whether or not the mouse is in the tile area
 var selectable = false #used to check whether or not tile is in player's area of influence
 var clicked = false
-@onready var player: Player = get_node("/root/Game/Player")
+@onready var player: Player = get_node("/root/MainScene/LevelRoot/Game/Player")
 @onready var tile_sprite: TileMap = $"Tile Sprite"
 @onready var tile_info: TileManager = $"Tile Info"
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
