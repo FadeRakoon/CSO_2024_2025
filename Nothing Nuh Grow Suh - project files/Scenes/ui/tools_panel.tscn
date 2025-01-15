@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dri03y6aouw2d"]
+[gd_scene load_steps=16 format=3 uid="uid://dri03y6aouw2d"]
 
 [ext_resource type="Theme" uid="uid://cwiv3vfpux3da" path="res://Scenes/ui/game_ui__theme.tres" id="1_2ih3r"]
 [ext_resource type="Script" path="res://Scenes/ui/tools_panel.gd" id="2_pfq6w"]
 [ext_resource type="Texture2D" uid="uid://vonvqnipfkek" path="res://Game elements Assets/Objects/Basic_tools_and_meterials.png" id="2_y723o"]
 [ext_resource type="Texture2D" uid="uid://b57qegy1y286s" path="res://Game elements Assets/Objects/Basic_Plants.png" id="3_1lsby"]
+[ext_resource type="Texture2D" uid="uid://vpiro62465f2" path="res://Assets packs/Custom/Fiyah nobg .png" id="4_xx2c1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymekw"]
 atlas = ExtResource("2_y723o")
@@ -11,6 +12,10 @@ region = Rect2(16, 0, 16, 16)
 margin = Rect2(1.5, 1.5, 3, 3)
 
 [sub_resource type="GDScript" id="GDScript_ukspa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0h2q"]
+atlas = ExtResource("4_xx2c1")
+region = Rect2(0, 77, 52, 67)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1esr"]
 load_path = "res://.godot/imported/Basic_tools_and_meterials.png-673371b1802b23817ec96d99dc883467.ctex"
@@ -71,6 +76,14 @@ icon_alignment = 1
 expand_icon = true
 script = SubResource("GDScript_ukspa")
 
+[node name="ToolBurn" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_m0h2q")
+icon_alignment = 1
+expand_icon = true
+
 [node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
@@ -107,6 +120,7 @@ expand_icon = true
 [connection signal="mouse_entered" from="MarginContainer" to="." method="_on_margin_container_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer" to="." method="_on_margin_container_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolBurn" to="." method="_on_tool_burn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolSeeds" to="." method="_on_tool_seeds_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
