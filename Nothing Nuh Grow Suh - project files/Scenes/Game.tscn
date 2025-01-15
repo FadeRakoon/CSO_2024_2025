@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dug5jkl2t0bsv" path="res://Scenes/objects/nature/small_tree.tscn" id="6_3i3gt"]
 [ext_resource type="PackedScene" uid="uid://bje1sfde48y4i" path="res://Scenes/objects/nature/large_tree.tscn" id="6_taxp7"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
-[ext_resource type="PackedScene" uid="uid://baxhn6mfvtma7" path="res://audio/music/Background_Music.tscn" id="13_q5pe3"]
+[ext_resource type="PackedScene" uid="uid://baxhn6mfvtma7" path="res://audio/music/on_the_farm_music.tscn" id="13_q5pe3"]
 [ext_resource type="PackedScene" uid="uid://dnw8ur1np8ejc" path="res://Scenes/ui/infoguide/infobutton.tscn" id="17_d6ns1"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ksjt4"]

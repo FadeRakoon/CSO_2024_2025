@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpyl0i1cptnfe"]
+[gd_scene load_steps=4 format=3 uid="uid://cpyl0i1cptnfe"]
 
 [ext_resource type="Theme" uid="uid://cwiv3vfpux3da" path="res://Scenes/ui/game_ui__theme.tres" id="1_gepl0"]
 [ext_resource type="PackedScene" uid="uid://dri03y6aouw2d" path="res://Scenes/ui/tools_panel.tscn" id="2_pxnhw"]
 [ext_resource type="PackedScene" uid="uid://c6j6sdw7ljbqs" path="res://Scenes/ui/plant_panel.tscn" id="3_5sifm"]
-[ext_resource type="Texture2D" uid="uid://cuyf44lq0r2nt" path="res://Misc resources/custom_mute_icon.png" id="4_a5dmc"]
 
 [node name="GameScreen" type="CanvasLayer"]
 
@@ -42,24 +41,3 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-
-[node name="MarginContainer3" type="MarginContainer" parent="."]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
-grow_vertical = 2
-
-[node name="MuteButtonPanel" type="PanelContainer" parent="MarginContainer3"]
-layout_mode = 2
-theme = ExtResource("1_gepl0")
-theme_type_variation = &"DarkWoodPanel"
-
-[node name="Mute_Music" type="Button" parent="MarginContainer3/MuteButtonPanel"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("4_a5dmc")
-icon_alignment = 1
-expand_icon = true

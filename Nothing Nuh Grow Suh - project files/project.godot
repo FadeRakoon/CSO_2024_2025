@@ -30,8 +30,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SceneManager="*res://Scripts/globals/scene_manager.gd"
 GameManager="*res://Scripts/globals/game_manager.gd"
 CostManager="*res://Scripts/globals/cost_manager.gd"
-OnTheFarmMusic="*res://audio/music/Background_Music.tscn"
-MusicManager="*res://Scripts/globals/music_manager.gd"
+OnTheFarmMusic="*res://audio/music/on_the_farm_music.tscn"
 
 [debug]
 
