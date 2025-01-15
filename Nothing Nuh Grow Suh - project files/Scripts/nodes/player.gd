@@ -7,6 +7,7 @@ var player_direction: Vector2
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 @export var current_plant: DataTypes.Plants = DataTypes.Plants.None
 @export var current_build: DataTypes.Builds = DataTypes.Builds.None
+static var export_postion: Vector2
 #export variable to allow for control when debugging
 #starts the player off with no tool
 
@@ -24,3 +25,6 @@ func _on_plant_selected(plant: DataTypes.Plants) -> void:
 	
 func _on_build_selected(build: DataTypes.Builds) -> void:
 	current_build = build
+
+func _process(delta: float) -> void:
+	export_postion = global_position
