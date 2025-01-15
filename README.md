@@ -15,9 +15,6 @@ https://cupnooble.itch.io/sprout-lands-ui-pack
 
 ^ (same Creator as Pack used for backgrounds to keep theme consistent)
 
-Tracks used to make ingame background music:
-XtremeFreddy - https://pixabay.com/users/32332307/
-
 # Notes for judges
 
 Running the executable:
