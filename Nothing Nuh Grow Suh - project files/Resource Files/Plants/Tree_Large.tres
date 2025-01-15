@@ -6,7 +6,7 @@
 script = ExtResource("1_ls46r")
 plant_name = "Large Tree"
 days_grown = 0
-growth_time = 5
+growth_time = 10
 min_fertility = 10
 min_moist = 5
 sell_value = 0
