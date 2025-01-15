@@ -1,30 +1,25 @@
 extends CanvasLayer
-
-# Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#pass # Replace with function body.
-#
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
-
+var isMapSelected:bool = false
 
 func _on_start_game_button_pressed() -> void:
-	pass # Replace with function body.
+	if isMapSelected :
+		GameManager.start_game()
+		queue_free()
 
 func _on_exit_pressed() -> void:
 	GameManager.exit_game()
 
-
 func _on_jamaica_map_pressed() -> void:
 	#GameManager.Map_select(DataTypes.map.Jamaica)
-	SceneManager.Map_select("Jamaica")
+	isMapSelected = true
+	GameManager.Map_select("Jamaica")
 
 func _on_barbados_map_pressed() -> void:
 	#GameManager.Map_select(DataTypes.map.Barbados)
+	isMapSelected = true
 	SceneManager.Map_select("Barbados")
 
 func _on_trinidad_map_pressed() -> void:
 	#GameManager.Map_select(DataTypes.map.Trinidad)
+	isMapSelected = true
 	SceneManager.Map_select("Trinidad")
