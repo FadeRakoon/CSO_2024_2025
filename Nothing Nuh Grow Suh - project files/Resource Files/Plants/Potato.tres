@@ -6,7 +6,7 @@
 script = ExtResource("1_vs0tw")
 plant_name = "Potato"
 days_grown = 0
-growth_time = 2
+growth_time = 4
 min_fertility = 10
 min_moist = 10
 sell_value = 5
