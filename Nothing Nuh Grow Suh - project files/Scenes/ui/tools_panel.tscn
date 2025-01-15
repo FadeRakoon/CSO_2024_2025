@@ -109,6 +109,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="ToolBuild" type="Button" parent="MarginContainer/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 theme_type_variation = &"ToolButton"

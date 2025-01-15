@@ -1,0 +1,133 @@
+[gd_scene load_steps=15 format=3 uid="uid://c6j6sdw7ljbqs"]
+
+[ext_resource type="Theme" uid="uid://cwiv3vfpux3da" path="res://Scenes/ui/game_ui__theme.tres" id="1_o26h7"]
+[ext_resource type="Texture2D" uid="uid://c8dc2owy45gps" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="2_1sc0y"]
+[ext_resource type="Script" path="res://Scenes/ui/plant_panel.gd" id="2_funv2"]
+[ext_resource type="Texture2D" uid="uid://j1yh7gjrvttl" path="res://Assets packs/Hana Caraka - Farming n Foraging [sample]/farming n foraging - all.png" id="3_3y61a"]
+[ext_resource type="Texture2D" uid="uid://b3anxsylc0wog" path="res://Assets packs/Hana Caraka - Farming n Foraging [sample]/free.png" id="4_4oj8u"]
+[ext_resource type="Texture2D" uid="uid://xc0ftyxn25y7" path="res://Assets packs/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="5_csn75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snpih"]
+atlas = ExtResource("2_1sc0y")
+region = Rect2(82, 17, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7om7"]
+atlas = ExtResource("2_1sc0y")
+region = Rect2(81, 0, 14, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub5hc"]
+atlas = ExtResource("3_3y61a")
+region = Rect2(130, 18, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefns"]
+atlas = ExtResource("3_3y61a")
+region = Rect2(129, 48, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27pkp"]
+atlas = ExtResource("3_3y61a")
+region = Rect2(33, 50, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08ni2"]
+atlas = ExtResource("3_3y61a")
+region = Rect2(128, 81, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a4m0"]
+atlas = ExtResource("4_4oj8u")
+region = Rect2(177, 146, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owab8"]
+atlas = ExtResource("5_csn75")
+region = Rect2(1, 0, 14, 28)
+
+[node name="plant_panel" type="PanelContainer"]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_o26h7")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_funv2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PlantTomato" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_snpih")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlantCorn" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_p7om7")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlantOnion" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_ub5hc")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlantCarrot" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_tefns")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlantPotato" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_27pkp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlantCallaloo" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_08ni2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlantPumpkin" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_3a4m0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlantTree" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_owab8")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlantTomato" to="." method="_on_plant_tomato_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlantCorn" to="." method="_on_plant_corn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlantOnion" to="." method="_on_plant_onion_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlantCarrot" to="." method="_on_plant_carrot_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlantPotato" to="." method="_on_plant_potato_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlantCallaloo" to="." method="_on_plant_callaloo_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlantPumpkin" to="." method="_on_plant_pumpkin_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlantTree" to="." method="_on_plant_tree_pressed"]
