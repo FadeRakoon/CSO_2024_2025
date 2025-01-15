@@ -15,13 +15,11 @@ const tiles = preload("res://Scenes/tile.tscn") #loads the tile scene
 const grow_zones = preload("res://Scenes/growingzone.tscn")
 const burn_tiles = preload("res://Scenes/objects/nature/burnt_tile.tscn")
 const tree_zones = preload("res://Scenes/objects/nature/tree_zone.tscn")
-const pollution = preload("res://Scenes/pollution_mask.tscn")
 #we create instances of this scene later
 
 var tile_dict = {} #tile dictionary to store where all the tiles are
 var grow_zones_dict = {}
 var tree_zones_dict = {}
-var pollution_dict = {}
 #may or may not need to include a grow zone dictionary to keep track of them? we see when we see
 
 var map_pollution : int
@@ -53,10 +51,6 @@ func _ready() -> void:
 			tile.position = local_cell_pos #draws the tile at the position of the cell coordinate in the world
 			#map_to_local converts cell coordinates to game coordinates
 			add_child(tile) #creates the tile
-			var mask = pollution.instantiate() #creates a pollution zone
-			mask.position = local_cell_pos
-			pollution_dict[cell] = mask
-			add_child(mask)
 		if field_layer.get_cell_source_id(cell) == 3: #tests for dirt layer
 			var grow_zone = grow_zones.instantiate() #creates a grow zone
 			grow_zone.position = local_cell_pos #places a grow zone at the cell position of the dirt layer
