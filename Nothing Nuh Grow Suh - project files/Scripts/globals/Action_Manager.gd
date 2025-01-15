@@ -2,7 +2,7 @@
 # As of right now, time is advanced automatically
 extends Node
 
-const MAXACTIONS = 4
+const MAXACTIONS = 5
 
 @export var action_count : int
 var current_day : int

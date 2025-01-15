@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://kfof3a4sl4w2" path="res://Scenes/ui/Coin.tscn" id="7_q8m0f"]
 [ext_resource type="PackedScene" uid="uid://buo8auxkalbwe" path="res://Scenes/ui/coin_count.tscn" id="8_h8nxo"]
 [ext_resource type="PackedScene" uid="uid://cpyl0i1cptnfe" path="res://Scenes/ui/game_screen.tscn" id="13_gcsel"]
-[ext_resource type="Script" path="res://Scripts/nodes/coin.gd" id="15_3c3is"]
+[ext_resource type="Script" path="res://Scripts/nodes/coin_and_actions.gd" id="15_3c3is"]
 [ext_resource type="PackedScene" uid="uid://dnw8ur1np8ejc" path="res://Scenes/ui/infoguide/infobutton.tscn" id="17_d6ns1"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ksjt4"]

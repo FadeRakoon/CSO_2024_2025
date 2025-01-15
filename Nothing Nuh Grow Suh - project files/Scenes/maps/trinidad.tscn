@@ -1,13 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://bd0gv5cxij2jh"]
+[gd_scene load_steps=17 format=4 uid="uid://bd0gv5cxij2jh"]
 
-[ext_resource type="Script" path="res://Scripts/nodes/coin.gd" id="1_0sc21"]
 [ext_resource type="PackedScene" uid="uid://c4carka6ralva" path="res://Scenes/day_transition.tscn" id="1_4wehd"]
 [ext_resource type="PackedScene" uid="uid://dxymbt6xp324j" path="res://Scenes/map_manager.tscn" id="1_gibut"]
 [ext_resource type="Script" path="res://Scripts/nodes/map_manager.gd" id="2_1hdmm"]
-[ext_resource type="PackedScene" uid="uid://kfof3a4sl4w2" path="res://Scenes/ui/Coin.tscn" id="2_44iw6"]
 [ext_resource type="Gradient" uid="uid://dniqajjicx3pr" path="res://Collections/day_night_gradient.tres" id="2_hrgfi"]
-[ext_resource type="PackedScene" uid="uid://buo8auxkalbwe" path="res://Scenes/ui/coin_count.tscn" id="3_4njy5"]
 [ext_resource type="TileSet" uid="uid://nvimvucdvves" path="res://Collections/game_tile_set.tres" id="3_uav5e"]
+[ext_resource type="PackedScene" uid="uid://cto25uxqi34oa" path="res://Scenes/coin_and _actions.tscn" id="3_wqhkf"]
 [ext_resource type="PackedScene" uid="uid://i6p2gpwhqase" path="res://Scenes/objects/barn.tscn" id="4_mpgvx"]
 [ext_resource type="Texture2D" uid="uid://biuojioalyqmn" path="res://Game elements Assets/Objects/Basic_Grass_Biom_things.png" id="5_vxuq1"]
 [ext_resource type="PackedScene" uid="uid://bje1sfde48y4i" path="res://Scenes/objects/nature/large_tree.tscn" id="6_w6dg4"]
@@ -84,33 +82,7 @@ y_sort_enabled = true
 transition_gradient = SubResource("GradientTexture1D_jdstb")
 fade_time = 4.0
 
-[node name="Coin" type="CanvasLayer" parent="."]
-script = ExtResource("1_0sc21")
-
-[node name="Cointexture" parent="Coin" instance=ExtResource("2_44iw6")]
-anchors_preset = -1
-anchor_right = 0.0451389
-anchor_bottom = 0.0771605
-offset_right = 53.0
-offset_bottom = 57.0
-size_flags_horizontal = 6
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="CoinCount" parent="Coin" instance=ExtResource("3_4njy5")]
-anchors_preset = -1
-anchor_left = 0.136
-anchor_top = 0.078
-anchor_right = 0.136
-anchor_bottom = 0.078
-offset_left = -63.672
-offset_top = -17.544
-offset_right = 96.328
-offset_bottom = 50.456
-grow_horizontal = 0
-size_flags_horizontal = 2
-text = "99999"
-metadata/_edit_use_anchors_ = true
+[node name="Coin and Actions" parent="." instance=ExtResource("3_wqhkf")]
 
 [node name="Map_Manager" parent="." groups=["player_aoi"] instance=ExtResource("1_gibut")]
 script = ExtResource("2_1hdmm")
