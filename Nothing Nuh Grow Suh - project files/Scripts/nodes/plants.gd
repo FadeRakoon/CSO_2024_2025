@@ -10,12 +10,9 @@ var circumstance : bool
 var fertility : int
 var moisture : int 
 var pollution: int
-var tile_info: TileManager
-var fert_const: float
-var pollution_const: float
 
 func set_crop(plant_type : DataTypes.Plants):
-	tile_info = get_parent().tile_placed.tile_info
+	
 	if plant_type == DataTypes.Plants.None:
 		sprite.animation = "None"
 		#Disable the growth and harvest functions of empty cells
@@ -34,6 +31,7 @@ func set_crop(plant_type : DataTypes.Plants):
 	Global.coin -= plant_instance.cost
 	ActionManager.night.connect(grow_plant.bind(growth_factor))
 	ActionManager.time_advanced.connect(update_can_grow)
+	ActionManager.time_advanced.connect(update_plant_growth)
 	#Set animation and initialise
 	sprite.animation = plant_instance.plant_name
 	sprite.frame = 0
@@ -46,17 +44,9 @@ func grow_plant(growth_mag : int):
 			var days_grown = plant_instance.get_days_grown()
 			plant_instance.set_days_grown(days_grown + growth_mag)
 			sprite.frame = plant_instance.get_current_growth_frame(frame_count)
-			if get_parent().plantgrowing:
-				tile_info.water(Global.PLANT_WATER_LOSS)
-			if fertility >= 30:
-				fert_const+=1
-			if pollution >= 30:
-				pollution_const+=1
-				
+		
 # To be implemented 
 func harvest():
-	plant_instance.sell_value += clamp(round(3 * fert_const/plant_instance.growth_time), 0, 4) #plants can sell for up to 4 more coins depending on how long they were in fertile soil for
-	plant_instance.sell_value -= clamp(round(3 * pollution_const/plant_instance.growth_time), 0, 4)
 	plant_instance.sell_plant()
 	Global.coin += plant_instance.sell_value
 	plant_instance = null
@@ -68,17 +58,15 @@ func set_can_grow(value : bool):
 	
 func update_can_grow():
 	if get_parent().plantgrowing:
-		fertility = tile_info.fertility
-		moisture = tile_info.moisture
-		pollution = tile_info.pollution
+		fertility = get_parent().tile_placed.tile_info.fertility
+		moisture = get_parent().tile_placed.tile_info.moisture
+		pollution = get_parent().tile_placed.tile_info.pollution
 		set_can_grow(fertility >= plant_instance.min_fertility and moisture >= plant_instance.min_moist and circumstance and pollution < 40)
-		if not moisture >= plant_instance.min_moist:
-			print('plant cant grow soil too dry')
-		if not fertility >= plant_instance.min_fertility:
-			print('plant cant grow soil too infertile')
-		if not  pollution < 40:
-			print('plant cant grow soil too polluted')
 		return
+
+func update_plant_growth():
+	if get_parent().plantgrowing:
+		pass
 	
 func calculate_sell_loss():
 	pass
