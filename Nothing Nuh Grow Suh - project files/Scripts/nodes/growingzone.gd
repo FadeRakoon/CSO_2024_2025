@@ -22,8 +22,6 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	plant_grown = plant_scene.grown
-	if plant_grown:
-		plantgrowing = false
 	
 	
 func _on_area_entered(area: Area2D) -> void:
@@ -50,7 +48,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 func plant_crop():
 	if not plantgrowing and map_manager.nature_tiles.get_cell_source_id(cell_pos) == -1:
 	#checks first if the tile is occupied by either another plant or something on the nature tile
-		if tile_placed.tile_info.fertility <= 5:
+		if tile_placed.tile_info.fertility <= 0:
 			print("soil infertile cannot plant")
 		elif player.current_plant != DataTypes.Plants.None and player.current_plant!=DataTypes.Plants.Trees:
 			#plant a crop if the soil is fertile and a plant is avaiable to be planted
@@ -59,7 +57,7 @@ func plant_crop():
 			plantgrowing = true
 			plant_scene.set_crop(player.current_plant)
 			plant_queue.append(player.current_plant) #adds the plant to the queue
-			tile_placed.tile_info.fertilize(Global.PLANT_FERTILITY_LOSS) #planting anything takes 2 fertility from the soil
+			tile_placed.tile_info.fertility -= 2 #planting anything takes 2 fertility from the soil
 			ActionManager.action_performed.emit()
 	elif not plant_grown:
 		print("plant is already growing here")
@@ -74,11 +72,11 @@ func update_crop_rotation():
 		if plant_queue.slice(-2, 0).all(func(x): return x == plant_queue[-1]): 
 			#checks the the two most recently planted crops are the same
 			#using all() and slice() for balance updates later if necessary
-			tile_placed.tile_info.fertilize(Global.PLANT_FERTILITY_LOSS)
+			tile_placed.tile_info.fertility -= 2
 			#removes another 2 fertility if you plant the same crop twice
 			#print("unrotated")
 		else:
-			tile_placed.tile_info.fertilize(Global.PLANT_FERTILITY_GAIN)
+			tile_placed.tile_info.fertility += 3
 			#adds 3 fertility if you rotate crops giving the player a net positive in fertility
 			#print("rotated")
 	if plant_queue.size() > 3:

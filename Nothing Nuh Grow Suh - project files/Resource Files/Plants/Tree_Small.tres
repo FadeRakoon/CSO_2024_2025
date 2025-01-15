@@ -6,7 +6,7 @@
 script = ExtResource("1_8uiu8")
 plant_name = "Small Tree"
 days_grown = 0
-growth_time = 8
+growth_time = 4
 min_fertility = 10
 min_moist = 5
 sell_value = 0

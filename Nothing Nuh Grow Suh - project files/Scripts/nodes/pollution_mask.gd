@@ -16,5 +16,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var max_pollution = tile_placed.tile_info.max_pollution
-	alpha = float(tile_placed.tile_info.pollution)/max_pollution * base_alpha
+	var alpha = tile_placed.tile_info.pollution/max_pollution * base_alpha
 	modulate = Color(0.78, 0.2, 0.99, alpha)
