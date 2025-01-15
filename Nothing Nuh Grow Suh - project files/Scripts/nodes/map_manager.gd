@@ -168,8 +168,10 @@ func _on_time_advanced():
 		if randi_range(0, 100) < round_disaster.dist_probability :
 			match round_disaster.disaster_name:
 				"Acid Rain" :
+					TextManger.say(["Acid Rain is occuring!!"]) #creates popup to say when disaster occured
 					growth_enabled = false
 				"Flood" :
+					TextManger.say(["Flooding has occured"]) #creates popup to say when disaster occured
 					for zone in grow_zones_dict:
 						if randi_range(0, 100) < round_disaster.dist_probability :
 							grow_zones_dict[zone].reset_plant()
